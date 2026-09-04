@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>AntiNorm Weekly Product Tracker &middot; W1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:Inter,Helvetica,Arial,sans-serif;background:#F2F7FB;color:#333333;
+  font-size:13px;line-height:1.5;padding:28px 24px 40px;-webkit-font-smoothing:antialiased}
+ .wrap{max-width:1240px;margin:0 auto}
+
+ /* header */
+ header{display:flex;justify-content:space-between;align-items:flex-end;
+  gap:24px;flex-wrap:wrap;margin-bottom:24px;padding:0 4px}
+ .mark{font-size:19px;font-weight:700;color:#004AAD;letter-spacing:-.3px}
+ .mark span{font-weight:400;color:#63ABFF}
+ .tagline{font-size:8.5px;color:#666666;letter-spacing:.16em;text-transform:uppercase;margin-top:1px}
+ h1{font-size:15px;font-weight:600;color:#1A1A2E;margin-top:14px}
+ .hmeta{text-align:right;font-size:11px;color:#666666;line-height:1.7}
+ .hmeta b{color:#1A1A2E;font-weight:600}
+
+ .banner{background:#fff;border-left:3px solid #004AAD;border-radius:10px;
+  padding:13px 18px;margin-bottom:20px;font-size:12px}
+ .banner b{color:#1A1A2E}
+
+ /* hero band */
+ .hero{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:1px;background:#E3EBF3;
+  border-radius:18px;overflow:hidden;margin-bottom:28px}
+ .hcell{background:#fff;padding:26px 28px}
+ .hcell.lead{padding:26px 32px}
+ .hlabel{font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:#666666;
+  font-weight:600}
+ .hnum{font-size:52px;font-weight:700;color:#1A1A2E;letter-spacing:-1.6px;
+  line-height:1.05;margin-top:10px}
+ .snum{font-size:27px;font-weight:700;color:#1A1A2E;letter-spacing:-.7px;margin-top:10px}
+ .hsub{font-size:11.5px;color:#666666;margin-top:6px}
+ .hsub b{color:#333333;font-weight:600}
+
+ /* bars */
+ .bar{width:100%;min-width:96px}
+ .bar.wide{margin-top:16px}
+ .track{position:relative;height:7px;background:#B8D8F8;border-radius:4px}
+ .fill{position:absolute;left:0;top:0;bottom:0;background:#004AAD;
+  border-radius:0 4px 4px 0}
+ .tick{position:absolute;top:-3px;bottom:-3px;width:2px;background:#1A1A2E;border-radius:1px}
+ .barmeta{display:flex;align-items:baseline;gap:7px;margin-top:6px}
+ .att{font-size:11px;font-weight:600;color:#333333;font-variant-numeric:tabular-nums}
+ .over{font-size:9.5px;font-weight:600;color:#fff;background:#1A1A2E;
+  border-radius:4px;padding:1px 5px}
+ .bar-na{font-size:10.5px;color:#666666}
+ .bar.mini{min-width:0;width:64px;margin:6px 0 0 auto}
+ .bar.mini .track{height:4px}
+
+ /* attention */
+ .sec{font-size:11px;font-weight:700;color:#1A1A2E;text-transform:uppercase;
+  letter-spacing:.13em;margin:0 4px 14px}
+ .sec em{font-style:normal;font-weight:400;color:#666666;text-transform:none;
+  letter-spacing:0;margin-left:10px;font-size:11.5px}
+ .acards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
+  gap:16px;margin-bottom:30px}
+ .acard{border-radius:16px;padding:22px 24px;background:#fff;border:1px solid #E3EBF3}
+ .acard.act{background:#1A1A2E;border-color:#1A1A2E}
+ .acard.fund{background:#004AAD;border-color:#004AAD}
+ .acard.watch{background:#B8D8F8;border-color:#B8D8F8}
+ .acard-k{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;
+  color:#666666}
+ .acard.act .acard-k,.acard.fund .acard-k{color:#B8D8F8}
+ .acard.watch .acard-k{color:#004AAD}
+ .acard-p{font-size:19px;font-weight:700;color:#1A1A2E;margin-top:8px;letter-spacing:-.3px}
+ .acard.act .acard-p,.acard.fund .acard-p{color:#fff}
+ .acard-n{font-size:11.5px;color:#666666;margin-top:5px}
+ .acard.act .acard-n,.acard.fund .acard-n{color:#B8D8F8}
+ .acard-f{display:flex;gap:26px;margin-top:16px;padding-top:14px;
+  border-top:1px solid #E3EBF3}
+ .acard.act .acard-f,.acard.fund .acard-f{border-top-color:rgba(255,255,255,.22)}
+ .acard.watch .acard-f{border-top-color:rgba(0,74,173,.2)}
+ .acard-f span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.1em;
+  color:#666666}
+ .acard.act .acard-f span,.acard.fund .acard-f span{color:#B8D8F8}
+ .acard-f b{display:block;font-size:15px;font-weight:700;color:#1A1A2E;margin-top:3px}
+ .acard.act .acard-f b,.acard.fund .acard-f b{color:#fff}
+ .acard-f i{display:block;font-style:normal;font-size:10px;color:#666666;margin-top:1px}
+ .acard.act .acard-f i,.acard.fund .acard-f i{color:#B8D8F8}
+
+ /* main table */
+ .panel{background:#fff;border-radius:18px;padding:8px 8px 4px;margin-bottom:28px}
+ table.main{width:100%;border-collapse:collapse}
+ table.main thead th{font-size:9.5px;text-transform:uppercase;letter-spacing:.11em;
+  color:#666666;font-weight:600;text-align:right;padding:16px 14px 12px;
+  border-bottom:1px solid #E3EBF3;white-space:nowrap}
+ table.main thead th.l{text-align:left}
+ table.main tbody td{padding:15px 14px;border-bottom:1px solid #E3EBF3;vertical-align:middle}
+ table.main tbody tr:last-child td{border-bottom:none}
+ table.main tbody tr:hover td{background:#F2F7FB}
+ .c-prod{width:24%}
+ .pname{font-size:14px;font-weight:600;color:#1A1A2E}
+ .psplit{font-size:10.5px;color:#666666;margin-top:3px;font-variant-numeric:tabular-nums}
+ .rnote{font-size:10.5px;color:#333333;margin-top:5px}
+ .c-st{width:12%}
+ .c-num,.c-mer{text-align:right;white-space:nowrap}
+ .c-bar{width:13%}
+ .big{font-size:14px;font-weight:600;color:#1A1A2E;font-variant-numeric:tabular-nums}
+ .small{font-size:10.5px;color:#666666;margin-top:2px;font-variant-numeric:tabular-nums}
+ .mer-ok{color:#004AAD;font-weight:700}
+ .mer-low{color:#666666}
+ .chip{display:inline-block;font-size:10px;font-weight:600;padding:4px 10px;
+  border-radius:6px;white-space:nowrap;border:1px solid transparent}
+ .chip.act{background:#1A1A2E;color:#fff}
+ .chip.fund{background:#004AAD;color:#fff}
+ .chip.watch{background:#B8D8F8;color:#1A1A2E}
+ .chip.behind{background:#F2F7FB;color:#333333;border-color:#E3EBF3}
+ .chip.ontrack{background:#fff;color:#666666;border-color:#E3EBF3}
+ .chip.nospend,.chip.idle,.chip.none{background:#fff;color:#666666;border-color:#E3EBF3}
+ tfoot td{padding:16px 14px;border-top:2px solid #1A1A2E;font-weight:700;color:#1A1A2E;
+  font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+ tfoot td.l{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+
+ /* unassigned strip */
+ .ustrip{display:flex;justify-content:space-between;align-items:center;gap:20px;
+  background:#B8D8F8;border-radius:14px;padding:16px 24px;margin-bottom:28px;flex-wrap:wrap}
+ .ustrip .t{font-size:12px;color:#1A1A2E}
+ .ustrip .t b{font-weight:700}
+ .ustrip .v{font-size:15px;font-weight:700;color:#1A1A2E;font-variant-numeric:tabular-nums}
+
+ /* details */
+ details{background:#fff;border-radius:16px;margin-bottom:14px;overflow:hidden}
+ summary{padding:18px 26px;font-size:12.5px;font-weight:600;color:#004AAD;cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;align-items:center}
+ summary::-webkit-details-marker{display:none}
+ summary::after{content:"+";font-size:17px;color:#666666;font-weight:400}
+ details[open] summary::after{content:"\2212"}
+ details[open] summary{border-bottom:1px solid #E3EBF3}
+ .dbody{padding:22px 26px 26px}
+ .scroll{overflow-x:auto}
+ table.det{width:100%;border-collapse:collapse;font-size:11.5px;min-width:1080px}
+ table.det th{background:#F2F7FB;color:#666666;font-size:9px;text-transform:uppercase;
+  letter-spacing:.07em;padding:9px 8px;text-align:right;white-space:nowrap;font-weight:600}
+ table.det th.l,table.det td.l{text-align:left}
+ table.det td{padding:8px;border-bottom:1px solid #E3EBF3;text-align:right;
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+ table.det td.p{color:#666666}
+ table.det tr.un{background:#F2F7FB}
+ .acol{min-width:0}
+ ul.audit{list-style:none;font-size:11px;margin-bottom:0}
+ ul.audit li{display:flex;justify-content:space-between;gap:16px;padding:6px 0;
+  border-bottom:1px solid #E3EBF3}
+ ul.audit li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ ul.audit li b{font-variant-numeric:tabular-nums;white-space:nowrap;color:#1A1A2E}
+ h5{font-size:11px;color:#004AAD;margin:0 0 8px;text-transform:lowercase;font-weight:600}
+ h5 em{font-style:normal;color:#666666;font-weight:400;text-transform:none}
+ .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+ ol.notes{font-size:12px;padding-left:20px} ol.notes li{margin-bottom:10px}
+ ol.notes b{color:#1A1A2E}
+ .fine{font-size:11px;color:#666666}
+
+ /* week pills */
+ .pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+ .pill{flex:1;min-width:132px;background:#fff;border-radius:12px;padding:12px 15px;
+  border:1px solid #E3EBF3}
+ .pill.on{background:#004AAD;border-color:#004AAD}
+ .pill b{display:block;font-size:13px;color:#004AAD}
+ .pill.on b{color:#fff}
+ .pill span{display:block;font-size:10.5px;color:#666666;margin-top:2px}
+ .pill.on span{color:#B8D8F8}
+ .pill i{display:block;font-style:normal;font-size:8.5px;color:#666666;margin-top:4px;
+  text-transform:uppercase;letter-spacing:.09em}
+ .pill.on i{color:#B8D8F8}
+
+ footer{font-size:10px;color:#666666;padding:18px 4px 0;line-height:1.8}
+ @media (max-width:1080px){.hero{grid-template-columns:1fr 1fr}}
+ @media (max-width:720px){.hero{grid-template-columns:1fr}
+  table.main thead{display:none}}
+</style></head><body><div class="wrap">
+
+<header>
+ <div><div class="mark">beyond <span>ads</span></div>
+  <div class="tagline">A D2C Boutique Agency</div>
+  <h1>AntiNorm &middot; weekly product tracker</h1></div>
+ <div class="hmeta"><b>W1 &middot; 31 Aug to 06 Sep 2026</b><br>
+  Day 4 of 7 &middot; 57% of week elapsed<br>
+  Locked 04 Sep 2026, 08:03 IST</div>
+</header>
+
+<div class="banner"><b>Week still running.</b> Day 4 of 7, data through 03 Sep. Compare every bar against the pace marker, not against 100%. Refreshes tomorrow at 08:00 IST; the final version for this week lands Monday morning.</div>
+
+<div class="hero">
+ <div class="hcell lead"><div class="hlabel">Revenue this week</div>
+  <div class="hnum">Rs 10.15 L</div>
+  <div class="hsub">against a target of <b>Rs 30.00 L</b></div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:33.8%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">34%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Spend incl GST</div>
+  <div class="snum">Rs 9.26 L</div>
+  <div class="hsub">target <b>Rs 23.97 L</b><br>
+   ex GST Rs 7.85 L</div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:38.6%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">39%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Product MER</div>
+  <div class="snum">1.10x</div>
+  <div class="hsub">target <b>1.25x</b><br>
+   revenue over GST inclusive spend</div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:87.6%"></div></div><div class="barmeta"><span class="att">88%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Unassigned spend</div>
+  <div class="snum">12.1%</div>
+  <div class="hsub"><b>Rs 1.12 L</b> with no product<br>
+   mostly Google generic</div></div>
+</div>
+
+<div class="sec">Where to look <em>ranked by money at stake, not alphabetically</em></div>
+<div class="acards">
+      <div class="acard act">
+        <div class="acard-k">Pull budget out</div>
+        <div class="acard-p">Detox on Demand</div>
+        <div class="acard-n">Burning budget 1.6x pace at 49% of target MER</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 1,38,061</b>
+            <i>of Rs 1,50,000</i></div>
+          <div><span>MER</span><b>0.49</b><i>target 1.00</i></div>
+        </div>
+      </div>
+      <div class="acard fund">
+        <div class="acard-k">Push budget in</div>
+        <div class="acard-p">Don't Sweat It</div>
+        <div class="acard-n">Beating target MER at 185%, only 11% of budget used</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 29,920</b>
+            <i>of Rs 2,67,857</i></div>
+          <div><span>MER</span><b>2.59</b><i>target 1.40</i></div>
+        </div>
+      </div>
+      <div class="acard fund">
+        <div class="acard-k">Push budget in</div>
+        <div class="acard-p">Bye Bye Blow Dry</div>
+        <div class="acard-n">Beating target MER at 158%, only 12% of budget used</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 27,010</b>
+            <i>of Rs 2,30,769</i></div>
+          <div><span>MER</span><b>2.05</b><i>target 1.30</i></div>
+        </div>
+      </div></div>
+
+<div class="sec">Every product <em>ranked by revenue contribution, biggest first</em></div>
+<div class="panel"><table class="main">
+ <thead><tr>
+  <th class="l">Product</th><th class="l">Status</th>
+  <th>Spend incl GST</th><th class="l">vs target</th>
+  <th>Revenue</th><th class="l">vs target</th><th>MER</th>
+ </tr></thead>
+ <tbody>
+      <tr>
+        <td class="c-prod"><div class="pname">FIAF Family</div>
+          <div class="psplit">Meta Rs 2,85,736 &middot; Google Rs 1,324</div></td>
+        <td class="c-st"><span class="chip ontrack">On track</span></td>
+        <td class="c-num"><div class="big">Rs 3,38,731</div>
+          <div class="small">of Rs 6,92,308</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:48.9%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">49%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 4,41,115</div>
+          <div class="small">of Rs 9,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:49.0%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">49%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.30</div>
+          <div class="small">target 1.30</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">DUOS</div>
+          <div class="psplit">Meta Rs 7,423 &middot; Google Rs 0</div></td>
+        <td class="c-st"><span class="chip ontrack">On track</span></td>
+        <td class="c-num"><div class="big">Rs 8,759</div>
+          <div class="small">of Rs 15,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:58.4%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">58%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 1,04,370</div>
+          <div class="small">of Rs 45,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:100.0%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">232%</span><span class="over">+132%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">11.92</div>
+          <div class="small">target 3.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Don't Sweat It</div>
+          <div class="psplit">Meta Rs 25,356 &middot; Google Rs 0</div><div class="rnote">Beating target MER at 185%, only 11% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 29,920</div>
+          <div class="small">of Rs 2,67,857</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:11.2%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">11%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 77,469</div>
+          <div class="small">of Rs 3,75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:20.7%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">21%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">2.59</div>
+          <div class="small">target 1.40</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Shower in Seconds</div>
+          <div class="psplit">Meta Rs 92,665 &middot; Google Rs 0</div><div class="rnote">MER at 66% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 1,09,344</div>
+          <div class="small">of Rs 3,75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:29.2%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">29%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 71,934</div>
+          <div class="small">of Rs 3,75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:19.2%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">19%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.66</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:65.8%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Detox on Demand</div>
+          <div class="psplit">Meta Rs 1,17,001 &middot; Google Rs 0</div><div class="rnote">Burning budget 1.6x pace at 49% of target MER</div></td>
+        <td class="c-st"><span class="chip act">Cut back</span></td>
+        <td class="c-num"><div class="big">Rs 1,38,061</div>
+          <div class="small">of Rs 1,50,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:92.0%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">92%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 67,071</div>
+          <div class="small">of Rs 1,50,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:44.7%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">45%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.49</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:48.6%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">FWB</div>
+          <div class="psplit">Meta Rs 40,490 &middot; Google Rs 2,561</div><div class="rnote">Beating target MER at 113%, only 19% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 50,800</div>
+          <div class="small">of Rs 2,72,727</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:18.6%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">19%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 63,336</div>
+          <div class="small">of Rs 3,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:21.1%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">21%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.25</div>
+          <div class="small">target 1.10</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Bye Bye Blow Dry</div>
+          <div class="psplit">Meta Rs 21,749 &middot; Google Rs 1,141</div><div class="rnote">Beating target MER at 158%, only 12% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 27,010</div>
+          <div class="small">of Rs 2,30,769</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:11.7%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">12%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 55,435</div>
+          <div class="small">of Rs 3,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:18.5%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">18%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">2.05</div>
+          <div class="small">target 1.30</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Intense Double Cleanse</div>
+          <div class="psplit">Meta Rs 33,332 &middot; Google Rs 7,979</div></td>
+        <td class="c-st"><span class="chip ontrack">On track</span></td>
+        <td class="c-num"><div class="big">Rs 48,748</div>
+          <div class="small">of Rs 83,333</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:58.5%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">58%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 45,552</div>
+          <div class="small">of Rs 75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:60.7%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">61%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">0.93</div>
+          <div class="small">target 0.90</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">One Step Wonder</div>
+          <div class="psplit">Meta Rs 34,647 &middot; Google Rs 0</div><div class="rnote">MER at 82% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 40,883</div>
+          <div class="small">of Rs 75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:54.5%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">55%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 33,572</div>
+          <div class="small">of Rs 75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:44.8%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">45%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.82</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:82.1%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Smooth Operator</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 1,25,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 24,621</div>
+          <div class="small">of Rs 1,50,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:16.4%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">16%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.20</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Chill The Flakes Out</div>
+          <div class="psplit">Meta Rs 11,716 &middot; Google Rs 957</div><div class="rnote">Beating target MER at 118%, only 20% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 14,954</div>
+          <div class="small">of Rs 75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:19.9%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">20%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 17,578</div>
+          <div class="small">of Rs 75,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:23.4%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">23%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.18</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Fuller Without Filler</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">No spend planned or run</div></td>
+        <td class="c-st"><span class="chip idle">Not funded</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 0</div></td>
+        <td class="c-bar"><div class="bar-na">no target</div></td>
+        <td class="c-num"><div class="big">Rs 6,490</div>
+          <div class="small">of Rs 45,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:14.4%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">14%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target -</div>
+          </td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">High & Dry</div>
+          <div class="psplit">Meta Rs 4,255 &middot; Google Rs 0</div><div class="rnote">Only 15% of budget used</div></td>
+        <td class="c-st"><span class="chip behind">Behind pace</span></td>
+        <td class="c-num"><div class="big">Rs 5,021</div>
+          <div class="small">of Rs 34,615</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:14.5%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">15%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 5,995</div>
+          <div class="small">of Rs 45,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:13.3%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">13%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">1.19</div>
+          <div class="small">target 1.30</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:91.8%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Hair & Everywhere</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">No spend planned or run</div></td>
+        <td class="c-st"><span class="chip idle">Not funded</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 0</div></td>
+        <td class="c-bar"><div class="bar-na">no target</div></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 45,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target -</div>
+          </td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">SIS Green Juice</div>
+          <div class="psplit">Meta Rs 1,077 &middot; Google Rs 0</div><div class="rnote">Rs 1,270 spent against a zero budget</div></td>
+        <td class="c-st"><span class="chip watch">Off plan spend</span></td>
+        <td class="c-num"><div class="big">Rs 1,270</div>
+          <div class="small">of Rs 0</div></td>
+        <td class="c-bar"><div class="bar-na">no target</div></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 45,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:57.1%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-mer"><div class="big ">0.00</div>
+          <div class="small">target -</div>
+          </td>
+      </tr>
+ </tbody>
+ <tfoot><tr><td class="l">Total</td><td></td>
+  <td>Rs 9,25,838</td><td></td>
+  <td>Rs 10,15,236</td><td></td><td>1.10x</td></tr></tfoot>
+</table></div>
+
+<div class="ustrip">
+ <div class="t"><b>Unassigned</b> &mdash; Rs 1,12,337 of spend and Rs 698
+  of revenue sit outside the plan. 83% of all Google spend has no product token.</div>
+ <div class="v">12.1% of spend</div>
+</div>
+
+<details><summary>Full numbers, every column</summary><div class="dbody"><div class="scroll">
+ <table class="det"><thead><tr><th class="l">Product</th>
+  <th>Meta</th><th>Meta tgt</th><th>Google</th><th>Google tgt</th>
+  <th>Spend ex GST</th><th>Ex GST tgt</th><th>Spend incl</th><th>Incl tgt</th>
+  <th>Revenue</th><th>Rev tgt</th><th>MER</th><th>MER tgt</th></tr></thead>
+  <tbody><tr class=""><td class="l">FIAF Family</td><td>Rs 2,85,736</td><td class="p">Rs 5,28,031</td><td>Rs 1,324</td><td class="p">Rs 58,670</td><td>Rs 2,87,060</td><td class="p">Rs 5,86,702</td><td><b>Rs 3,38,731</b></td><td class="p">Rs 6,92,308</td><td><b>Rs 4,41,115</b></td><td class="p">Rs 9,00,000</td><td>1.30</td><td class="p">1.30</td></tr><tr class=""><td class="l">Shower in Seconds</td><td>Rs 92,665</td><td class="p">Rs 2,86,017</td><td>Rs 0</td><td class="p">Rs 31,780</td><td>Rs 92,665</td><td class="p">Rs 3,17,797</td><td><b>Rs 1,09,344</b></td><td class="p">Rs 3,75,000</td><td><b>Rs 71,934</b></td><td class="p">Rs 3,75,000</td><td>0.66</td><td class="p">1.00</td></tr><tr class=""><td class="l">FWB</td><td>Rs 40,490</td><td class="p">Rs 2,08,012</td><td>Rs 2,561</td><td class="p">Rs 23,112</td><td>Rs 43,051</td><td class="p">Rs 2,31,125</td><td><b>Rs 50,800</b></td><td class="p">Rs 2,72,727</td><td><b>Rs 63,336</b></td><td class="p">Rs 3,00,000</td><td>1.25</td><td class="p">1.10</td></tr><tr class=""><td class="l">Don't Sweat It</td><td>Rs 25,356</td><td class="p">Rs 2,04,298</td><td>Rs 0</td><td class="p">Rs 22,700</td><td>Rs 25,356</td><td class="p">Rs 2,26,997</td><td><b>Rs 29,920</b></td><td class="p">Rs 2,67,857</td><td><b>Rs 77,469</b></td><td class="p">Rs 3,75,000</td><td>2.59</td><td class="p">1.40</td></tr><tr class=""><td class="l">Bye Bye Blow Dry</td><td>Rs 21,749</td><td class="p">Rs 1,76,010</td><td>Rs 1,141</td><td class="p">Rs 19,557</td><td>Rs 22,890</td><td class="p">Rs 1,95,567</td><td><b>Rs 27,010</b></td><td class="p">Rs 2,30,769</td><td><b>Rs 55,435</b></td><td class="p">Rs 3,00,000</td><td>2.05</td><td class="p">1.30</td></tr><tr class=""><td class="l">Detox on Demand</td><td>Rs 1,17,001</td><td class="p">Rs 1,14,407</td><td>Rs 0</td><td class="p">Rs 12,712</td><td>Rs 1,17,001</td><td class="p">Rs 1,27,119</td><td><b>Rs 1,38,061</b></td><td class="p">Rs 1,50,000</td><td><b>Rs 67,071</b></td><td class="p">Rs 1,50,000</td><td>0.49</td><td class="p">1.00</td></tr><tr class=""><td class="l">Smooth Operator</td><td>Rs 0</td><td class="p">Rs 95,339</td><td>Rs 0</td><td class="p">Rs 10,593</td><td>Rs 0</td><td class="p">Rs 1,05,932</td><td><b>Rs 0</b></td><td class="p">Rs 1,25,000</td><td><b>Rs 24,621</b></td><td class="p">Rs 1,50,000</td><td>-</td><td class="p">1.20</td></tr><tr class=""><td class="l">Intense Double Cleanse</td><td>Rs 33,332</td><td class="p">Rs 63,559</td><td>Rs 7,979</td><td class="p">Rs 7,062</td><td>Rs 41,312</td><td class="p">Rs 70,621</td><td><b>Rs 48,748</b></td><td class="p">Rs 83,333</td><td><b>Rs 45,552</b></td><td class="p">Rs 75,000</td><td>0.93</td><td class="p">0.90</td></tr><tr class=""><td class="l">Chill The Flakes Out</td><td>Rs 11,716</td><td class="p">Rs 57,203</td><td>Rs 957</td><td class="p">Rs 6,356</td><td>Rs 12,673</td><td class="p">Rs 63,559</td><td><b>Rs 14,954</b></td><td class="p">Rs 75,000</td><td><b>Rs 17,578</b></td><td class="p">Rs 75,000</td><td>1.18</td><td class="p">1.00</td></tr><tr class=""><td class="l">One Step Wonder</td><td>Rs 34,647</td><td class="p">Rs 57,203</td><td>Rs 0</td><td class="p">Rs 6,356</td><td>Rs 34,647</td><td class="p">Rs 63,559</td><td><b>Rs 40,883</b></td><td class="p">Rs 75,000</td><td><b>Rs 33,572</b></td><td class="p">Rs 75,000</td><td>0.82</td><td class="p">1.00</td></tr><tr class=""><td class="l">High & Dry</td><td>Rs 4,255</td><td class="p">Rs 26,402</td><td>Rs 0</td><td class="p">Rs 2,934</td><td>Rs 4,255</td><td class="p">Rs 29,335</td><td><b>Rs 5,021</b></td><td class="p">Rs 34,615</td><td><b>Rs 5,995</b></td><td class="p">Rs 45,000</td><td>1.19</td><td class="p">1.30</td></tr><tr class=""><td class="l">DUOS</td><td>Rs 7,423</td><td class="p">Rs 11,441</td><td>Rs 0</td><td class="p">Rs 1,271</td><td>Rs 7,423</td><td class="p">Rs 12,712</td><td><b>Rs 8,759</b></td><td class="p">Rs 15,000</td><td><b>Rs 1,04,370</b></td><td class="p">Rs 45,000</td><td>11.92</td><td class="p">3.00</td></tr><tr class=""><td class="l">Hair & Everywhere</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 45,000</td><td>-</td><td class="p">-</td></tr><tr class=""><td class="l">SIS Green Juice</td><td>Rs 1,077</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 1,077</td><td class="p">Rs 0</td><td><b>Rs 1,270</b></td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 45,000</td><td>0.00</td><td class="p">-</td></tr><tr class=""><td class="l">Fuller Without Filler</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 0</td><td><b>Rs 6,490</b></td><td class="p">Rs 45,000</td><td>-</td><td class="p">-</td></tr><tr class="un"><td class="l">Unassigned</td><td>Rs 24,589</td><td class="p">-</td><td>Rs 70,612</td><td class="p">-</td><td>Rs 95,201</td><td class="p">-</td><td><b>Rs 1,12,337</b></td><td class="p">-</td><td><b>Rs 698</b></td><td class="p">-</td><td>0.01</td><td class="p">-</td></tr></tbody></table></div></div></details>
+
+<details><summary>Reconciliation and unassigned audit</summary><div class="dbody">
+ <ul class="audit"><li><span>Meta &mdash; raw Rs 7,00,035, mapped plus unassigned Rs 7,00,035</span><b>ties</b></li><li><span>Google &mdash; raw Rs 84,573, mapped plus unassigned Rs 84,573</span><b>ties</b></li><li><span>Shopify revenue &mdash; raw Rs 10,15,236, mapped plus unassigned Rs 10,15,236</span><b>ties</b></li></ul>
+ <div class="cols">
+  <div class='acol'><h5>meta ads with no product token <em>Rs 24,589</em></h5><ul class='audit'><li><span>All Products - Single product Catalog - Generic - PDP - 26/03/26</span><b>Rs 8,945</b></li><li><span>Generic - Founder - Partnership - LuxuryOfLess - HavingYouToDoLess - Video - CP - 31/08/26</span><b>Rs 3,437</b></li><li><span>SO - Founder - Partnership - StrawberryLegs - Nonetheless - Video - PDP - 07/08/26</span><b>Rs 2,632</b></li><li><span>Quiz - Arushi - PictureUpload - Video - Quiz LP - 26/08/26</span><b>Rs 2,430</b></li><li><span>Quiz - Arushi - Regular - Video - HP - 26/08/26</span><b>Rs 2,401</b></li><li><span>SO - Founder - Partnership - GlycolicAcidBenefits - DifferentThanOtherGlycolicAcid - Video - PDP - 31/08/26</span><b>Rs 1,867</b></li><li><span>SO - Founder - Partnership - StrawberryLegs - GreenScreen - Video - PDP - 14/07/26</span><b>Rs 1,026</b></li><li><span>Quiz - WhatWorksForYou - FindYourMatch - Static - CP - 02/09/26</span><b>Rs 924</b></li><li><span>Quiz - ScanYourFace - GetEssentials - Static - CP - 02/09/26</span><b>Rs 633</b></li><li><span>SO - Founder - Partnership - GlycolicAcidBenefits - WhyItsBest - Video - PDP - 01/08/26</span><b>Rs 178</b></li><li><span>SO - Founder - Partnership - StrawberryLegs - Video - PDP - 10/07/26</span><b>Rs 85</b></li><li><span>SO - Founder - Partnership - GlycolicAcidBenefits - BodyPolisher - Video - PDP - 25/08/26</span><b>Rs 17</b></li><li><span>SO - Founder - Partnership - BeforeAfter - RightAfterWaxing - Video - PDP - 19/08/26</span><b>Rs 14</b></li><li><span>SO - Founder - Partnership - AboutProduct - Benefits - Video - PDP - 01/08/26</span><b>Rs 0</b></li></ul></div>
+  <div class='acol'><h5>google generic campaigns <em>Rs 70,612</em></h5><ul class='audit'><li><span>Search_Brand_campaign_maxconversions(Re)</span><b>Rs 35,115</b></li><li><span>PLA_Shopping_Singles_tROAS(Acq)</span><b>Rs 11,908</b></li><li><span>Pmax_Brand_Sales_Retargeting(Re)</span><b>Rs 11,238</b></li><li><span>PLA_Shopping_tROAS</span><b>Rs 6,873</b></li><li><span>Pmax_InterestTargeting(Acq)</span><b>Rs 2,901</b></li><li><span>Search_Generic_maxconversionvalue_troas(Acq)</span><b>Rs 1,456</b></li><li><span>Search_Brand_campaign_troas(Re)</span><b>Rs 1,120</b></li></ul></div>
+  <div class='acol'><h5>shopify lines outside the plan <em>Rs 698</em></h5><ul class='audit'><li><span>Against the Norm Cap</span><b>Rs 499</b></li><li><span>Works like a Charm</span><b>Rs 199</b></li></ul></div>
+ </div></div></details>
+
+<details><summary>How to read this</summary><div class="dbody">
+ <ol class="notes">
+  <li><b>The pace marker is the point.</b> The dark tick on every bar sits at
+   57%, where the week has actually got to. A fill short of the tick is behind
+   pace, a fill past it is ahead. Judge against the tick, never against a full bar.</li>
+  <li><b>Product MER, not ROAS.</b> Numerator is all channel Shopify net sales for the
+   product including organic and quick commerce. Denominator is only the spend we could
+   attribute to that product. Products with organic pull read high, products carrying
+   prospecting spend read low. This will not tie to Meta reported ROAS.</li>
+  <li><b>Total spend</b> is (Meta + Google) x 1.18. The sheet states targets and target
+   ROAS on GST inclusive spend, so MER and its target are directly comparable.</li>
+  <li><b>Targets are the stated weekly figures</b> from the Internal Weekly Checkpoint
+   tab, not a pro rata of the month. Weeks with targets today:
+   W1, W2.</li>
+  <li><b>Google product coverage is thin.</b> Only five campaigns carry a product token.
+   83% of Google spend is brand, shopping or generic Pmax and sits in
+   Unassigned, so per product Google spend is understated throughout.</li>
+  <li><b>Smooth Operator shows zero spend by design.</b> The short form <code>SO</code>
+   was excluded from the product logic as ambiguous and no ad spells the name out, so its
+   ads sit in Unassigned. Restoring the token would fix that row.</li>
+  <li><b>Mapping</b> matches the product word or its short form on token boundaries.
+   GSIS resolves before SIS, Pouch maps to Don't Sweat It, Detox to Detox on Demand,
+   H&amp;D to High &amp; Dry. First match wins, nothing is double counted, FIAF refill and
+   jar combos stay inside FIAF Family.</li>
+  <li><b>Creative count is not in this version.</b> Weekly creative targets exist in the
+   sheet but the Meta Creatives Update tab cannot be read end to end yet.</li>
+  <li><b>September context.</b> Month target is Rs 1.60 Cr spend
+   incl GST against Rs 2.00 Cr revenue at
+   1.25.</li>
+ </ol></div></details>
+
+<div class="sec" style="margin-top:28px">September weeks</div>
+<div class="pills"><div class="pill on"><b>W1</b><span>31 Aug to 06 Sep</span><i>target set</i></div><div class="pill "><b>W2</b><span>07 Sep to 13 Sep</span><i>target set</i></div><div class="pill "><b>W3</b><span>14 Sep to 20 Sep</span><i>target pending</i></div><div class="pill "><b>W4</b><span>21 Sep to 27 Sep</span><i>target pending</i></div><div class="pill "><b>W5</b><span>28 Sep to 30 Sep</span><i>target pending</i></div></div>
+
+<footer>Beyond Ads &middot; hello@gobeyondads.com &middot; +91 9553926661 &middot;
+ Banjara Hills, Hyderabad 500082<br>
+ Google Partner &middot; Meta Business Partner &middot; Amazon Ads Verified Partner &middot;
+ Shopify Partner<br>
+ Sources: Windsor.ai (Meta Ads, Google Ads, Shopify) &middot; Antinorm Media Plan,
+ Internal Weekly Checkpoint. Refreshes every morning at 08:00 IST.
+</footer>
+</div></body></html>

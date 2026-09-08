@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>AntiNorm Weekly Product Tracker &middot; W2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:Inter,Helvetica,Arial,sans-serif;background:#F2F7FB;color:#333333;
+  font-size:13px;line-height:1.5;padding:28px 24px 40px;-webkit-font-smoothing:antialiased}
+ .wrap{max-width:1240px;margin:0 auto}
+
+ /* header */
+ header{display:flex;justify-content:space-between;align-items:flex-end;
+  gap:24px;flex-wrap:wrap;margin-bottom:24px;padding:0 4px}
+ .mark{font-size:19px;font-weight:700;color:#004AAD;letter-spacing:-.3px}
+ .mark span{font-weight:400;color:#63ABFF}
+ .tagline{font-size:8.5px;color:#666666;letter-spacing:.16em;text-transform:uppercase;margin-top:1px}
+ h1{font-size:15px;font-weight:600;color:#1A1A2E;margin-top:14px}
+ .hmeta{text-align:right;font-size:11px;color:#666666;line-height:1.7}
+ .hmeta b{color:#1A1A2E;font-weight:600}
+
+ .banner{background:#fff;border-left:3px solid #004AAD;border-radius:10px;
+  padding:13px 18px;margin-bottom:20px;font-size:12px}
+ .banner b{color:#1A1A2E}
+
+ /* hero band */
+ .hero{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:1px;background:#E3EBF3;
+  border-radius:18px;overflow:hidden;margin-bottom:28px}
+ .hcell{background:#fff;padding:26px 28px}
+ .hcell.lead{padding:26px 32px}
+ .hlabel{font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:#666666;
+  font-weight:600}
+ .hnum{font-size:52px;font-weight:700;color:#1A1A2E;letter-spacing:-1.6px;
+  line-height:1.05;margin-top:10px}
+ .snum{font-size:27px;font-weight:700;color:#1A1A2E;letter-spacing:-.7px;margin-top:10px}
+ .hsub{font-size:11.5px;color:#666666;margin-top:6px}
+ .hsub b{color:#333333;font-weight:600}
+
+ /* bars */
+ .bar{width:100%;min-width:96px}
+ .bar.wide{margin-top:16px}
+ .track{position:relative;height:7px;background:#B8D8F8;border-radius:4px}
+ .fill{position:absolute;left:0;top:0;bottom:0;background:#004AAD;
+  border-radius:0 4px 4px 0}
+ .tick{position:absolute;top:-3px;bottom:-3px;width:2px;background:#1A1A2E;border-radius:1px}
+ .barmeta{display:flex;align-items:baseline;gap:7px;margin-top:6px}
+ .att{font-size:11px;font-weight:600;color:#333333;font-variant-numeric:tabular-nums}
+ .over{font-size:9.5px;font-weight:600;color:#fff;background:#1A1A2E;
+  border-radius:4px;padding:1px 5px}
+ .bar-na{font-size:10.5px;color:#666666}
+ .bar.mini{min-width:0;width:64px;margin:6px 0 0 auto}
+ .bar.mini .track{height:4px}
+
+ /* attention */
+ .sec{font-size:11px;font-weight:700;color:#1A1A2E;text-transform:uppercase;
+  letter-spacing:.13em;margin:0 4px 14px}
+ .sec em{font-style:normal;font-weight:400;color:#666666;text-transform:none;
+  letter-spacing:0;margin-left:10px;font-size:11.5px}
+ .acards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
+  gap:16px;margin-bottom:30px}
+ .acard{border-radius:16px;padding:22px 24px;background:#fff;border:1px solid #E3EBF3}
+ .acard.act{background:#1A1A2E;border-color:#1A1A2E}
+ .acard.fund{background:#004AAD;border-color:#004AAD}
+ .acard.watch{background:#B8D8F8;border-color:#B8D8F8}
+ .acard-k{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;
+  color:#666666}
+ .acard.act .acard-k,.acard.fund .acard-k{color:#B8D8F8}
+ .acard.watch .acard-k{color:#004AAD}
+ .acard-p{font-size:19px;font-weight:700;color:#1A1A2E;margin-top:8px;letter-spacing:-.3px}
+ .acard.act .acard-p,.acard.fund .acard-p{color:#fff}
+ .acard-n{font-size:11.5px;color:#666666;margin-top:5px}
+ .acard.act .acard-n,.acard.fund .acard-n{color:#B8D8F8}
+ .acard-f{display:flex;gap:26px;margin-top:16px;padding-top:14px;
+  border-top:1px solid #E3EBF3}
+ .acard.act .acard-f,.acard.fund .acard-f{border-top-color:rgba(255,255,255,.22)}
+ .acard.watch .acard-f{border-top-color:rgba(0,74,173,.2)}
+ .acard-f span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.1em;
+  color:#666666}
+ .acard.act .acard-f span,.acard.fund .acard-f span{color:#B8D8F8}
+ .acard-f b{display:block;font-size:15px;font-weight:700;color:#1A1A2E;margin-top:3px}
+ .acard.act .acard-f b,.acard.fund .acard-f b{color:#fff}
+ .acard-f i{display:block;font-style:normal;font-size:10px;color:#666666;margin-top:1px}
+ .acard.act .acard-f i,.acard.fund .acard-f i{color:#B8D8F8}
+
+ /* main table */
+ .panel{background:#fff;border-radius:18px;padding:8px 8px 4px;margin-bottom:28px}
+ table.main{width:100%;border-collapse:collapse}
+ table.main thead th{font-size:9.5px;text-transform:uppercase;letter-spacing:.11em;
+  color:#666666;font-weight:600;text-align:right;padding:16px 14px 12px;
+  border-bottom:1px solid #E3EBF3;white-space:nowrap}
+ table.main thead th.l{text-align:left}
+ table.main tbody td{padding:15px 14px;border-bottom:1px solid #E3EBF3;vertical-align:middle}
+ table.main tbody tr:last-child td{border-bottom:none}
+ table.main tbody tr:hover td{background:#F2F7FB}
+ .c-prod{width:24%}
+ .pname{font-size:14px;font-weight:600;color:#1A1A2E}
+ .psplit{font-size:10.5px;color:#666666;margin-top:3px;font-variant-numeric:tabular-nums}
+ .rnote{font-size:10.5px;color:#333333;margin-top:5px}
+ .c-st{width:12%}
+ .c-num,.c-mer{text-align:right;white-space:nowrap}
+ .c-bar{width:13%}
+ .big{font-size:14px;font-weight:600;color:#1A1A2E;font-variant-numeric:tabular-nums}
+ .small{font-size:10.5px;color:#666666;margin-top:2px;font-variant-numeric:tabular-nums}
+ .mer-ok{color:#004AAD;font-weight:700}
+ .mer-low{color:#666666}
+ .chip{display:inline-block;font-size:10px;font-weight:600;padding:4px 10px;
+  border-radius:6px;white-space:nowrap;border:1px solid transparent}
+ .chip.act{background:#1A1A2E;color:#fff}
+ .chip.fund{background:#004AAD;color:#fff}
+ .chip.watch{background:#B8D8F8;color:#1A1A2E}
+ .chip.behind{background:#F2F7FB;color:#333333;border-color:#E3EBF3}
+ .chip.ontrack{background:#fff;color:#666666;border-color:#E3EBF3}
+ .chip.nospend,.chip.idle,.chip.none{background:#fff;color:#666666;border-color:#E3EBF3}
+ tfoot td{padding:16px 14px;border-top:2px solid #1A1A2E;font-weight:700;color:#1A1A2E;
+  font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+ tfoot td.l{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+
+ /* unassigned strip */
+ .ustrip{display:flex;justify-content:space-between;align-items:center;gap:20px;
+  background:#B8D8F8;border-radius:14px;padding:16px 24px;margin-bottom:28px;flex-wrap:wrap}
+ .ustrip .t{font-size:12px;color:#1A1A2E}
+ .ustrip .t b{font-weight:700}
+ .ustrip .v{font-size:15px;font-weight:700;color:#1A1A2E;font-variant-numeric:tabular-nums}
+
+ /* details */
+ details{background:#fff;border-radius:16px;margin-bottom:14px;overflow:hidden}
+ summary{padding:18px 26px;font-size:12.5px;font-weight:600;color:#004AAD;cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;align-items:center}
+ summary::-webkit-details-marker{display:none}
+ summary::after{content:"+";font-size:17px;color:#666666;font-weight:400}
+ details[open] summary::after{content:"\2212"}
+ details[open] summary{border-bottom:1px solid #E3EBF3}
+ .dbody{padding:22px 26px 26px}
+ .scroll{overflow-x:auto}
+ table.det{width:100%;border-collapse:collapse;font-size:11.5px;min-width:1080px}
+ table.det th{background:#F2F7FB;color:#666666;font-size:9px;text-transform:uppercase;
+  letter-spacing:.07em;padding:9px 8px;text-align:right;white-space:nowrap;font-weight:600}
+ table.det th.l,table.det td.l{text-align:left}
+ table.det td{padding:8px;border-bottom:1px solid #E3EBF3;text-align:right;
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+ table.det td.p{color:#666666}
+ table.det tr.un{background:#F2F7FB}
+ .acol{min-width:0}
+ ul.audit{list-style:none;font-size:11px;margin-bottom:0}
+ ul.audit li{display:flex;justify-content:space-between;gap:16px;padding:6px 0;
+  border-bottom:1px solid #E3EBF3}
+ ul.audit li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ ul.audit li b{font-variant-numeric:tabular-nums;white-space:nowrap;color:#1A1A2E}
+ h5{font-size:11px;color:#004AAD;margin:0 0 8px;text-transform:lowercase;font-weight:600}
+ h5 em{font-style:normal;color:#666666;font-weight:400;text-transform:none}
+ .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+ ol.notes{font-size:12px;padding-left:20px} ol.notes li{margin-bottom:10px}
+ ol.notes b{color:#1A1A2E}
+ .fine{font-size:11px;color:#666666}
+
+ /* week pills */
+ .pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+ .pill{flex:1;min-width:132px;background:#fff;border-radius:12px;padding:12px 15px;
+  border:1px solid #E3EBF3}
+ .pill.on{background:#004AAD;border-color:#004AAD}
+ .pill b{display:block;font-size:13px;color:#004AAD}
+ .pill.on b{color:#fff}
+ .pill span{display:block;font-size:10.5px;color:#666666;margin-top:2px}
+ .pill.on span{color:#B8D8F8}
+ .pill i{display:block;font-style:normal;font-size:8.5px;color:#666666;margin-top:4px;
+  text-transform:uppercase;letter-spacing:.09em}
+ .pill.on i{color:#B8D8F8}
+
+ /* ---- creative hub ---- */
+ .hubnote{background:#fff;border-left:3px solid #63ABFF;border-radius:10px;padding:14px 20px;
+   margin-bottom:20px;font-size:12px}
+ .hubnote strong{color:#1A1A2E}
+ .ptiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));
+   gap:16px;margin-bottom:28px}
+ .ptile{background:#fff;border-radius:18px;padding:22px 24px}
+ .ptile-h{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:baseline;
+   padding-bottom:14px;border-bottom:1px solid #E3EBF3;margin-bottom:4px}
+ .ptile-n{font-size:16px;font-weight:700;color:#1A1A2E;letter-spacing:-.2px}
+ .ptile-r{text-align:right;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+ .ptile-r em{display:block;font-style:normal;font-size:10px;font-weight:400;color:#666666;
+   margin-top:1px}
+ .ptile-m{font-size:11px;color:#666666;font-variant-numeric:tabular-nums}
+ .ptile-m b{color:#333333;font-weight:600}
+ .dimblock{padding-top:14px}
+ .dimhead{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+   color:#666666;margin-bottom:6px;display:flex;justify-content:space-between}
+ .dimhead em{font-style:normal;font-weight:400;letter-spacing:.04em;text-transform:none;
+   font-size:10px}
+ .erow{border-radius:8px}
+ .erow+.erow{margin-top:3px}
+ .egap{height:9px}
+ .etag{white-space:nowrap}
+ .erow summary{display:grid;grid-template-columns:52px minmax(0,1fr) auto auto 44px 68px;gap:8px;
+   align-items:center;padding:7px 8px;cursor:pointer;list-style:none;border-radius:8px;
+   font-variant-numeric:tabular-nums}
+ .erow summary::-webkit-details-marker{display:none}
+ .erow summary::after,
+ .erow[open]>summary::after{content:none}
+ .erow summary::before{content:"›";color:#666666;font-size:13px;line-height:1;
+   position:absolute;left:-2px;opacity:.55;transition:transform .12s}
+ .erow[open]>summary::before{transform:rotate(90deg)}
+ .erow summary{position:relative;padding-left:14px}
+ .nochip{display:block;width:0}
+ .erow summary:hover{background:#F2F7FB}
+ .erow.best summary{background:#F2F7FB}
+ .erow.best summary:hover{background:#B8D8F8}
+ .etag{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+   color:#666666}
+ .erow.best .etag{color:#004AAD}
+ .ekey{font-size:12.5px;font-weight:600;color:#1A1A2E;overflow:hidden;
+   text-overflow:ellipsis;white-space:nowrap}
+ .enum{font-size:13px;font-weight:700;color:#1A1A2E}
+ .edelta{font-size:11px;font-weight:600;color:#666666;text-align:right}
+ .erow.best .edelta{color:#004AAD}
+ .espend{font-size:10.5px;color:#666666;text-align:right;white-space:nowrap}
+ .erow .chip{font-size:9px;padding:2px 7px}
+ .ebody{padding:10px 8px 12px}
+ .ethin{font-size:10.5px;color:#666666;padding:6px 8px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+ .thumb{margin:0}
+ .thumb img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;display:block;
+   background:#F2F7FB}
+ .thumb a{display:block}
+ .noimg{width:100%;aspect-ratio:1;border-radius:8px;background:#F2F7FB;display:flex;
+   align-items:center;justify-content:center;font-size:9px;color:#666666;text-align:center}
+ .thumb figcaption{font-size:9.5px;color:#666666;margin-top:5px;line-height:1.35;
+   font-variant-numeric:tabular-nums}
+ .thumb figcaption b{color:#1A1A2E;font-weight:600}
+ .thumb figcaption span{display:block;color:#666666;overflow:hidden;
+   text-overflow:ellipsis;white-space:nowrap}
+ @media (max-width:900px){.ptiles{grid-template-columns:1fr}}
+ footer{font-size:10px;color:#666666;padding:18px 4px 0;line-height:1.8}
+ @media (max-width:1080px){.hero{grid-template-columns:1fr 1fr}}
+ @media (max-width:720px){.hero{grid-template-columns:1fr}
+  table.main thead{display:none}}
+</style></head><body><div class="wrap">
+
+<header>
+ <div><div class="mark">beyond <span>ads</span></div>
+  <div class="tagline">A D2C Boutique Agency</div>
+  <h1>AntiNorm &middot; weekly product tracker</h1></div>
+ <div class="hmeta"><b>W2 &middot; 07 Sep to 13 Sep 2026</b><br>
+  Day 1 of 7 &middot; 14% of week elapsed<br>
+  Locked 08 Sep 2026, 15:32 IST</div>
+</header>
+
+<div class="banner"><b>Week still running.</b> Day 1 of 7, data through 07 Sep. Compare every bar against the pace marker, not against 100%. Refreshes tomorrow at 11:00 IST; the final version for this week lands Monday morning.</div>
+
+<div class="hero">
+ <div class="hcell lead"><div class="hlabel">Revenue this week</div>
+  <div class="hnum">Rs 2.58 L</div>
+  <div class="hsub">against a target of <b>Rs 40.00 L</b></div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:6.5%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">6%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Spend incl GST</div>
+  <div class="snum">Rs 2.58 L</div>
+  <div class="hsub">target <b>Rs 31.95 L</b><br>
+   ex GST Rs 2.19 L</div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:8.1%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">8%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Product MER</div>
+  <div class="snum">1.00x</div>
+  <div class="hsub">target <b>1.25x</b><br>
+   revenue over GST inclusive spend</div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:80.0%"></div></div><div class="barmeta"><span class="att">80%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Unassigned spend</div>
+  <div class="snum">15.9%</div>
+  <div class="hsub"><b>Rs 41,029</b> with no product<br>
+   mostly Google generic</div></div>
+</div>
+
+<div class="sec">Where to look <em>ranked by money at stake, not alphabetically</em></div>
+<div class="acards">
+      <div class="acard act">
+        <div class="acard-k">Pull budget out</div>
+        <div class="acard-p">Detox on Demand</div>
+        <div class="acard-n">Burning budget 1.2x pace at 42% of target MER</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 34,770</b>
+            <i>of Rs 2,00,000</i></div>
+          <div><span>MER</span><b>0.42</b><i>target 1.00</i></div>
+        </div>
+      </div>
+      <div class="acard fund">
+        <div class="acard-k">Push budget in</div>
+        <div class="acard-p">Don't Sweat It</div>
+        <div class="acard-n">Beating target MER at 131%, only 2% of budget used</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 8,183</b>
+            <i>of Rs 3,57,143</i></div>
+          <div><span>MER</span><b>1.83</b><i>target 1.40</i></div>
+        </div>
+      </div>
+      <div class="acard fund">
+        <div class="acard-k">Push budget in</div>
+        <div class="acard-p">Bye Bye Blow Dry</div>
+        <div class="acard-n">Beating target MER at 141%, only 2% of budget used</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 6,029</b>
+            <i>of Rs 3,07,692</i></div>
+          <div><span>MER</span><b>1.84</b><i>target 1.30</i></div>
+        </div>
+      </div></div>
+
+<div class="sec">Every product <em>ranked by revenue contribution, biggest first</em></div>
+<div class="panel"><table class="main">
+ <thead><tr>
+  <th class="l">Product</th><th class="l">Status</th>
+  <th>Spend incl GST</th><th class="l">vs target</th>
+  <th>Revenue</th><th class="l">vs target</th><th>MER</th>
+ </tr></thead>
+ <tbody>
+      <tr>
+        <td class="c-prod"><div class="pname">FIAF Family</div>
+          <div class="psplit">Meta Rs 75,367 &middot; Google Rs 0</div><div class="rnote">MER at 80% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 88,933</div>
+          <div class="small">of Rs 9,23,077</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:9.6%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">10%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 92,510</div>
+          <div class="small">of Rs 12,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:7.7%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">8%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">1.04</div>
+          <div class="small">target 1.30</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:80.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">DUOS</div>
+          <div class="psplit">Meta Rs 1,643 &middot; Google Rs 0</div><div class="rnote">Only 10% of budget used</div></td>
+        <td class="c-st"><span class="chip behind">Behind pace</span></td>
+        <td class="c-num"><div class="big">Rs 1,938</div>
+          <div class="small">of Rs 20,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:9.7%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">10%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 36,637</div>
+          <div class="small">of Rs 60,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:61.1%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">61%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">18.90</div>
+          <div class="small">target 3.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Shower in Seconds</div>
+          <div class="psplit">Meta Rs 20,755 &middot; Google Rs 0</div><div class="rnote">Only 5% of budget used</div></td>
+        <td class="c-st"><span class="chip behind">Behind pace</span></td>
+        <td class="c-num"><div class="big">Rs 24,491</div>
+          <div class="small">of Rs 5,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:4.9%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">5%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 26,572</div>
+          <div class="small">of Rs 5,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:5.3%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">5%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.08</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">FWB</div>
+          <div class="psplit">Meta Rs 24,880 &middot; Google Rs 642</div><div class="rnote">MER at 68% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 30,116</div>
+          <div class="small">of Rs 3,63,636</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:8.3%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">8%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 22,379</div>
+          <div class="small">of Rs 4,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:5.6%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">6%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.74</div>
+          <div class="small">target 1.10</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:67.6%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Don't Sweat It</div>
+          <div class="psplit">Meta Rs 6,935 &middot; Google Rs 0</div><div class="rnote">Beating target MER at 131%, only 2% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 8,183</div>
+          <div class="small">of Rs 3,57,143</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:2.3%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 14,994</div>
+          <div class="small">of Rs 5,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:3.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">3%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.83</div>
+          <div class="small">target 1.40</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Detox on Demand</div>
+          <div class="psplit">Meta Rs 29,466 &middot; Google Rs 0</div><div class="rnote">Burning budget 1.2x pace at 42% of target MER</div></td>
+        <td class="c-st"><span class="chip act">Cut back</span></td>
+        <td class="c-num"><div class="big">Rs 34,770</div>
+          <div class="small">of Rs 2,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:17.4%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">17%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 14,433</div>
+          <div class="small">of Rs 2,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:7.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">7%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.42</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:41.5%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Intense Double Cleanse</div>
+          <div class="psplit">Meta Rs 6,205 &middot; Google Rs 1,278</div><div class="rnote">Beating target MER at 167%, only 8% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 8,829</div>
+          <div class="small">of Rs 1,11,111</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:7.9%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">8%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 13,286</div>
+          <div class="small">of Rs 1,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:13.3%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">13%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.50</div>
+          <div class="small">target 0.90</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Bye Bye Blow Dry</div>
+          <div class="psplit">Meta Rs 5,109 &middot; Google Rs 0</div><div class="rnote">Beating target MER at 141%, only 2% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 6,029</div>
+          <div class="small">of Rs 3,07,692</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:2.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 11,087</div>
+          <div class="small">of Rs 4,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:2.8%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">3%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.84</div>
+          <div class="small">target 1.30</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Smooth Operator</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 1,66,667</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 7,641</div>
+          <div class="small">of Rs 2,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:3.8%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">4%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.20</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Chill The Flakes Out</div>
+          <div class="psplit">Meta Rs 3,542 &middot; Google Rs 0</div><div class="rnote">Beating target MER at 172%, only 4% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 4,180</div>
+          <div class="small">of Rs 1,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:4.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">4%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 7,191</div>
+          <div class="small">of Rs 1,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:7.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">7%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.72</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">One Step Wonder</div>
+          <div class="psplit">Meta Rs 5,623 &middot; Google Rs 0</div><div class="rnote">MER at 72% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 6,635</div>
+          <div class="small">of Rs 1,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:6.6%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">7%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 4,796</div>
+          <div class="small">of Rs 1,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:4.8%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">5%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.72</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:72.3%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Hair & Everywhere</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">No spend planned or run</div></td>
+        <td class="c-st"><span class="chip idle">Not funded</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 0</div></td>
+        <td class="c-bar"><div class="bar-na">no target</div></td>
+        <td class="c-num"><div class="big">Rs 3,798</div>
+          <div class="small">of Rs 60,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:6.3%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">6%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target -</div>
+          </td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Fuller Without Filler</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">No spend planned or run</div></td>
+        <td class="c-st"><span class="chip idle">Not funded</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 0</div></td>
+        <td class="c-bar"><div class="bar-na">no target</div></td>
+        <td class="c-num"><div class="big">Rs 1,947</div>
+          <div class="small">of Rs 60,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:3.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">3%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target -</div>
+          </td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">High & Dry</div>
+          <div class="psplit">Meta Rs 2,032 &middot; Google Rs 0</div><div class="rnote">MER at 38% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 2,398</div>
+          <div class="small">of Rs 46,154</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:5.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">5%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 1,199</div>
+          <div class="small">of Rs 60,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:2.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.50</div>
+          <div class="small">target 1.30</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:38.5%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">SIS Green Juice</div>
+          <div class="psplit">Meta Rs 502 &middot; Google Rs 0</div><div class="rnote">Rs 592 spent against a zero budget</div></td>
+        <td class="c-st"><span class="chip watch">Off plan spend</span></td>
+        <td class="c-num"><div class="big">Rs 592</div>
+          <div class="small">of Rs 0</div></td>
+        <td class="c-bar"><div class="bar-na">no target</div></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 60,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-mer"><div class="big ">0.00</div>
+          <div class="small">target -</div>
+          </td>
+      </tr>
+ </tbody>
+ <tfoot><tr><td class="l">Total</td><td></td>
+  <td>Rs 2,58,124</td><td></td>
+  <td>Rs 2,58,470</td><td></td><td>1.00x</td></tr></tfoot>
+</table></div>
+
+<div class="ustrip">
+ <div class="t"><b>Unassigned</b> &mdash; Rs 41,029 of spend and Rs 0
+  of revenue sit outside the plan. 92% of all Google spend has no product token.</div>
+ <div class="v">15.9% of spend</div>
+</div>
+
+
+<div class="sec">Creative hub <em>best and worst per product, 07 Sep to 13 Sep 2026</em></div>
+
+<div class="hubnote">Every number here is <strong>Meta attributed</strong> revenue over GST
+ inclusive spend. Plan targets are deliberately absent: those are set on Shopify revenue, and
+ mixing the two bases produced misleading verdicts. Each entry is judged against
+ <strong>its own product's</strong> blended Meta ROAS, with the account blend of
+ <strong>0.98x</strong> as the absolute check. An entry needs Rs 10,000 of spend
+ before it is ranked. Click any row to see the ads behind it.</div>
+
+<div class="ptiles">
+      <div class="ptile">
+        <div class="ptile-h">
+          <div class="ptile-n">FIAF Family</div>
+          <div class="ptile-m"><b>Rs 88,720</b> &middot; 38 ads</div>
+          <div class="ptile-r"><span class="mer-ok">1.01x</span>
+            <em>+3% vs account</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>3 of 20 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Tan</span>
+          <span class="nochip"></span>
+          <span class="enum">0.94x</span>
+          <span class="edelta">-7%</span>
+          <span class="espend">Rs 10,929</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120249889369070223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/754561283_2483225552172674_438898484977417482_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=F7VTtmX8I2kQ7kNvwGr6LRj&_nc_oc=AdpX6KvfglzWLXvRikkoxKu5mKgXOcv8NWchFv9t7tB8JcfHk1_qPeCrOueu2oc8xVQ&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=t4Hi7p38qFGXtzo1mT8Jww&_nc_tpa=Q5bMBQKtA1CzxCsEfm4gvNFu5hakUX-z2RkPBZxeLbzj40mK7ellZy2QQ4MyxrwQUfrn3-z7WQgXF7DXPA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJ8nhnr5PKENWG_B9M07lR04h_PfpQVUtmvUFoebQz9Yw&oe=6AA60868" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 6,054</b> &middot; 1.26x
+            <span>Ingredientss</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250235377900223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/700762127_3020701548129208_1853332646330654096_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=ifqA0MKMxk8Q7kNvwGpBUf2&_nc_oc=AdqCF9LC47QwBZIPCmtMIKNDOymqXp0ouXUeVbPCMUkq5KnAKwDDzOiuh_vHAId0kIo&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=2iv7wL2oRFpAtBwXlPWHYQ&_nc_tpa=Q5bMBQJen4eYz9_2pMnstZQDG06qNjIuFlkMIk_Oh0ziTSiEAtc1uIaL95E8dfyX8JsI0T1PX3C5YK8wcA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQLEBi0yC88v0EyFyPv3qk7ny-n5IPaCGEUEYCk0UzvKfw&oe=6AA600F5" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,342</b> &middot; 0.43x
+            <span>Travelling</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250761127010223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/793901073_1093270663236709_4635597315404727170_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=Jq-bvaFoAn8Q7kNvwFdWop0&_nc_oc=Adp97zedJitAxjxkcNa52r6pxTB45WCHrMEqF8jstg-_C2_VmYXC_EudVx051B4YtzE&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=ssetjYzL5soRFOJRJ-gHBw&_nc_tpa=Q5bMBQJX0S6IDBhbDOXWs1t3mt2yl8543lwUFJ2kUOoXzNqAx-8Mri-Olqlv-Zp0lBXppkVAgDw7Nj8ZXw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJTnJ1hH7jw0nkAvSc_WnQAuWKincgiSlD0LX52g-B_0g&oe=6AA5F5BD" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,520</b> &middot; 0.79x
+            <span>WithoutTheSalonBill</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120249889369060223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/754620342_897159126243828_8350214525191678884_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=nLRiWfehBvoQ7kNvwHM0PlD&_nc_oc=AdrphLdY4MO6YQQmh6VxLphBHnU9ipQkLeHMAEFZoi5KxmLkv2Uq7w4dyheebeYTIAQ&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=t4Hi7p38qFGXtzo1mT8Jww&_nc_tpa=Q5bMBQL4G2sD96iZ_KmKt6FXaB2JLbfQvj5JSn6abF0_068AQE3LCyOFVFquM7cflvVCKspCtpZix5JH7Q&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQL2FKi1JVMwEigFmjztR-zAyYMlZisRgHsttX3WXRQN4w&oe=6AA5F64B" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 14</b> &middot; 0.00x
+            <span>Summer</span></figcaption></figure></div></div>
+      </details><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">FIAFVsSalonFacial</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.67x</span>
+          <span class="edelta">-34%</span>
+          <span class="espend">Rs 10,720</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205004500223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t45.1600-4/766399385_1540362297843462_2801294219930411632_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=ilMpBOLfCgoQ7kNvwH-aE6l&_nc_oc=AdqjXRbfSOaJL29QZCmo3pyZ3wCVZbNfVKBm_ky5zTrcJ8-9NtGUf1INJAylNYJufb4&_nc_zt=1&_nc_ht=scontent-fra3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=UBey2-84hcywIMAiDElaUA&_nc_tpa=Q5bMBQLkwL1t-94vnESEvHE-xY7BW1DhjWVZ2__NDvXpVT7n4YSXWDai8JK2_9vIPjHNsVS61rkpH5toiQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQILB2A1oi5i_N53we994MhzUmN6yX2df541NnGvobaZ3Q&oe=6AA5FD1F" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 6,806</b> &middot; 0.18x
+            <span>1SalonVisit</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250775176670223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/793351988_1565833051963053_3424226216980515715_n.png?_nc_cat=108&ccb=1-7&_nc_ohc=Ul46hKLergYQ7kNvwF5QSLF&_nc_oc=AdoSfhaUz2B6rpiBYuMGHk0KMIGy8dFPRrpYV72anzn77pXNMQQyi1PBCsz27TB7L2w&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=5BTi9ZjrxOuXAabrKyHR_w&_nc_tpa=Q5bMBQIicHdOhfjN0P2wwfSWuQ-7mkKHzRhzzwHCJai5cV5mPF5UgA1Kxyd3wKJmjlVuR0rouVEjoVpypA&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKF_moY2C3gar52K5AazenVXv-yPoKb7HDvU24QqW-M1w&oe=6AA5E925" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,450</b> &middot; 2.45x
+            <span>HomeRitual</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205004510223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t45.1600-4/766033247_1540362277843464_4056653573303167476_n.png?_nc_cat=111&ccb=1-7&_nc_ohc=dbuOgdkSqEEQ7kNvwG9-6FA&_nc_oc=Adqtexqvqqb5xJx5tJYY9Unhs2kPKLe_jZ33eoaMlVmxPEGzdmSx_Ey878VfppM-eME&_nc_zt=1&_nc_ht=scontent-fra3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=2vGcFJUTnj_4c4_cJYgJEQ&_nc_tpa=Q5bMBQJExjBRLfzbi6HO31yCB-Mf77VeklJqAca6ZSt1PZ9dLrKGaY6lSsd2ZDO7iGhuEYBWCWm7T-HrIw&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKw1_t-KbSQdm6P50lXLXeaF2m9VPb24jqDT7z81M-qMw&oe=6AA5EEEF" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,166</b> &middot; 0.00x
+            <span>SpendLess</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205004530223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t45.1600-4/768259213_1540362287843463_2752535837503919193_n.png?_nc_cat=100&ccb=1-7&_nc_ohc=kAJVhIY1mA4Q7kNvwHzc9Zm&_nc_oc=AdoSKqja1A-XVYqBbYz4lTOo_H_cP5mI7P54zQAjoOUHdvrSi97cijAvHZ_c2insXaQ&_nc_zt=1&_nc_ht=scontent-fra5-1.xx&edm=AJfPMC4EAAAA&_nc_gid=9LZh99jEVf-1bLwj6fQOvQ&_nc_tpa=Q5bMBQLUcKYy3rUVLeHGwLrOrg70AABX1ZA4Vm0RPBQTiLhVXC-SuScVxHkvukp6Zqm-4s_J5yskWwkG2Q&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJD45EZeUXwbv20Hl2n9lLjexjBc0KIghyNtReKm_YsiA&oe=6AA5EF79" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 229</b> &middot; 0.00x
+            <span>SalonLevel</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250775176660223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/792822030_1565833028629722_3314366963248246472_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=d9mHiHksdhkQ7kNvwE7kqse&_nc_oc=AdpaUJ_RJRr-uVfotsLci5djCqMdyK0A-_OOBeI2r6imnDX4zosQABvUwWTxSwKGU4g&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=nz0XX5bbC8N-iawGWCSxJg&_nc_tpa=Q5bMBQKbvBJmoqDsCm4xcOUpKgnlgj_d_as7ja2iqziKqaWi3XhsqCKWW0mzBS1z8gXBFeKquAGYhtGrWg&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIeo0CM5_NwEPDtc4c6nw4ERx9j9k8Ddhp_j0OtgATmKg&oe=6AA5F040" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 69</b> &middot; 0.00x
+            <span>TheGoodPart</span></figcaption></figure></div></div>
+      </details>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>2 of 6 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">UGC</span>
+          <span class="nochip"></span>
+          <span class="enum">1.15x</span>
+          <span class="edelta">+14%</span>
+          <span class="espend">Rs 26,958</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120242672404950223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/669068850_1400871971791277_4528660362870858554_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=UAzDIK4JAoAQ7kNvwHRKFdN&_nc_oc=Adrd-1w4_WiIwEehvMAjkThGU3qxJXpMzlL0qsOwHVsvqpia69aqIK6tMb694ygqUTw&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=SA369haZzKvhZgkT5a4zpA&_nc_tpa=Q5bMBQL9NBh0_qAiJu6ta5kp20JyysDoayTUQseNG0hcWB-7zY5ofqfPxDk2DvchFG9M9sPakHdapfVUJQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQKlRKitmHyUol22DPxw-OV-pnZTfs3Xcsfu_KjHQbozzg&oe=6AA60525" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 21,540</b> &middot; 0.92x
+            <span>Deepa Thadhani</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250707689080223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/789972746_2210246046536425_8209952174311816274_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=iGAFXTi1hOUQ7kNvwEQ9MmU&_nc_oc=AdpE046MLp5sun_TuqzB1wCKRqe4EM6uFVu_q1YuY6afogPiUGxDexTeJohZuEWrICw&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=SztANhXgQyTc-keHYA2syg&_nc_tpa=Q5bMBQJai6UKSx6JIsxt0cGcNR3uo1HZoK6LfxE2Xjl4Su98o4u5qCO8-BAK-zQD35pFT4WqoVcORXq7_g&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQLweOSaeorcVbGuet7cPwgdgoaQBoIek-puDAFA0TGFoA&oe=6AA60676" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 5,418</b> &middot; 2.07x
+            <span>PackagingNeverAgain</span></figcaption></figure></div></div>
+      </details><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">Founder</span>
+          <span class="nochip"></span>
+          <span class="enum">1.00x</span>
+          <span class="edelta">-1%</span>
+          <span class="espend">Rs 35,750</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250518744420223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/780087654_1474442581161483_6245441380957619141_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=yOvUUJviHooQ7kNvwFQ5eLj&_nc_oc=Ado1YL7RiuP6F7dFxuyRCchdqV-jEs7h-0HvDXtzazfk58jUcqO0wVr_ZKRlOaEJYrA&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=7ea3MqMtFEFD4InG71J2ow&_nc_tpa=Q5bMBQKugPA6cGyVKRuRpb0dwscy08whRgswmxOQRHc8g1qDclMocufHIvf7Fyxm8IZ0wnlpm7aRpVKAJQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQLOu6U1EEkM9MJSE6rP1p-9mfTTv4vd4UqVUtqbNPOMKg&oe=6AA5FB27" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 7,033</b> &middot; 1.46x
+            <span>RefillTheirBottle</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793846950223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/763193247_1350489353865879_8694889825783069782_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=za9EjpB7YZwQ7kNvwE22DYA&_nc_oc=Adp3UE654jPylejWu_MgVbD224WznzltMWpYu6pK043dhcycvalYW3cEdWnxNjspQ7g&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=L2ZF5xwyjcXXCq7wa75Qlw&_nc_tpa=Q5bMBQKqJ0lfB5JV_YfNTHYvzZbm-P08DMDRU_fwVqhFDu8gNlIrzUtYqla9UiMsvd9DjQ_0566LwIm-ag&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQJSfvmxJC_8cTsLwx4bjzHd0AzZi6Jyh3acnjCizk4lbQ&oe=6AA61599" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 6,097</b> &middot; 1.41x
+            <span>NykaaAward</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120249889369070223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/754561283_2483225552172674_438898484977417482_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=F7VTtmX8I2kQ7kNvwGr6LRj&_nc_oc=AdpX6KvfglzWLXvRikkoxKu5mKgXOcv8NWchFv9t7tB8JcfHk1_qPeCrOueu2oc8xVQ&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=t4Hi7p38qFGXtzo1mT8Jww&_nc_tpa=Q5bMBQKtA1CzxCsEfm4gvNFu5hakUX-z2RkPBZxeLbzj40mK7ellZy2QQ4MyxrwQUfrn3-z7WQgXF7DXPA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJ8nhnr5PKENWG_B9M07lR04h_PfpQVUtmvUFoebQz9Yw&oe=6AA60868" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 6,054</b> &middot; 1.26x
+            <span>Ingredientss</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793815550223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/741735490_1352989000233006_6298937996189957662_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=i9K71emHHJwQ7kNvwFI72nF&_nc_oc=AdqGa-7h8_vna66PDKPrY7oc8bQLGx-pWbhL1LnlDScyHDKW3eWMU0CKWvde1bc76lw&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=L2ZF5xwyjcXXCq7wa75Qlw&_nc_tpa=Q5bMBQKKfD1F1znArhgu1zyIEikHvvNgTX36uRMhc0wiG8-hlp4HENUJhYq6ETGuUF9nTGHF72v8oHXpuw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJ7MC0Yf26tEMc8zt27JSGH152WNJ9udGZuSRvPquoznQ&oe=6AA60B09" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,527</b> &middot; 1.52x
+            <span>Founder</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250235377900223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/700762127_3020701548129208_1853332646330654096_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=ifqA0MKMxk8Q7kNvwGpBUf2&_nc_oc=AdqCF9LC47QwBZIPCmtMIKNDOymqXp0ouXUeVbPCMUkq5KnAKwDDzOiuh_vHAId0kIo&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=2iv7wL2oRFpAtBwXlPWHYQ&_nc_tpa=Q5bMBQJen4eYz9_2pMnstZQDG06qNjIuFlkMIk_Oh0ziTSiEAtc1uIaL95E8dfyX8JsI0T1PX3C5YK8wcA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQLEBi0yC88v0EyFyPv3qk7ny-n5IPaCGEUEYCk0UzvKfw&oe=6AA600F5" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,342</b> &middot; 0.43x
+            <span>Travelling</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250170817700223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/765715791_2193634567870650_4989993397514484036_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=uezXI5OdotkQ7kNvwE9u6Fz&_nc_oc=AdrNTExvPlVE_wbnRtmoNsP4c1a5IPNGPyu2drglsjQhHAaU5gKgLL03ksWtE3POkhY&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=T27HxV41o79OgFoVNMCXbw&_nc_tpa=Q5bMBQJcuS0PGOuhyX_HIyuDHSd-nH4vcK1HR0RwRyXv-5iBw3MLE8kkEJRjAToycc4hzkLRGr0FUpFI3g&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQKTErmWNoBJGSZt7QK2dPq0Kq3y9Qn4p-k8jkKHgcYU6w&oe=6AA5E70D" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,313</b> &middot; 0.52x
+            <span>Founder</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205087340223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/766241294_2104049780490909_5285901963628631728_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=1weVeEA22vIQ7kNvwERHvfZ&_nc_oc=Adrux2ZFPbG-Cs5BcOWvLcqm7H4i30kRul57a30zRUfiBGnIhzkTNu1TQoWcfCs_0Ng&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=-YfXhX6w0raa9XBFnC1rPw&_nc_tpa=Q5bMBQLazNV2EZs6dz8A8eL7lfi2EY40z_2Bk33dgkg3r_leq5_xephtCM2KT3uJKeY8U8XL_knNItQ2Pw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJvS1cxcF4kREmuqSY61SzDrBwqQjVF868pT665Dz1cVg&oe=6AA5E4B9" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,233</b> &middot; 0.56x
+            <span>UsVsThem</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250333019760223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/768704038_4460475287416486_6478523687024939407_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=dkEgh9QoL7IQ7kNvwHKtOFo&_nc_oc=AdqhsQQgGv58BF4zKU42pwB6pSg2qoo3BhYiYO9e0GbaUlWlo0XFg7EtLz_eQZfJsB8&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=C-stgLs5ZK8CjHiaZM1lDA&_nc_tpa=Q5bMBQJhJNsA2_YTadRb-E1ZqgV0A1b6TAVNph2zyxXHCvqZGk3jBiw6fcFNfldwVPPuJBCvL4E6Amlg2A&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJfJXmfoBbfbJMh0IUYVaF6ef72jkmFVugK8b6wtECX2g&oe=6AA6068F" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,944</b> &middot; 0.00x
+            <span>PostGym</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250313378130223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/772414572_1538879614702291_2347164050282444092_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=hZv53IV05IoQ7kNvwGbVkyr&_nc_oc=Adp-kDHsOomb_tO3QcuKqnSYwPSLZiF8ZcaFQKynUtUKnzM8i-LWeoisb7hGE71m28k&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=WQudH4ctkwkTb3AgB5KKSw&_nc_tpa=Q5bMBQK-130hXC9owPNCobc5F8S1ZHmqX2rdbyTMMB6DSD3EFoBdHX8rNyfdetqTpwPB385lZsVZrDsMOQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQI2QkunWKRdkqKgol2SSj7DQcTj5DIn8PCVprmW11PI2w&oe=6AA606F0" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,396</b> &middot; 0.00x
+            <span>Detanning</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250333019770223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/772440501_929992930148867_7453093725979441095_n.jpg?_nc_cat=103&ccb=1-7&_nc_ohc=LEnikVrITFEQ7kNvwGjmbbn&_nc_oc=AdoM6eaFvRe3-Tj13-3LP8J9uaW4y1lhUmoPNjFqWoUqbTyN7jJAsCzrksBUgNjhsSM&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=C-stgLs5ZK8CjHiaZM1lDA&_nc_tpa=Q5bMBQKJSyavvmI8fRhDQYmCyosAp0P5rjpNdxZEYh_LsjA40F7MqNas1WUYUi3bOcDee4WnHvSHBpUIZQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQIvx9PNkSuu7GNoSdBMM6X4_3KoN44LtCVBBKc7EDHY3A&oe=6AA60001" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 991</b> &middot; 0.00x
+            <span>BeforeMakeup</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250140066510223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/656817709_1620084509112455_38440599085198055_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=1WThYplicXYQ7kNvwHAUoAY&_nc_oc=Adp0Mel4NOoE_wdpiHtTOCIl1nTF634ERXNEWBQfhNdT4Di0BSN_RVTDd8PBtYxvtYs&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=7ea3MqMtFEFD4InG71J2ow&_nc_tpa=Q5bMBQLLHiZm-vDhsrsshIpFCGaBSfuPx0-AcL5QGHMttGMvPv9_Zx60ZxkSEYyGRefwjIo_L4szBizXgw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIBLILev2GCFF_4KhtV98OqYouzhk_4HDjatJsMz6i6hg&oe=6AA5EC1E" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 617</b> &middot; 0.00x
+            <span>Founder</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205087370223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/768873776_28140628708895549_5523425872928985700_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=P00nh0i8YcoQ7kNvwGB9EKM&_nc_oc=Adrsv_lu3a84sadCz1UkP_p1ZVg9afmEk4lk9wCR7TRtXbLDX-55uOnDdqgP8db5JIg&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=-YfXhX6w0raa9XBFnC1rPw&_nc_tpa=Q5bMBQLGhNVH9cfCeg9EUZzJ7UOWV5dsMZzzYI-m9XExFG_0_0i2yoj_New8UfQjufUlQAPx8HK1eFKJ8w&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQLvlhmNYr_oZ_gwRc0K1rpZ3Ypr4jc1KrTyB9wrJaOjPA&oe=6AA5EDAE" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 126</b> &middot; 0.00x
+            <span>Ingrediants</span></figcaption></figure></div><p class="fine">Showing 12 of 16 ads by spend.</p></div>
+      </details>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>2 of 3 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Video</span>
+          <span class="nochip"></span>
+          <span class="enum">1.03x</span>
+          <span class="edelta">+2%</span>
+          <span class="espend">Rs 71,875</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120242672404950223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/669068850_1400871971791277_4528660362870858554_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=UAzDIK4JAoAQ7kNvwHRKFdN&_nc_oc=Adrd-1w4_WiIwEehvMAjkThGU3qxJXpMzlL0qsOwHVsvqpia69aqIK6tMb694ygqUTw&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=SA369haZzKvhZgkT5a4zpA&_nc_tpa=Q5bMBQL9NBh0_qAiJu6ta5kp20JyysDoayTUQseNG0hcWB-7zY5ofqfPxDk2DvchFG9M9sPakHdapfVUJQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQKlRKitmHyUol22DPxw-OV-pnZTfs3Xcsfu_KjHQbozzg&oe=6AA60525" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 21,540</b> &middot; 0.92x
+            <span>Deepa Thadhani</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250518744420223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/780087654_1474442581161483_6245441380957619141_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=yOvUUJviHooQ7kNvwFQ5eLj&_nc_oc=Ado1YL7RiuP6F7dFxuyRCchdqV-jEs7h-0HvDXtzazfk58jUcqO0wVr_ZKRlOaEJYrA&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=7ea3MqMtFEFD4InG71J2ow&_nc_tpa=Q5bMBQKugPA6cGyVKRuRpb0dwscy08whRgswmxOQRHc8g1qDclMocufHIvf7Fyxm8IZ0wnlpm7aRpVKAJQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQLOu6U1EEkM9MJSE6rP1p-9mfTTv4vd4UqVUtqbNPOMKg&oe=6AA5FB27" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 7,033</b> &middot; 1.46x
+            <span>RefillTheirBottle</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793846950223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/763193247_1350489353865879_8694889825783069782_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=za9EjpB7YZwQ7kNvwE22DYA&_nc_oc=Adp3UE654jPylejWu_MgVbD224WznzltMWpYu6pK043dhcycvalYW3cEdWnxNjspQ7g&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=L2ZF5xwyjcXXCq7wa75Qlw&_nc_tpa=Q5bMBQKqJ0lfB5JV_YfNTHYvzZbm-P08DMDRU_fwVqhFDu8gNlIrzUtYqla9UiMsvd9DjQ_0566LwIm-ag&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQJSfvmxJC_8cTsLwx4bjzHd0AzZi6Jyh3acnjCizk4lbQ&oe=6AA61599" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 6,097</b> &middot; 1.41x
+            <span>NykaaAward</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120249889369070223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/754561283_2483225552172674_438898484977417482_n.jpg?_nc_cat=108&ccb=1-7&_nc_ohc=F7VTtmX8I2kQ7kNvwGr6LRj&_nc_oc=AdpX6KvfglzWLXvRikkoxKu5mKgXOcv8NWchFv9t7tB8JcfHk1_qPeCrOueu2oc8xVQ&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=t4Hi7p38qFGXtzo1mT8Jww&_nc_tpa=Q5bMBQKtA1CzxCsEfm4gvNFu5hakUX-z2RkPBZxeLbzj40mK7ellZy2QQ4MyxrwQUfrn3-z7WQgXF7DXPA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJ8nhnr5PKENWG_B9M07lR04h_PfpQVUtmvUFoebQz9Yw&oe=6AA60868" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 6,054</b> &middot; 1.26x
+            <span>Ingredientss</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250707689080223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/789972746_2210246046536425_8209952174311816274_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=iGAFXTi1hOUQ7kNvwEQ9MmU&_nc_oc=AdpE046MLp5sun_TuqzB1wCKRqe4EM6uFVu_q1YuY6afogPiUGxDexTeJohZuEWrICw&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=SztANhXgQyTc-keHYA2syg&_nc_tpa=Q5bMBQJai6UKSx6JIsxt0cGcNR3uo1HZoK6LfxE2Xjl4Su98o4u5qCO8-BAK-zQD35pFT4WqoVcORXq7_g&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQLweOSaeorcVbGuet7cPwgdgoaQBoIek-puDAFA0TGFoA&oe=6AA60676" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 5,418</b> &middot; 2.07x
+            <span>PackagingNeverAgain</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250140210930223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/602149136_1532945494700515_6618802844351089015_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=0oZjlSC4o2IQ7kNvwE7ZR9s&_nc_oc=Ado9W6DbGZ-MNQhfgBTJIT8xA_VoQic_ajhDvJdtRcma5QpLzwSt-PkLxi6e9lt72eQ&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=mspgJegRNE6xwSiuD2xCww&_nc_tpa=Q5bMBQLvyoEwKtPF7ILp90CZLx0CYgt2WI_cRkHMXmx0B0xCO_btQYvJ0QQ9_6qEvOIruk3yU1RYPakyeQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJi1XaPxcUY_GPOrjpMK2hVh338RylgvNf_FDkKEZ2NOw&oe=6AA5EF6B" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 4,600</b> &middot; 0.94x
+            <span>ASMR Ananya</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793815550223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/741735490_1352989000233006_6298937996189957662_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=i9K71emHHJwQ7kNvwFI72nF&_nc_oc=AdqGa-7h8_vna66PDKPrY7oc8bQLGx-pWbhL1LnlDScyHDKW3eWMU0CKWvde1bc76lw&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=L2ZF5xwyjcXXCq7wa75Qlw&_nc_tpa=Q5bMBQKKfD1F1znArhgu1zyIEikHvvNgTX36uRMhc0wiG8-hlp4HENUJhYq6ETGuUF9nTGHF72v8oHXpuw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJ7MC0Yf26tEMc8zt27JSGH152WNJ9udGZuSRvPquoznQ&oe=6AA60B09" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,527</b> &middot; 1.52x
+            <span>Founder</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250235377900223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/700762127_3020701548129208_1853332646330654096_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=ifqA0MKMxk8Q7kNvwGpBUf2&_nc_oc=AdqCF9LC47QwBZIPCmtMIKNDOymqXp0ouXUeVbPCMUkq5KnAKwDDzOiuh_vHAId0kIo&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=2iv7wL2oRFpAtBwXlPWHYQ&_nc_tpa=Q5bMBQJen4eYz9_2pMnstZQDG06qNjIuFlkMIk_Oh0ziTSiEAtc1uIaL95E8dfyX8JsI0T1PX3C5YK8wcA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQLEBi0yC88v0EyFyPv3qk7ny-n5IPaCGEUEYCk0UzvKfw&oe=6AA600F5" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,342</b> &middot; 0.43x
+            <span>Travelling</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250170817700223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/765715791_2193634567870650_4989993397514484036_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=uezXI5OdotkQ7kNvwE9u6Fz&_nc_oc=AdrNTExvPlVE_wbnRtmoNsP4c1a5IPNGPyu2drglsjQhHAaU5gKgLL03ksWtE3POkhY&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=T27HxV41o79OgFoVNMCXbw&_nc_tpa=Q5bMBQJcuS0PGOuhyX_HIyuDHSd-nH4vcK1HR0RwRyXv-5iBw3MLE8kkEJRjAToycc4hzkLRGr0FUpFI3g&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQKTErmWNoBJGSZt7QK2dPq0Kq3y9Qn4p-k8jkKHgcYU6w&oe=6AA5E70D" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,313</b> &middot; 0.52x
+            <span>Founder</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205087340223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/766241294_2104049780490909_5285901963628631728_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=1weVeEA22vIQ7kNvwERHvfZ&_nc_oc=Adrux2ZFPbG-Cs5BcOWvLcqm7H4i30kRul57a30zRUfiBGnIhzkTNu1TQoWcfCs_0Ng&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=-YfXhX6w0raa9XBFnC1rPw&_nc_tpa=Q5bMBQLazNV2EZs6dz8A8eL7lfi2EY40z_2Bk33dgkg3r_leq5_xephtCM2KT3uJKeY8U8XL_knNItQ2Pw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJvS1cxcF4kREmuqSY61SzDrBwqQjVF868pT665Dz1cVg&oe=6AA5E4B9" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,233</b> &middot; 0.56x
+            <span>UsVsThem</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250333019760223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/768704038_4460475287416486_6478523687024939407_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=dkEgh9QoL7IQ7kNvwHKtOFo&_nc_oc=AdqhsQQgGv58BF4zKU42pwB6pSg2qoo3BhYiYO9e0GbaUlWlo0XFg7EtLz_eQZfJsB8&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=C-stgLs5ZK8CjHiaZM1lDA&_nc_tpa=Q5bMBQJhJNsA2_YTadRb-E1ZqgV0A1b6TAVNph2zyxXHCvqZGk3jBiw6fcFNfldwVPPuJBCvL4E6Amlg2A&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJfJXmfoBbfbJMh0IUYVaF6ef72jkmFVugK8b6wtECX2g&oe=6AA6068F" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,944</b> &middot; 0.00x
+            <span>PostGym</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250745547600223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/794467543_1457023059596197_4080328111438905415_n.jpg?_nc_cat=110&ccb=1-7&_nc_ohc=HtCF40TfTtIQ7kNvwEjtd1H&_nc_oc=AdolLyusAyzMdmuhMC04cAk2BcguSQGjP9tEszwyGL0G_mHU7ROS1CCxzZzT7-lf7NI&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=xMJnYJ-TKrmLpP2J_nkwPw&_nc_tpa=Q5bMBQKd_j26WHgHeD-IpOm3Di90jdDwwf9UkFNwENs78mNtbt_E4_DxybL-F9H5ovox23JiJOab19SZNQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIOr8CAY5MLy0W--JkAZvd_86sBA5zsdbL7qCfb3yTAWA&oe=6AA5FE76" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,723</b> &middot; 1.13x
+            <span>EmptyJar</span></figcaption></figure></div><p class="fine">Showing 12 of 25 ads by spend.</p></div>
+      </details><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">Static</span>
+          <span class="nochip"></span>
+          <span class="enum">0.91x</span>
+          <span class="edelta">-10%</span>
+          <span class="espend">Rs 16,842</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205004500223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t45.1600-4/766399385_1540362297843462_2801294219930411632_n.png?_nc_cat=104&ccb=1-7&_nc_ohc=ilMpBOLfCgoQ7kNvwH-aE6l&_nc_oc=AdqjXRbfSOaJL29QZCmo3pyZ3wCVZbNfVKBm_ky5zTrcJ8-9NtGUf1INJAylNYJufb4&_nc_zt=1&_nc_ht=scontent-fra3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=UBey2-84hcywIMAiDElaUA&_nc_tpa=Q5bMBQLkwL1t-94vnESEvHE-xY7BW1DhjWVZ2__NDvXpVT7n4YSXWDai8JK2_9vIPjHNsVS61rkpH5toiQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQILB2A1oi5i_N53we994MhzUmN6yX2df541NnGvobaZ3Q&oe=6AA5FD1F" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 6,806</b> &middot; 0.18x
+            <span>1SalonVisit</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250775176670223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/793351988_1565833051963053_3424226216980515715_n.png?_nc_cat=108&ccb=1-7&_nc_ohc=Ul46hKLergYQ7kNvwF5QSLF&_nc_oc=AdoSfhaUz2B6rpiBYuMGHk0KMIGy8dFPRrpYV72anzn77pXNMQQyi1PBCsz27TB7L2w&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=5BTi9ZjrxOuXAabrKyHR_w&_nc_tpa=Q5bMBQIicHdOhfjN0P2wwfSWuQ-7mkKHzRhzzwHCJai5cV5mPF5UgA1Kxyd3wKJmjlVuR0rouVEjoVpypA&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKF_moY2C3gar52K5AazenVXv-yPoKb7HDvU24QqW-M1w&oe=6AA5E925" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,450</b> &middot; 2.45x
+            <span>HomeRitual</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250745547880223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/790059582_1565041495375542_1770870299957683765_n.png?_nc_cat=109&ccb=1-7&_nc_ohc=SDK7l7c_ZvMQ7kNvwGCj7Oz&_nc_oc=AdpTqVpsmVnDdPS1gh0YpGms7ny8YqpXD78GgQmILrIRc8qqjEAp0lo0SZ1PJYU1s1M&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=2Sr4375-CJ7xpIyRGSK4RA&_nc_tpa=Q5bMBQJcQrxo48Kv4DUwFNDNzhPbH43pgY3USElYLCzp53dQuQUUhUCmmZSYT3lHshR04SlSJA1xqto96w&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQI43oVL8AqgULpQAO3t9aZcRxIearEdb8RWHsEYPxIMOg&oe=6AA5FD00" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,165</b> &middot; 1.55x
+            <span>ReplaceMultipleProducts / SkincareForMen</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250745547820223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t45.1600-4/793405728_1565041498708875_7253563010118686862_n.png?_nc_cat=102&ccb=1-7&_nc_ohc=7TAY5rjrIVIQ7kNvwGdUXvx&_nc_oc=Adr8bnLKfqOqaUBPpSMVz7OLIos6Mqr3cEiBgBqQ-nMPCPxHOtlVwUvVi4J2ht1Vqh0&_nc_zt=1&_nc_ht=scontent-fra5-1.xx&edm=AJfPMC4EAAAA&_nc_gid=fXeb51-ZeA7oMf_nUVcENw&_nc_tpa=Q5bMBQKBvzwV3aCmg0sbw9l3A3tBj1S4A2Eh5C1Pbi_C2G6NMjc7q4OZdoO7wkzJDPFDkl8IuTv8NdH_JA&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJ-C9lGZr5kI6VNCBT3oIFo5dwE6C4oHiPFC5OT579O4g&oe=6AA5F823" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,740</b> &middot; 2.10x
+            <span>FavouriteSkincareProduct</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250745547760223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/793627048_1565041478708877_8927801838052188758_n.png?_nc_cat=105&ccb=1-7&_nc_ohc=Y2hsx73yEkAQ7kNvwGiVsXE&_nc_oc=AdqZn907QpCcFmKERPCfxGyLK-lYWea34JIpRmLYQq3FlpRcFOA7Td0ZD40Hc4D9lOY&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=msuOnGNJo7zI3n2A2r9pmw&_nc_tpa=Q5bMBQI43V3omad2DBeodepoj0kr4OUzVe61t6PkOcuCVdUu1zRYnSxpSqML6vbHkMOblgWJwoy8_Ql4gQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIKZS22BP13GY3SPOBZgKtQ0LnOZTtclnDYtIsne-HQgw&oe=6AA60124" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,501</b> &middot; 0.80x
+            <span>FacialRoutine</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205004510223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t45.1600-4/766033247_1540362277843464_4056653573303167476_n.png?_nc_cat=111&ccb=1-7&_nc_ohc=dbuOgdkSqEEQ7kNvwG9-6FA&_nc_oc=Adqtexqvqqb5xJx5tJYY9Unhs2kPKLe_jZ33eoaMlVmxPEGzdmSx_Ey878VfppM-eME&_nc_zt=1&_nc_ht=scontent-fra3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=2vGcFJUTnj_4c4_cJYgJEQ&_nc_tpa=Q5bMBQJExjBRLfzbi6HO31yCB-Mf77VeklJqAca6ZSt1PZ9dLrKGaY6lSsd2ZDO7iGhuEYBWCWm7T-HrIw&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKw1_t-KbSQdm6P50lXLXeaF2m9VPb24jqDT7z81M-qMw&oe=6AA5EEEF" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,166</b> &middot; 0.00x
+            <span>SpendLess</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793814240223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/724251626_122116519664915198_5724743425292756232_n.png?_nc_cat=103&ccb=1-7&_nc_ohc=oF9DTtyC9lwQ7kNvwEcVt9y&_nc_oc=Adrm0F201ifuFxTBGVPhNsLZ72jrYphgPf8cTsOwCcpJ9PCrixGVFIKCC22Fle7BFBM&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=QsTllLOzR-cLW3oU5cAAIw&_nc_tpa=Q5bMBQL5tk3-FnbRPUchP0COzN-8u2gNHkH_Av_yp-TC937q-Tuv1XydtBNRlTdIlTBvzWS55gC4flA7kA&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQLztA4St908R1BsTG2rNTVbGVc7lxwBS1YIU5onCkNWmA&oe=6AA5E0FE" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 471</b> &middot; 0.00x
+            <span>Brand</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250205004530223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t45.1600-4/768259213_1540362287843463_2752535837503919193_n.png?_nc_cat=100&ccb=1-7&_nc_ohc=kAJVhIY1mA4Q7kNvwHzc9Zm&_nc_oc=AdoSKqja1A-XVYqBbYz4lTOo_H_cP5mI7P54zQAjoOUHdvrSi97cijAvHZ_c2insXaQ&_nc_zt=1&_nc_ht=scontent-fra5-1.xx&edm=AJfPMC4EAAAA&_nc_gid=9LZh99jEVf-1bLwj6fQOvQ&_nc_tpa=Q5bMBQLUcKYy3rUVLeHGwLrOrg70AABX1ZA4Vm0RPBQTiLhVXC-SuScVxHkvukp6Zqm-4s_J5yskWwkG2Q&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJD45EZeUXwbv20Hl2n9lLjexjBc0KIghyNtReKm_YsiA&oe=6AA5EF79" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 229</b> &middot; 0.00x
+            <span>SalonLevel</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250745547740223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/789617947_1565041512042207_8794476282597487174_n.png?_nc_cat=105&ccb=1-7&_nc_ohc=vxazJZ1s7cgQ7kNvwG5vD_s&_nc_oc=AdodYBdgnxke_4hbUnv2HKXVBlymC0fHRTyZkFidRcYMsu0O1vDE3qACFykcYLWIWX0&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=fQQ2NhwE00HiGDdMvrOkSA&_nc_tpa=Q5bMBQLNqIlvCcxoplXKqVnJavuDELI2u74zx8peJY0IBdhrwxqVZbsn-w75fmY6uhZtKBAU2noEiBMB-Q&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQL3ULXNWwS2GM_1Z3VDIigEnGnb6F2M5SYgUwhkrp7hJQ&oe=6AA5EBC8" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 123</b> &middot; 0.00x
+            <span>SuperDull</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250745547670223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t45.1600-4/789708453_1565042132042145_6953972175647729074_n.png?_nc_cat=102&ccb=1-7&_nc_ohc=731OF69q1W0Q7kNvwEUa1hK&_nc_oc=AdrKJHfp9hpL2SfwojFXpHWr5pYMV8WbK1r5C2I3ZnSwNYAJQThQj99uqnKqYIgChRk&_nc_zt=1&_nc_ht=scontent-fra5-1.xx&edm=AJfPMC4EAAAA&_nc_gid=u31UmHhGBjEriA3MSJJ9SQ&_nc_tpa=Q5bMBQIEowcx8vyeGTdNp1fFDhqEiqeg5AlE7QZpCXaxu1neNsgzHEqiOKDPo4Td7aLH0f4kmgrVRqmbhQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKESxLzBKeXGx3JYeId_DaSTtol7-tLLjNBc18I8Weijg&oe=6AA611EE" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 98</b> &middot; 0.00x
+            <span>Post-HolidayFix</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250775176660223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/792822030_1565833028629722_3314366963248246472_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=d9mHiHksdhkQ7kNvwE7kqse&_nc_oc=AdpaUJ_RJRr-uVfotsLci5djCqMdyK0A-_OOBeI2r6imnDX4zosQABvUwWTxSwKGU4g&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=nz0XX5bbC8N-iawGWCSxJg&_nc_tpa=Q5bMBQKbvBJmoqDsCm4xcOUpKgnlgj_d_as7ja2iqziKqaWi3XhsqCKWW0mzBS1z8gXBFeKquAGYhtGrWg&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIeo0CM5_NwEPDtc4c6nw4ERx9j9k8Ddhp_j0OtgATmKg&oe=6AA5F040" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 69</b> &middot; 0.00x
+            <span>TheGoodPart</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250745547590223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/789708464_1565042122042146_1577191955184453800_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=VKr1mvq6n04Q7kNvwEFehKR&_nc_oc=Ado7He2UxphlQFD3e9hp_y4L1pBx8JmTnz7XVF8is_LjzE6fFdxWcxMlpllt8OCalBA&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=6lSklSVNt0hYFobKtURnbA&_nc_tpa=Q5bMBQJY0ZdPv8g3-G3WQtxMlcGeF0QDTCA6XME07tRAfjBqvXCt8VyTQSyqdp7SP9E2kJG33QtlNpkgng&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIdXaQ9sTXtbJdLoY4ewQP3Vjs3zqWIlQa6CIeKzMC7mA&oe=6AA605A2" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 24</b> &middot; 0.00x
+            <span>AllInOne</span></figcaption></figure></div></div>
+      </details>
+        </div>
+      </div>
+      <div class="ptile">
+        <div class="ptile-h">
+          <div class="ptile-n">FWB</div>
+          <div class="ptile-m"><b>Rs 29,359</b> &middot; 30 ads</div>
+          <div class="ptile-r"><span class="mer-ok">1.15x</span>
+            <em>+17% vs account</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>1 of 9 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Fragrance</span>
+          <span class="chip watch">Best of a weak set</span>
+          <span class="enum">0.74x</span>
+          <span class="edelta">-35%</span>
+          <span class="espend">Rs 12,284</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250678914740223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/730487513_811149091965724_8196748175773544869_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=dPH2tnn_n70Q7kNvwFweA4G&_nc_oc=AdrI-8mHfF9iO5OO0ezS1FUlezKQTlbGOdKtFpmDXC-gyu1CoSYTnHszFtqJwGnT_OM&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=mhgjS6MgGrBNXBTnQ6DVew&_nc_tpa=Q5bMBQI37RnfDpAgvrGoKYAm3AVnD0EaX0-i3GbN8-HLhgxjXpPhuKPQDaW6zD47qfYKrTKgG7yD9erMfQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJaXyxV9qwyqreI61zOOMWPdwtzfje1HhF-sjizf4qJ0g&oe=6AA60E28" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 5,520</b> &middot; 0.27x
+            <span>Best Smelling Deo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760968360223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/794032905_1565830268629998_2673068509043146848_n.png?_nc_cat=108&ccb=1-7&_nc_ohc=j00PZigAqKIQ7kNvwFCUcfD&_nc_oc=Adqont4cBxgtk5UvlRaqkbuX7QySyRPxyme4QwAMCQiPBFaeOCyYChesqvfWKEIDisk&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=_F5obI914FyA5YpX6HkiNg&_nc_tpa=Q5bMBQKXSdvkMX2E11TuHx_ZJoUTcMvDD3HssGKjK3Bk9YnvJuLPNFXcOQtzdoisLB_c4x-8PDA4oASZoQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJsNH4HYz8TIlhD7pBApcKqZ9_flhg5erJR9919e8CblQ&oe=6AA5F709" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,518</b> &middot; 1.63x
+            <span>BestSmellingRollOn</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760938070223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/793245480_1565827625296929_8548437979645182526_n.png?_nc_cat=105&ccb=1-7&_nc_ohc=0c6aOrhHRg4Q7kNvwF7P5pe&_nc_oc=Adr1ulP7SfUNX1LqeH_e4M4E8O2sLPi1VNYDRNx-10s0SDPHzXTKASkWggf4EfB7998&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=D5dRytxPN0ajZookGeSTOA&_nc_tpa=Q5bMBQJQj7pZRrpFhbCAbNFiuZarVrAw2qdUa8HmHE0cpL81qNACh20C_vNXANWByjSJolUSiU0iDYIuCQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIcr0D5xRkv5ohkee070YiLzks4edwzUJBdBGYAA6XwUw&oe=6AA5F9DB" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,406</b> &middot; 0.37x
+            <span>HeadToToe</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793796570223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/740401651_122119261946915198_8738792241949965499_n.png?_nc_cat=105&ccb=1-7&_nc_ohc=tG0QxC45xXAQ7kNvwHqIy0Q&_nc_oc=Adq_y82SEhxJJl9aDNEkUuVaGC2DFPMX4acE-TpxUGvTOdTr2_MgD5SDQsZyItfscZM&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=muKFlj51aCnlW-NKpJKbWQ&_nc_tpa=Q5bMBQKeTPu8TfqYZnwYEOmMuwu9yjl8vpaKLdqIr1jgQqeSKjBT2DOzB8vMi8dH7AKWlyf6QQqH7d6Q6Q&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKpi34DzLKix_EWM1VXvaavzkEH3iUpJfYfF8Px39BoCw&oe=6AA5FB26" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 882</b> &middot; 0.00x
+            <span>Message</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713641300223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/792459356_1563342522212106_7789227687259746680_n.png?_nc_cat=108&ccb=1-7&_nc_ohc=_I342V-5sJsQ7kNvwFdZUlG&_nc_oc=AdoqTumcMvsW9rCkR9n4-RfV-swvOi99kBEysUIPkXy03Px_jgXliW3Wy2rzOPZqctM&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=8h8stXqvNQmGOvKFGfu-og&_nc_tpa=Q5bMBQIOx4i_8_7I6Yj_bZsf8h5W9SZHyjOwRe9VTu1H6mU4Yji9PprmbazEp9ZmjYCxzRnDbsEmEwloZQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJqWgrIY408RziVdKmnf2pLU2Lft25PTdVDb24g15VMsg&oe=6AA5F5C4" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 368</b> &middot; 0.00x
+            <span>SweatyGame</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793802350223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/732178657_122117676776915198_8258966835151845338_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=QFqjKfJAEvsQ7kNvwHbvr_N&_nc_oc=AdoX7EnSsn32T_NPDUQnKnA_Lcy83eHQjJbiWNBTVG-9nPY2Z4Ga36AKaeHSy9i2dJY&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=8_PNvDexp1-XNkSuh-J4jQ&_nc_tpa=Q5bMBQKyu_H8BzuHRx_ABBy-Y3pQSxjwa3PTiUc1uACdOYJXBDNyM9LKQnOiEW2FWsy3l7GeA2km7DLiXg&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJdoOYwRb9a7wLNSStqcSwLcZwmBAoYt5KGHSsYgZtMRg&oe=6AA5E4F7" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 267</b> &middot; 0.00x
+            <span>Sexiest Smelling all over deo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760937990223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/793594993_1056438400574565_6261447744685847875_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=xTJIO_lV9q4Q7kNvwE1dWwF&_nc_oc=AdpcpTfKIRztwAq2ZJ-SwTFc5UKVyeSjZjn8Lhy6Lpv7IqyHbEYLrL0sicDIeKcQoig&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=mmOKOodeyf0ZbbcKRMKIhg&_nc_tpa=Q5bMBQLe5IkuhAeKbjBynqbVaJ51vnaBm0aMih4f9fOTNDY7usrwz_PyuhgcHRLu1Ywwwrj0-1u9SxhU3w&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLVgwZv30_nZ3pj0xzijNtIEarzkUeoGutu9CBGwLdRoQ&oe=6AA5EF6F" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 194</b> &middot; 0.00x
+            <span>BestDeodorant2026</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250763939040223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/793867559_1918575779595426_3117528249733109573_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=9jZtESXRYtgQ7kNvwEWuGaH&_nc_oc=AdowPJ2lmCJnBkNWh7Hk7y5kaVOdFuaB9SZ8clRnDoXKyT5Xrtdr-3Uq3TwwiTTe2kk&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=pfaqX_4j6QGTjyyOTXZ2gw&_nc_tpa=Q5bMBQI_RmMdDqxZ-wZg1D05ok9AzOQWxSbqF-2C7zuFwBOlUA8wHEGQKEsV5ji1YVEHHkm0ljnpXcnHCw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKu5Saxiv0e0PBrXklCVMD5VaMqCkf2b1BN3jHkU8Apjw&oe=6AA61547" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 74</b> &middot; 35.93x
+            <span>SmellsSexierThanAnyPerfume</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760968310223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t45.1600-4/794328387_1565830258629999_5810134753786836873_n.png?_nc_cat=111&ccb=1-7&_nc_ohc=-lNhtSHRQQEQ7kNvwF8WU-a&_nc_oc=AdrVindf7jgEsEUQYM4TyXHLtk_68qQZplNbSPB3WQwxla8g0aJ0YMhNUTsi1Jo6CBA&_nc_zt=1&_nc_ht=scontent-fra3-2.xx&edm=AJfPMC4EAAAA&_nc_gid=d1Fx56Ip6ppQ3oaY8kffqA&_nc_tpa=Q5bMBQLigfgeT_2peNXkQkxG6Dah8oI274ZtP2vYoy5mM1e_FbKVppJwXCc7modGD0PDQWB-A9ilvqUkaw&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJOURaLiAtxrNJfRB2XI6s0Di42X8RfG_JvipY1kQp6pg&oe=6AA5FA13" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 48</b> &middot; 0.00x
+            <span>ProtectionFromOdour</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760968280223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/793902270_1565830248630000_8616016732097596854_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=BGtBo3slWFMQ7kNvwEGvBoZ&_nc_oc=Adq8fOTA_CMyXKmLTsjujyail4R2XSylQhUQeiU604PkK1MzdmpTWzzBUCLn4OLsEfY&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=d7ZaSD9iwoR_qopQ0oLL8w&_nc_tpa=Q5bMBQJq72wW1SlAAmPgn69GYSjnyKQW4odn6ZT5XY3_wmjVNdEVvOKbEEx302wxxmYF7nQJKlyknT-gTQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQLuPMYRkjhlXdDwhtgHnYB7kiU6xtYGGoeyZVlpoyj38A&oe=6AA5EBEB" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 5</b> &middot; 0.00x
+            <span>SmellsSexy</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250604777100223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/780771826_1556034722942886_7325189357198649338_n.png?_nc_cat=109&ccb=1-7&_nc_ohc=KbOaYIeflAgQ7kNvwFYfkGl&_nc_oc=AdqGyaDPMZqZUd0ji6i4jFe6v5W0vbe93lSDae2P5yg-2PRsMqUKn7ybCy1I695GKrI&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=cknvSPhKcdMay93LtKp-2Q&_nc_tpa=Q5bMBQIh_Rlr5fiHzliEX0kA8FV2sRFCmGKeWIa7eFntyPnFWI6NikkzON1HqzTca-7BTQ3LSR0hiSjMdw&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKeQAg1ZNwbZGQfHebUEMaFeFU9CTO75OKeJCu8inecwA&oe=6AA608FF" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2</b> &middot; 0.00x
+            <span>WorksLikeFreshnessStick</span></figcaption></figure></div></div>
+      </details><div class="ethin">Only one above the floor, nothing to compare against</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>1 of 7 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Founder</span>
+          <span class="nochip"></span>
+          <span class="enum">1.07x</span>
+          <span class="edelta">-7%</span>
+          <span class="espend">Rs 13,671</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250678914740223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/730487513_811149091965724_8196748175773544869_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=dPH2tnn_n70Q7kNvwFweA4G&_nc_oc=AdrI-8mHfF9iO5OO0ezS1FUlezKQTlbGOdKtFpmDXC-gyu1CoSYTnHszFtqJwGnT_OM&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=mhgjS6MgGrBNXBTnQ6DVew&_nc_tpa=Q5bMBQI37RnfDpAgvrGoKYAm3AVnD0EaX0-i3GbN8-HLhgxjXpPhuKPQDaW6zD47qfYKrTKgG7yD9erMfQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJaXyxV9qwyqreI61zOOMWPdwtzfje1HhF-sjizf4qJ0g&oe=6AA60E28" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 5,520</b> &middot; 0.27x
+            <span>Best Smelling Deo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713142520223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/793567635_1563342772212081_6456161531653618924_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=3bujvjYLyhMQ7kNvwECnrH7&_nc_oc=Ado75CwSKPCswaPefo2T2AoI5cYXYhQDsWMc-ZoHqwKKEpzwUG2arYlVYXooJNk4co4&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=CZsMy7InD6vcXtvaxHhzAA&_nc_tpa=Q5bMBQK5W3eSrc8mGQqlD3ID8Qx5EFZcCSRevA9bPu38d8161GcavJlG9Jxs-JVHGPwMXAlvhCyTrSbEfw&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJ6PFHoivl-IPJmy9abTCosVr5oDF3OLvY5CBbseZwQGg&oe=6AA60475" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,351</b> &middot; 0.00x
+            <span>Job24HourLater</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774168640223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/792909605_1093039816392771_5310889002389723094_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=VnQF-j79A68Q7kNvwFH0J6n&_nc_oc=Adqe-NcTM8u3nEDjXxn2s3g17IoE45EL2LMpjzYUySiX9HOtyedDRDRtdDsijUoI2yM&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=OCl9lcHV_3NIBPZtjAGAEA&_nc_tpa=Q5bMBQKtBMFDhyZxUGYVNm7y5wg3rsd0zG33HdxuWS2G6psyAsDd9Pm_IWwPnkhJ4def1E0myj1N2Dwsyg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQK--2BKTSCv16bU84VuiaCgbScrtwoyGwcKMjNrfpcg0g&oe=6AA5E858" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,809</b> &middot; 3.58x
+            <span>MovingVeryEasily</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250651853840223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/784506794_1903318450724653_1347882976147070204_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=jDSEpKbLr2UQ7kNvwGb8FBE&_nc_oc=AdpsI-JDLsDEVGP7mlmPmgFZVKqPm3BK9ys4dGKnqfCOZLlZ8k3qt9q1om8QYkKxwnE&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=sWltFInP241hw0WFR7sOag&_nc_tpa=Q5bMBQIKjSyXztSCHMrVMvysAPOSrFMy6ZHMEuYIHDl7KsJRNrt7IV4izZk0iT5fjl0mWBldK-CpeBRD2Q&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJK5Epl5HPMnTQBRohR8HbdtRgQvwbNLUofUqu-7JTLbA&oe=6AA5ED16" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,160</b> &middot; 0.82x
+            <span>ComeWithARefill</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250651853830223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/784250752_1053893134159937_1555576816034669313_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=Ooj-dG9WuFoQ7kNvwGCakrR&_nc_oc=AdpSdCaNW-6G3VMGm0gjorEOuBYT0zDhbBZZ6s3NgE8-Yb1CNqlF0i9JmOzYr_DoBBQ&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=sWltFInP241hw0WFR7sOag&_nc_tpa=Q5bMBQL9jggfTrUa9mXD4RWqjkWxwiRGf915WHvGcy8bNonGfuQ-gBUz2F1emOm73geSjMWfxLF6cZLJgg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJT7slGqIoZHbZQsIxLGm15xv6FOAbCBxvsdqBSfUBMMg&oe=6AA5E46B" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,124</b> &middot; 2.36x
+            <span>VisibleReductionPigmentation</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713142280223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/793458267_1563342722212086_2875302164174950232_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=RmXPRrR7iTQQ7kNvwFAaAbh&_nc_oc=AdoKYC_2mWMN--xbWceQNTEOn76zZbBnbye5CDiNUOmRC6DwtVpmn5Xxg8uHR0rQiw0&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=p4ay89r2sj9V2lkmI9evmQ&_nc_tpa=Q5bMBQLnZErV5gcZHGc5T69ff4N9r0O9rf77SX-mmh5G1drWJTzmiTnFSAtBalQubRH4aI7mLpqnXPZ78Q&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJHPAaGMGCFcIrgYFnBF99HtyQvOf1-JqE5LP0P3LQC9Q&oe=6AA6020C" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,091</b> &middot; 0.00x
+            <span>SkinFeelingFresh</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793802350223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/732178657_122117676776915198_8258966835151845338_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=QFqjKfJAEvsQ7kNvwHbvr_N&_nc_oc=AdoX7EnSsn32T_NPDUQnKnA_Lcy83eHQjJbiWNBTVG-9nPY2Z4Ga36AKaeHSy9i2dJY&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=8_PNvDexp1-XNkSuh-J4jQ&_nc_tpa=Q5bMBQKyu_H8BzuHRx_ABBy-Y3pQSxjwa3PTiUc1uACdOYJXBDNyM9LKQnOiEW2FWsy3l7GeA2km7DLiXg&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJdoOYwRb9a7wLNSStqcSwLcZwmBAoYt5KGHSsYgZtMRg&oe=6AA5E4F7" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 267</b> &middot; 0.00x
+            <span>Sexiest Smelling all over deo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250678908990223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/789198172_1057980803797139_7107152810210318044_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=Gv1cp_rbyc8Q7kNvwFpmCVF&_nc_oc=AdrWGh3GcQU457W0fcEp7lesuXzxSyoUu3458_54ean_QMjPD0xYAuQvUPYtm6T65DA&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=mhgjS6MgGrBNXBTnQ6DVew&_nc_tpa=Q5bMBQIxKwcNNcsOTPD9UMQeT-wwgpeiTm6BirgsLqcq6Lh0oSKl7zme7eu6QR4PgdtQs8Rdb5fqPH_qBQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJqoaA0V2WqVoyZ11QWRLAoWV688qMZ1S3x9Dcesrxh-w&oe=6AA5F10E" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 242</b> &middot; 12.38x
+            <span>JustFor899Now</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713142430223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/792717946_1563342758878749_2683607297326153089_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=R6NRvjUmNTcQ7kNvwE-z-K0&_nc_oc=AdpWjEz4jOe4AogB9VnGupxd-mfYbpbolii84mu9UwwPShPVXL-XOFY86KmJLzgxq0w&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=KmPqwv4KczvtWr2TtxRn_g&_nc_tpa=Q5bMBQLAzTvEa7oMke5ugoBxxBxDZurgN0pcwWDeqznQlVCTDBnfo_U0P5LdaBAnV337t9qxYA8oWDTHAA&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKRoBrWm-AxYvgPIN4Q8kdBXeM4TvBbwH1bIRvaJOppDg&oe=6AA60FBA" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 77</b> &middot; 0.00x
+            <span>BodyOdourInCheck</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774168630223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/790879863_1593584588933165_6832991896848256770_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=JMha_J1rTe0Q7kNvwFltvcm&_nc_oc=AdoueR7_GxkhX7XSWsj9KxiIBzRySUSRgyf_f2OmRQcpiUc7k3uLe_gTn-sYNLLOP4Y&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=OCl9lcHV_3NIBPZtjAGAEA&_nc_tpa=Q5bMBQKgdmxbJr1ALosoy73gen7ZwaynEt-mb0XeDqp9JqULfyES7TC46R5ZjpmerWVRMdxivAMDEaTtRQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQIIKscfzaZrZeGjnfR0U4G0fL8Ap3loHJun45ohSPRO-g&oe=6AA60FB0" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 31</b> &middot; 0.00x
+            <span>BestFriend</span></figcaption></figure></div></div>
+      </details><div class="ethin">Only one above the floor, nothing to compare against</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>2 of 3 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Video</span>
+          <span class="chip fund">Scale</span>
+          <span class="enum">1.65x</span>
+          <span class="edelta">+43%</span>
+          <span class="espend">Rs 16,225</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250678914740223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/730487513_811149091965724_8196748175773544869_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=dPH2tnn_n70Q7kNvwFweA4G&_nc_oc=AdrI-8mHfF9iO5OO0ezS1FUlezKQTlbGOdKtFpmDXC-gyu1CoSYTnHszFtqJwGnT_OM&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=mhgjS6MgGrBNXBTnQ6DVew&_nc_tpa=Q5bMBQI37RnfDpAgvrGoKYAm3AVnD0EaX0-i3GbN8-HLhgxjXpPhuKPQDaW6zD47qfYKrTKgG7yD9erMfQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJaXyxV9qwyqreI61zOOMWPdwtzfje1HhF-sjizf4qJ0g&oe=6AA60E28" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 5,520</b> &middot; 0.27x
+            <span>Best Smelling Deo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250761468400223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/794991683_1744298126875689_1644043569178095839_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=GzAMyq1jFbsQ7kNvwGlx5xY&_nc_oc=Adq5YIWHcp4e0Rw0ppkosJtIXNkM3y7cXxLGhIwzIZwMQHpN-cMG3YHVU-NOmf3OWpI&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=cqGKtl0TH-JdD5luJxEo1A&_nc_tpa=Q5bMBQI9p_wWpwyM42C4mCdK4fjDBTFXDU2nc9itA4_2-pA1j6LauW6sjKo1kzrefzRgAxZDPfCMR1tlFg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLayE-Jrz8BSoKJElwj_35xaPTqJA8g7VMD3PotlWvmQw&oe=6AA5E27E" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,172</b> &middot; 1.73x
+            <span>NotJustForYourUnderarms</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250761735270223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/793594996_1399179045737045_5169398419072523420_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=oKdsfi7STs0Q7kNvwFCad57&_nc_oc=AdoRhYQreFEerZOtY5h_-2eJuU7YJgEjHrKtIR26F25cn3wLkc0_M0NhhXR2E7BUvVI&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=0BzCVwtlK6637lRZmVkUjQ&_nc_tpa=Q5bMBQLTWnomNWaP2zTQm_oSYrvkG-zK0mMAaubEbk1Rd0-GA_BksAshbmNZS08iqrcYEj0dmNLg5QiDXw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQIffOn6n4QD8JqfXclY_Bl6sWjffAoqPv2pK6MYLZWN1A&oe=6AA60379" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,180</b> &middot; 0.44x
+            <span>LoveTheSmell</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774168640223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/792909605_1093039816392771_5310889002389723094_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=VnQF-j79A68Q7kNvwFH0J6n&_nc_oc=Adqe-NcTM8u3nEDjXxn2s3g17IoE45EL2LMpjzYUySiX9HOtyedDRDRtdDsijUoI2yM&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=OCl9lcHV_3NIBPZtjAGAEA&_nc_tpa=Q5bMBQKtBMFDhyZxUGYVNm7y5wg3rsd0zG33HdxuWS2G6psyAsDd9Pm_IWwPnkhJ4def1E0myj1N2Dwsyg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQK--2BKTSCv16bU84VuiaCgbScrtwoyGwcKMjNrfpcg0g&oe=6AA5E858" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,809</b> &middot; 3.58x
+            <span>MovingVeryEasily</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250651853840223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/784506794_1903318450724653_1347882976147070204_n.jpg?_nc_cat=106&ccb=1-7&_nc_ohc=jDSEpKbLr2UQ7kNvwGb8FBE&_nc_oc=AdpsI-JDLsDEVGP7mlmPmgFZVKqPm3BK9ys4dGKnqfCOZLlZ8k3qt9q1om8QYkKxwnE&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=sWltFInP241hw0WFR7sOag&_nc_tpa=Q5bMBQIKjSyXztSCHMrVMvysAPOSrFMy6ZHMEuYIHDl7KsJRNrt7IV4izZk0iT5fjl0mWBldK-CpeBRD2Q&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJK5Epl5HPMnTQBRohR8HbdtRgQvwbNLUofUqu-7JTLbA&oe=6AA5ED16" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,160</b> &middot; 0.82x
+            <span>ComeWithARefill</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250651853830223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/784250752_1053893134159937_1555576816034669313_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=Ooj-dG9WuFoQ7kNvwGCakrR&_nc_oc=AdpSdCaNW-6G3VMGm0gjorEOuBYT0zDhbBZZ6s3NgE8-Yb1CNqlF0i9JmOzYr_DoBBQ&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=sWltFInP241hw0WFR7sOag&_nc_tpa=Q5bMBQL9jggfTrUa9mXD4RWqjkWxwiRGf915WHvGcy8bNonGfuQ-gBUz2F1emOm73geSjMWfxLF6cZLJgg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJT7slGqIoZHbZQsIxLGm15xv6FOAbCBxvsdqBSfUBMMg&oe=6AA5E46B" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,124</b> &middot; 2.36x
+            <span>VisibleReductionPigmentation</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774174260223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/792909652_1075161014897567_705644354032219374_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=CyBg0ICaMQgQ7kNvwFSCKou&_nc_oc=AdpIZqVBYw9NQP1cj5Js_BprdhIl5tLxYDGoXxDG9buiIjQJGmefo1CGPAixAVWV3Bs&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=0I2C3Omzpc6d4J-KpTs3JQ&_nc_tpa=Q5bMBQLdUv3PnWJDZIge_S-VwpJMpNmEGJC3z3BT6HetFVg3NYuN4v9msTIspZhNvEnwg9R4FiIUj36xzg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJUcxN-gHYUexhSK0OmtiDxsvj2EdpMZIc6ok3ve0yl1Q&oe=6AA600BF" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 278</b> &middot; 0.00x
+            <span>BrighterUnderarms</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250678908990223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t15.5256-10/789198172_1057980803797139_7107152810210318044_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=Gv1cp_rbyc8Q7kNvwFpmCVF&_nc_oc=AdrWGh3GcQU457W0fcEp7lesuXzxSyoUu3458_54ean_QMjPD0xYAuQvUPYtm6T65DA&_nc_zt=23&_nc_ht=scontent-fra5-2.xx&edm=AEuWsiQEAAAA&_nc_gid=mhgjS6MgGrBNXBTnQ6DVew&_nc_tpa=Q5bMBQIxKwcNNcsOTPD9UMQeT-wwgpeiTm6BirgsLqcq6Lh0oSKl7zme7eu6QR4PgdtQs8Rdb5fqPH_qBQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQJqoaA0V2WqVoyZ11QWRLAoWV688qMZ1S3x9Dcesrxh-w&oe=6AA5F10E" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 242</b> &middot; 12.38x
+            <span>JustFor899Now</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250761468360223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/792820469_2021096521902871_5318711730498113086_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=QpKZqM1ysSsQ7kNvwHO7tyF&_nc_oc=AdosAZjxUWK3RpBitH9ixOSD_txdu_oi9Nv6u-zD8UhXmXJhICGw_u2LzlCrIAWIltk&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=cqGKtl0TH-JdD5luJxEo1A&_nc_tpa=Q5bMBQKOZReDsQktp9k_EZdDcsOj1btwfyelwLIMyOHT4HVaVT0hHHlZhm-kCAqSgxsR52MC_suhfJftZw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKusUClu37glMzg1TStPjsAikwRo2t8ohAFceq4MFHKxw&oe=6AA605BF" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 199</b> &middot; 0.00x
+            <span>MultipleJobs</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760937990223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/793594993_1056438400574565_6261447744685847875_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=xTJIO_lV9q4Q7kNvwE1dWwF&_nc_oc=AdpcpTfKIRztwAq2ZJ-SwTFc5UKVyeSjZjn8Lhy6Lpv7IqyHbEYLrL0sicDIeKcQoig&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=mmOKOodeyf0ZbbcKRMKIhg&_nc_tpa=Q5bMBQLe5IkuhAeKbjBynqbVaJ51vnaBm0aMih4f9fOTNDY7usrwz_PyuhgcHRLu1Ywwwrj0-1u9SxhU3w&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLVgwZv30_nZ3pj0xzijNtIEarzkUeoGutu9CBGwLdRoQ&oe=6AA5EF6F" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 194</b> &middot; 0.00x
+            <span>BestDeodorant2026</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250732533460223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/793580669_1794251178430461_1577588715161024204_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=mJm-z0b01mQQ7kNvwFYldh2&_nc_oc=AdrVktGYE-bTTjRGE0XGYIe8CBsTPKdvTO58RAXqjqLHHhOidgydf32vG5OBKKbO99U&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=0BzCVwtlK6637lRZmVkUjQ&_nc_tpa=Q5bMBQKcWy1LxES2vO2Vy9kefjIJebmqP6jRPbAILY1DwTJIGS12SXH2BfrYvczLVwc2WAQQqAR6uYoUbA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQI3eoUJ59SOpgRRxwxd4EnaEi5iLWeTxuYWVrYEZesiYg&oe=6AA60A01" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 178</b> &middot; 0.00x
+            <span>Breezy</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250763939040223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/793867559_1918575779595426_3117528249733109573_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=9jZtESXRYtgQ7kNvwEWuGaH&_nc_oc=AdowPJ2lmCJnBkNWh7Hk7y5kaVOdFuaB9SZ8clRnDoXKyT5Xrtdr-3Uq3TwwiTTe2kk&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=pfaqX_4j6QGTjyyOTXZ2gw&_nc_tpa=Q5bMBQI_RmMdDqxZ-wZg1D05ok9AzOQWxSbqF-2C7zuFwBOlUA8wHEGQKEsV5ji1YVEHHkm0ljnpXcnHCw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKu5Saxiv0e0PBrXklCVMD5VaMqCkf2b1BN3jHkU8Apjw&oe=6AA61547" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 74</b> &middot; 35.93x
+            <span>SmellsSexierThanAnyPerfume</span></figcaption></figure></div><p class="fine">Showing 12 of 14 ads by spend.</p></div>
+      </details><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">Static</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.57x</span>
+          <span class="edelta">-50%</span>
+          <span class="espend">Rs 12,252</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760968360223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/794032905_1565830268629998_2673068509043146848_n.png?_nc_cat=108&ccb=1-7&_nc_ohc=j00PZigAqKIQ7kNvwFCUcfD&_nc_oc=Adqont4cBxgtk5UvlRaqkbuX7QySyRPxyme4QwAMCQiPBFaeOCyYChesqvfWKEIDisk&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=_F5obI914FyA5YpX6HkiNg&_nc_tpa=Q5bMBQKXSdvkMX2E11TuHx_ZJoUTcMvDD3HssGKjK3Bk9YnvJuLPNFXcOQtzdoisLB_c4x-8PDA4oASZoQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJsNH4HYz8TIlhD7pBApcKqZ9_flhg5erJR9919e8CblQ&oe=6AA5F709" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,518</b> &middot; 1.63x
+            <span>BestSmellingRollOn</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250760938070223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/793245480_1565827625296929_8548437979645182526_n.png?_nc_cat=105&ccb=1-7&_nc_ohc=0c6aOrhHRg4Q7kNvwF7P5pe&_nc_oc=Adr1ulP7SfUNX1LqeH_e4M4E8O2sLPi1VNYDRNx-10s0SDPHzXTKASkWggf4EfB7998&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=D5dRytxPN0ajZookGeSTOA&_nc_tpa=Q5bMBQJQj7pZRrpFhbCAbNFiuZarVrAw2qdUa8HmHE0cpL81qNACh20C_vNXANWByjSJolUSiU0iDYIuCQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIcr0D5xRkv5ohkee070YiLzks4edwzUJBdBGYAA6XwUw&oe=6AA5F9DB" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,406</b> &middot; 0.37x
+            <span>HeadToToe</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713142520223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/793567635_1563342772212081_6456161531653618924_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=3bujvjYLyhMQ7kNvwECnrH7&_nc_oc=Ado75CwSKPCswaPefo2T2AoI5cYXYhQDsWMc-ZoHqwKKEpzwUG2arYlVYXooJNk4co4&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=CZsMy7InD6vcXtvaxHhzAA&_nc_tpa=Q5bMBQK5W3eSrc8mGQqlD3ID8Qx5EFZcCSRevA9bPu38d8161GcavJlG9Jxs-JVHGPwMXAlvhCyTrSbEfw&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJ6PFHoivl-IPJmy9abTCosVr5oDF3OLvY5CBbseZwQGg&oe=6AA60475" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,351</b> &middot; 0.00x
+            <span>Job24HourLater</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774174270223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/794144838_1565825051963853_1787320737691134546_n.png?_nc_cat=108&ccb=1-7&_nc_ohc=ozDEOYqJ4M4Q7kNvwGU6s5D&_nc_oc=Adp72OauVC3YCPf3IQbTHadLkE70VztRotKy9LT4WzgNYbsJT74HHgvR-BouGi8e41g&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=m_X856DL_JVTBdFcBacBeg&_nc_tpa=Q5bMBQJVL1ZIV2FFeuRaAR8mlCl5QrvKpr6JJvnu5PTMuOyKnqSunucuWYRvKmUUWkKSwopOwLb1X2bDFA&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIOjrwHhcFLnQKuD-hdbZrPO9_YFhm8VpWBp-z2_4_sMw&oe=6AA5F98E" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,175</b> &middot; 0.92x
+            <span>SoftestGlide</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713142280223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/793458267_1563342722212086_2875302164174950232_n.jpg?_nc_cat=107&ccb=1-7&_nc_ohc=RmXPRrR7iTQQ7kNvwFAaAbh&_nc_oc=AdoKYC_2mWMN--xbWceQNTEOn76zZbBnbye5CDiNUOmRC6DwtVpmn5Xxg8uHR0rQiw0&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=p4ay89r2sj9V2lkmI9evmQ&_nc_tpa=Q5bMBQLnZErV5gcZHGc5T69ff4N9r0O9rf77SX-mmh5G1drWJTzmiTnFSAtBalQubRH4aI7mLpqnXPZ78Q&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJHPAaGMGCFcIrgYFnBF99HtyQvOf1-JqE5LP0P3LQC9Q&oe=6AA6020C" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,091</b> &middot; 0.00x
+            <span>SkinFeelingFresh</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793799560223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t45.1600-4/726574863_122117355494915198_6009210462583957462_n.png?_nc_cat=100&ccb=1-7&_nc_ohc=mYM-4TzLMaQQ7kNvwGEB-MD&_nc_oc=Ado1h1xWqY9y1IP0pv5GOtw7qZAs7laKCbohDEx2H08HV83wz5fhPyelJlo2DFbAa3c&_nc_zt=1&_nc_ht=scontent-fra5-1.xx&edm=AJfPMC4EAAAA&_nc_gid=CPR9rFoYB8gKQnSGKR83aw&_nc_tpa=Q5bMBQJrCy8MuDgamAsMz_fOYZrNdiWKMm_C73PpIqA2Q2HMPQTPV3JRUxgyrAAWI5NerFa7Bk1xQdqoQQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJuKd8zi7rSScNI5OjcEMMAxFggO_BnMB0RYMHSzhmBJw&oe=6AA5F6C1" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 392</b> &middot; 0.00x
+            <span>5 Jobs 1 Swipe</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713641300223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/792459356_1563342522212106_7789227687259746680_n.png?_nc_cat=108&ccb=1-7&_nc_ohc=_I342V-5sJsQ7kNvwFdZUlG&_nc_oc=AdoqTumcMvsW9rCkR9n4-RfV-swvOi99kBEysUIPkXy03Px_jgXliW3Wy2rzOPZqctM&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=8h8stXqvNQmGOvKFGfu-og&_nc_tpa=Q5bMBQIOx4i_8_7I6Yj_bZsf8h5W9SZHyjOwRe9VTu1H6mU4Yji9PprmbazEp9ZmjYCxzRnDbsEmEwloZQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJqWgrIY408RziVdKmnf2pLU2Lft25PTdVDb24g15VMsg&oe=6AA5F5C4" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 368</b> &middot; 0.00x
+            <span>SweatyGame</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250793802350223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/732178657_122117676776915198_8258966835151845338_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=QFqjKfJAEvsQ7kNvwHbvr_N&_nc_oc=AdoX7EnSsn32T_NPDUQnKnA_Lcy83eHQjJbiWNBTVG-9nPY2Z4Ga36AKaeHSy9i2dJY&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=8_PNvDexp1-XNkSuh-J4jQ&_nc_tpa=Q5bMBQKyu_H8BzuHRx_ABBy-Y3pQSxjwa3PTiUc1uACdOYJXBDNyM9LKQnOiEW2FWsy3l7GeA2km7DLiXg&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQJdoOYwRb9a7wLNSStqcSwLcZwmBAoYt5KGHSsYgZtMRg&oe=6AA5E4F7" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 267</b> &middot; 0.00x
+            <span>Sexiest Smelling all over deo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774174280223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/793626834_1565825021963856_1134581531305633053_n.png?_nc_cat=107&ccb=1-7&_nc_ohc=3mhZ2yfRDE8Q7kNvwF3srIu&_nc_oc=Adqg3InIarIZlYy25SfTM55Zonygo878tqdZ9iS-5u7g55wkiRdKjbgEyI7aTnxuh7Y&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=ptearCFdoqny1BCBcWQmvw&_nc_tpa=Q5bMBQICxqvYUVceyJrCioP71yHZNScHhnk_MQ753o0XPljas2Y8ytN-WKGErfBCD6ALivBuYCi4a81PJQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQLl7q1Gd-dD5q350bP6wVsYn33AgGGBzjg0WY1Ba5R-QA&oe=6AA5F6B0" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 191</b> &middot; 0.00x
+            <span>DarkNeck</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250761056370223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t45.1600-4/794328519_1565833921962966_3039254234093552792_n.png?_nc_cat=106&ccb=1-7&_nc_ohc=-DFuqZxShS4Q7kNvwFW-KjU&_nc_oc=Adq5Qbx-HDg6YxaFtNqZDyprNYlBftA3bO2CA8Isij37UO4pHYeXeMxXowEzLwR09os&_nc_zt=1&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=b698V5xmK6FXGSfaGdqJtA&_nc_tpa=Q5bMBQIOvFGTxHX6Xq7qHz5YwK19tBZJvW-Ra5I-lzhFv6kTz-4KuU_zBzQzIHw6Me5b9B3lXCsDERDfxw&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIlGCyGOafKV7RpP3x8uTivFM3Q-2Jq2wSQokfq8RJ3IQ&oe=6AA5F64D" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 181</b> &middot; 0.00x
+            <span>SmootherLookingSkin</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774174250223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/794262521_1565825038630521_3603982148730738858_n.png?_nc_cat=103&ccb=1-7&_nc_ohc=ODcTcXzfw20Q7kNvwG-isd9&_nc_oc=Adqm8LSMryn3md1ng-y-n_YUSex5sFEx3U61qkW3y_Ti52tLugFdLNtOz7b9_tu9bZ4&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=gg7TRQxidPWpBvwfEGr7JA&_nc_tpa=Q5bMBQKaL45V-XBT3V6VSvwHuB3ml4tLGLwMtvRDN7MHCGHRS4Gd3mVi7YHqeRWIJh79_iSFRWJquVQOpQ&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIyEqFGDdzy1h7pNnVUv5FHKKrmU3T4jfDrhsnQHgOvOA&oe=6AA60A12" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 179</b> &middot; 0.00x
+            <span>India'sBestDeodorant</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250713142430223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/792717946_1563342758878749_2683607297326153089_n.png?_nc_cat=101&ccb=1-7&_nc_ohc=R6NRvjUmNTcQ7kNvwE-z-K0&_nc_oc=AdpWjEz4jOe4AogB9VnGupxd-mfYbpbolii84mu9UwwPShPVXL-XOFY86KmJLzgxq0w&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=KmPqwv4KczvtWr2TtxRn_g&_nc_tpa=Q5bMBQLAzTvEa7oMke5ugoBxxBxDZurgN0pcwWDeqznQlVCTDBnfo_U0P5LdaBAnV337t9qxYA8oWDTHAA&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQKRoBrWm-AxYvgPIN4Q8kdBXeM4TvBbwH1bIRvaJOppDg&oe=6AA60FBA" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 77</b> &middot; 0.00x
+            <span>BodyOdourInCheck</span></figcaption></figure></div><p class="fine">Showing 12 of 15 ads by spend.</p></div>
+      </details>
+        </div>
+      </div>
+      <div class="ptile">
+        <div class="ptile-h">
+          <div class="ptile-n">Shower in Seconds</div>
+          <div class="ptile-m"><b>Rs 24,491</b> &middot; 7 ads</div>
+          <div class="ptile-r"><span class="mer-ok">1.00x</span>
+            <em>+2% vs account</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>1 of 6 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Cigarette</span>
+          <span class="nochip"></span>
+          <span class="enum">1.00x</span>
+          <span class="edelta">+0%</span>
+          <span class="espend">Rs 19,853</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250088788060223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/687936944_4314223392162734_8761779151185947742_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=3zszcZEm34YQ7kNvwFlbz6p&_nc_oc=Adqkt4m9s-AKXaqB575DIa7aK_zCbFUhiG8JubLAaerGkMw6vy11BUdIiICRnEX7Vgk&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=ZJAB42Mt5FCAQGv-jcqRkA&_nc_tpa=Q5bMBQKE7Si-M-L1S4zpMJwTa7TyycUFfchzYmRbe3T0A9yI3dSgxLawbLEuN8gdYTCyni_16v7OSYYm7w&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLTgL9pyDds9z8HE74aEjKgVA04UwbwyNYMSo5OwOP4mg&oe=6AA5FC87" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 16,402</b> &middot; 1.05x
+            <span>EGC</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250740767210223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/649399203_1887216761913349_4673795594904627174_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=zSpQK-7tq5EQ7kNvwF4WW60&_nc_oc=Adqd6myIGJrxnMWznPOaCmUnw_AXKAfUqWFqIPzmP8cMvqh3sZgNaEjzokF5mSe4Y2k&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=OtTxR32r-e-ae4zh0krDJA&_nc_tpa=Q5bMBQJRlBBs9UhXF3K7OWTrakwjmMEa-xZclLCIZ82LBqo3vI0FOEWrrjUQHycOB9ZAgDBM4kX0vooxbA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKx4VsOMv1H59LXXIUEjRTOJKmw9VMHnYaG547Jr1i33w&oe=6AA606B0" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,451</b> &middot; 0.76x
+            <span>Cigarette</span></figcaption></figure></div></div>
+      </details><div class="ethin">Only one above the floor, nothing to compare against</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>1 of 3 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">EGC</span>
+          <span class="nochip"></span>
+          <span class="enum">1.03x</span>
+          <span class="edelta">+3%</span>
+          <span class="espend">Rs 22,038</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250088788060223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/687936944_4314223392162734_8761779151185947742_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=3zszcZEm34YQ7kNvwFlbz6p&_nc_oc=Adqkt4m9s-AKXaqB575DIa7aK_zCbFUhiG8JubLAaerGkMw6vy11BUdIiICRnEX7Vgk&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=ZJAB42Mt5FCAQGv-jcqRkA&_nc_tpa=Q5bMBQKE7Si-M-L1S4zpMJwTa7TyycUFfchzYmRbe3T0A9yI3dSgxLawbLEuN8gdYTCyni_16v7OSYYm7w&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLTgL9pyDds9z8HE74aEjKgVA04UwbwyNYMSo5OwOP4mg&oe=6AA5FC87" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 16,402</b> &middot; 1.05x
+            <span>EGC</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250740767210223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/649399203_1887216761913349_4673795594904627174_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=zSpQK-7tq5EQ7kNvwF4WW60&_nc_oc=Adqd6myIGJrxnMWznPOaCmUnw_AXKAfUqWFqIPzmP8cMvqh3sZgNaEjzokF5mSe4Y2k&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=OtTxR32r-e-ae4zh0krDJA&_nc_tpa=Q5bMBQJRlBBs9UhXF3K7OWTrakwjmMEa-xZclLCIZ82LBqo3vI0FOEWrrjUQHycOB9ZAgDBM4kX0vooxbA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKx4VsOMv1H59LXXIUEjRTOJKmw9VMHnYaG547Jr1i33w&oe=6AA606B0" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,451</b> &middot; 0.76x
+            <span>Cigarette</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250604795330223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/784350910_2118161882425002_3244988767823350099_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=z5dj8qacRZ8Q7kNvwESAGh2&_nc_oc=AdoGc1e7k6PVKeaa0hsXdvikyMa_sybskaiUPyHAJ5hGFatsFkiOe7j5HfWbW-fMyP0&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=XUBUYGcOi84B7iUG0vMwfA&_nc_tpa=Q5bMBQLHTfmjeXZYnHw7RPqUtq-UYgUntwcXchhY4dFRKllz8V6RIHqzdGllx-oVZ8lWiVnPdtWAT9INcA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQItzlYpXUq9G2gw6okNYB9vi-cYbo9akrf6_Yi-4kM18A&oe=6AA617BA" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,015</b> &middot; 1.39x
+            <span>GoodToGo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250743192450223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/670291506_949005534490850_3230783109513281840_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=_PCWSejmivgQ7kNvwGVDZhD&_nc_oc=AdrA-_PI66fBP4fJOveA_ic5f6XA0Bs2-8dKiWQZyYIKRC5bSgQQ0lITMdAfPN6OucA&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=OtTxR32r-e-ae4zh0krDJA&_nc_tpa=Q5bMBQJH1JQP-96PLKpIPPePJPi_8XIB_PWrM210XdFady72TAoqJGX_DaM94t1e4UlsRbkOgOsF3ndqtw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLuQBFlhOiH5F5zqJ_dO_HxwOWABsPNo6S-bWV-f62klA&oe=6AA60018" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 170</b> &middot; 0.00x
+            <span>Cigarette</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250743192440223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/650279803_1318094726814424_2684535233165472888_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=yoOF04C8zGcQ7kNvwFSuc10&_nc_oc=AdqtK-7WQ_wC9y3jMC_JJZYlbZnIk41JQS0CSeMqT7XdfHunwTagQso8q9ddkA63jxw&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=OtTxR32r-e-ae4zh0krDJA&_nc_tpa=Q5bMBQJ9vDVDHbk1ZzATOHbAymx3AikAdg39wneh-RufiZk8N5YOHJZRGgvRG4F6gLSBnrSlUPvlzn9dfQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJgmCPtJEQjdt-9HKDj_Wj5R2rVrz6wfPsUpBEi4RKLRQ&oe=6AA5E474" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 0</b> &middot; 0.00x
+            <span>Cigarette</span></figcaption></figure></div></div>
+      </details><div class="ethin">Only one above the floor, nothing to compare against</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>1 of 2 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Video</span>
+          <span class="nochip"></span>
+          <span class="enum">1.04x</span>
+          <span class="edelta">+4%</span>
+          <span class="espend">Rs 23,653</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250088788060223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/687936944_4314223392162734_8761779151185947742_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=3zszcZEm34YQ7kNvwFlbz6p&_nc_oc=Adqkt4m9s-AKXaqB575DIa7aK_zCbFUhiG8JubLAaerGkMw6vy11BUdIiICRnEX7Vgk&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=ZJAB42Mt5FCAQGv-jcqRkA&_nc_tpa=Q5bMBQKE7Si-M-L1S4zpMJwTa7TyycUFfchzYmRbe3T0A9yI3dSgxLawbLEuN8gdYTCyni_16v7OSYYm7w&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQLTgL9pyDds9z8HE74aEjKgVA04UwbwyNYMSo5OwOP4mg&oe=6AA5FC87" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 16,402</b> &middot; 1.05x
+            <span>EGC</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250740767210223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/649399203_1887216761913349_4673795594904627174_n.jpg?_nc_cat=100&ccb=1-7&_nc_ohc=zSpQK-7tq5EQ7kNvwF4WW60&_nc_oc=Adqd6myIGJrxnMWznPOaCmUnw_AXKAfUqWFqIPzmP8cMvqh3sZgNaEjzokF5mSe4Y2k&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=OtTxR32r-e-ae4zh0krDJA&_nc_tpa=Q5bMBQJRlBBs9UhXF3K7OWTrakwjmMEa-xZclLCIZ82LBqo3vI0FOEWrrjUQHycOB9ZAgDBM4kX0vooxbA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKx4VsOMv1H59LXXIUEjRTOJKmw9VMHnYaG547Jr1i33w&oe=6AA606B0" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 3,451</b> &middot; 0.76x
+            <span>Cigarette</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250604795330223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/784350910_2118161882425002_3244988767823350099_n.jpg?_nc_cat=101&ccb=1-7&_nc_ohc=z5dj8qacRZ8Q7kNvwESAGh2&_nc_oc=AdoGc1e7k6PVKeaa0hsXdvikyMa_sybskaiUPyHAJ5hGFatsFkiOe7j5HfWbW-fMyP0&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=XUBUYGcOi84B7iUG0vMwfA&_nc_tpa=Q5bMBQLHTfmjeXZYnHw7RPqUtq-UYgUntwcXchhY4dFRKllz8V6RIHqzdGllx-oVZ8lWiVnPdtWAT9INcA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQItzlYpXUq9G2gw6okNYB9vi-cYbo9akrf6_Yi-4kM18A&oe=6AA617BA" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 2,015</b> &middot; 1.39x
+            <span>GoodToGo</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250774313660223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/796639811_1046220201585967_1371579062030631176_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=wQYrA1QZ7TsQ7kNvwEXroxm&_nc_oc=AdqDePpA0vSOADWfmD7Ymdq0C6SIoWfqlYuE8lR-j_fDcPMZ_8Y68H5kFMR0rXHOLCo&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=kMQuVtku2eKirXmB4JF7Og&_nc_tpa=Q5bMBQIlWTkfbfiqIp5btlxtB3-CqC_rpmrW65ewyGQyptvmc3Rpfa0OuDtiZoJs9VFowsxfrg26Pi-8UA&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJDAszatoJVYGC21bCWQrn6cgfob-OzoqT3MFN-h3zPpQ&oe=6AA5FE30" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,614</b> &middot; 1.14x
+            <span>FeelsRefreshing</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250743192450223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t15.5256-10/670291506_949005534490850_3230783109513281840_n.jpg?_nc_cat=102&ccb=1-7&_nc_ohc=_PCWSejmivgQ7kNvwGVDZhD&_nc_oc=AdrA-_PI66fBP4fJOveA_ic5f6XA0Bs2-8dKiWQZyYIKRC5bSgQQ0lITMdAfPN6OucA&_nc_zt=23&_nc_ht=scontent-fra5-1.xx&edm=AEuWsiQEAAAA&_nc_gid=OtTxR32r-e-ae4zh0krDJA&_nc_tpa=Q5bMBQJH1JQP-96PLKpIPPePJPi_8XIB_PWrM210XdFady72TAoqJGX_DaM94t1e4UlsRbkOgOsF3ndqtw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=5fad0e&_nc_sid=58080a&oh=00_AQLuQBFlhOiH5F5zqJ_dO_HxwOWABsPNo6S-bWV-f62klA&oe=6AA60018" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 170</b> &middot; 0.00x
+            <span>Cigarette</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250743192440223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/650279803_1318094726814424_2684535233165472888_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=yoOF04C8zGcQ7kNvwFSuc10&_nc_oc=AdqtK-7WQ_wC9y3jMC_JJZYlbZnIk41JQS0CSeMqT7XdfHunwTagQso8q9ddkA63jxw&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=OtTxR32r-e-ae4zh0krDJA&_nc_tpa=Q5bMBQJ9vDVDHbk1ZzATOHbAymx3AikAdg39wneh-RufiZk8N5YOHJZRGgvRG4F6gLSBnrSlUPvlzn9dfQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQJgmCPtJEQjdt-9HKDj_Wj5R2rVrz6wfPsUpBEi4RKLRQ&oe=6AA5E474" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 0</b> &middot; 0.00x
+            <span>Cigarette</span></figcaption></figure></div></div>
+      </details><div class="ethin">Only one above the floor, nothing to compare against</div>
+        </div>
+      </div>
+      <div class="ptile">
+        <div class="ptile-h">
+          <div class="ptile-n">Unassigned</div>
+          <div class="ptile-m"><b>Rs 13,488</b> &middot; 11 ads</div>
+          <div class="ptile-r"><span class="mer-ok">1.59x</span>
+            <em>+63% vs account</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>0 of 8 judged</em></div>
+          <div class="ethin">Nothing above Rs 10,000 this week (8 tracked)</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>1 of 2 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Unlabelled</span>
+          <span class="chip fund">Scale</span>
+          <span class="enum">2.09x</span>
+          <span class="edelta">+31%</span>
+          <span class="espend">Rs 10,292</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250240870350223" target="_blank" rel="noopener"><img src="https://scontent-fra5-2.xx.fbcdn.net/v/t39.30808-1/502410583_122125239722835766_5530406701854829043_n.jpg?_nc_cat=109&ccb=1-7&_nc_ohc=Kd78sm8P9JYQ7kNvwH1Z6nA&_nc_oc=AdpNndNsKHVmRdDX3U6t75wl9LVqBe3rgPRU99gleayK6GuUjrw6wXEpo1vbMKJSXCE&_nc_zt=24&_nc_ht=scontent-fra5-2.xx&edm=AJfPMC4EAAAA&_nc_gid=S8VQ8tKxFvwly8oUozl25A&_nc_tpa=Q5bMBQIakDdi62IqTxDU90WK00jl7YgnbeZzrG-Z8lrlhv8dh14Kn6Fcq1wnOFv9O5U6FfVFNM2LNTehOA&stp=dst-emg0_fr_q75_tt6&ur=f907e8&_nc_sid=64c8fc&oh=00_AQI-df9wuRp_DlYzsR0M9Z0vGNBlm9U4CA5Dd9u3MWExrA&oe=6AA5EC8F" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 7,250</b> &middot; 2.54x
+            <span>Generic</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250743352190223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/786166727_1595982212208520_5756337672836707656_n.jpg?_nc_cat=104&ccb=1-7&_nc_ohc=nnZRa2T-u9oQ7kNvwHW0LL4&_nc_oc=Ado3TjAIpXwvYx1tT_2bSFa6kP4cyPPlax1BHE5xpCy-Vqwk9GsuSjzUUNOcI-HgJ2E&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=JsCdYSAqoUr3KY9YZSP8iw&_nc_tpa=Q5bMBQJCWKC3AsDzT0MRHpAJQHg5FlzIbiIgzUaygXIJ87mcVJ-WCP-hnMQVn1kVaIrsAnQUElTneAEdWw&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=d2b52d&_nc_sid=58080a&oh=00_AQKZuTSMJl-v7Rrrzu7o61vI4qcNSadyq0K-ZDk4fpRVUw&oe=6AA5FE34" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 1,874</b> &middot; 0.80x
+            <span>Regular</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250732533550223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t45.1600-4/792585418_1564247332121625_1072202904247521450_n.png?_nc_cat=103&ccb=1-7&_nc_ohc=9mX6euQNcgYQ7kNvwFpwgQd&_nc_oc=AdrmLZuNLjq2u4ixHD0dHlYHyUAyaq4z1TJXOK6hOTkTdLMLet-PnHLijU8veR4w6ek&_nc_zt=1&_nc_ht=scontent-fra3-1.xx&edm=AJfPMC4EAAAA&_nc_gid=YYNKtdaURgat_G6yV6sHYQ&_nc_tpa=Q5bMBQL1Bb6IEJ0fTD9jHivoLOeL0bVOGTwgP5Fc9cOYm5d8Om65kIzPPGzBT0M4WyIyqzS46mCX_3MNcg&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQI-5Y0GQy6j1a9DamQD8tJVdYMedi3BikZ6Y-QQgPRJiQ&oe=6AA5FB81" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 721</b> &middot; 2.22x
+            <span>FindYourMatch</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250732533340223" target="_blank" rel="noopener"><img src="https://scontent-fra5-1.xx.fbcdn.net/v/t45.1600-4/793561849_1564247322121626_682599558650313762_n.png?_nc_cat=102&ccb=1-7&_nc_ohc=WdQQ-Ziwg-QQ7kNvwEByExt&_nc_oc=AdpE6M8bmYRe-mavxhLHOw-WOM_w1Bn8SnNtbR0tuJAgW8kxcMksJTKXFAxy1MC3gic&_nc_zt=1&_nc_ht=scontent-fra5-1.xx&edm=AJfPMC4EAAAA&_nc_gid=PRekSBy0TPxxreJrZGg3RQ&_nc_tpa=Q5bMBQI1VFuAabULYziH9H-d6A1tFHb3uf9ujCXPuMX5eD2t3LQ-uhaoyCi57fyUi5RnIQWb6oQOeXxn8A&stp=dst-emg0_fr_q75_tt6&ur=f0a831&_nc_sid=64c8fc&oh=00_AQIxvxaJeGd_lYMUAFGBRzjebEpTXu1zPFWK37au787-uQ&oe=6AA5F61E" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 446</b> &middot; 0.00x
+            <span>GetEssentials</span></figcaption></figure></div></div>
+      </details><div class="ethin">Only one above the floor, nothing to compare against</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>0 of 3 judged</em></div>
+          <div class="ethin">Nothing above Rs 10,000 this week (3 tracked)</div>
+        </div>
+      </div></div>
+
+
+<div class="ustrip">
+  <div class="t"><b>Blind spot.</b> Rs 34,814 of spend carries no angle in its ad name and
+    cannot be judged below. Rename those ads to the standard convention and they join the hub
+    automatically.</div>
+  <div class="v">Rs 34,814</div>
+</div>
+<details><summary>Which products are unlabelled</summary><div class="dbody">
+  <ul class="audit"><li><span>Detox on Demand</span><b>Rs 34,770</b></li><li><span>High & Dry</span><b>Rs 44</b></li><li><span>Shower in Seconds</span><b>Rs 0</b></li></ul></div></details>
+
+<details><summary>How the creative hub is built</summary><div class="dbody">
+ <ol class="notes">
+  <li><b>Parsing.</b> Ad names follow
+   <code>Product - Format - [Partnership] - [Creator] - Angle - Description - Type - Landing - Date</code>.
+   The parser anchors from both ends because the middle is variable length. Creator is whatever sits
+   immediately before <code>Partnership</code>, which is why lowercase handles are read correctly.</li>
+  <li><b>Offers are excluded</b>, Rs 2,330 this week. PriceSlash,
+   FreebieOffer, AOV999 and similar are promo levers, not creative angles.</li>
+  <li><b>Best and worst need two qualifying entries.</b> Where a product has only one entry above
+   the floor the tile says so rather than inventing a comparison.</li>
+  <li><b>Scale</b> means it beats its product average by 20% or more AND clears the account blend.
+   <b>Cut</b> means it is at or below 0.75x its product average, or under 60% of the account blend.
+   No chip means the gap is not decisive.</li>
+  <li><b>Creative type is a thin dimension.</b> Almost everything is Video or Static, and in a
+   single week only a handful of products carry enough of both to compare. Read it as a sanity
+   check, not a strategy input.</li>
+  <li><b>Thumbnails</b> come from Meta's CDN and the links open the ad in Ads Manager. The image
+   URLs are signed and expire in one to four days, so they are refreshed on every daily run. If a
+   run is skipped for more than a day some images may show blank while the numbers stay correct.</li>
+ </ol></div></details>
+
+<details><summary>Full numbers, every column</summary><div class="dbody"><div class="scroll">
+ <table class="det"><thead><tr><th class="l">Product</th>
+  <th>Meta</th><th>Meta tgt</th><th>Google</th><th>Google tgt</th>
+  <th>Spend ex GST</th><th>Ex GST tgt</th><th>Spend incl</th><th>Incl tgt</th>
+  <th>Revenue</th><th>Rev tgt</th><th>MER</th><th>MER tgt</th></tr></thead>
+  <tbody><tr class=""><td class="l">FIAF Family</td><td>Rs 75,367</td><td class="p">Rs 7,04,042</td><td>Rs 0</td><td class="p">Rs 78,227</td><td>Rs 75,367</td><td class="p">Rs 7,82,269</td><td><b>Rs 88,933</b></td><td class="p">Rs 9,23,077</td><td><b>Rs 92,510</b></td><td class="p">Rs 12,00,000</td><td>1.04</td><td class="p">1.30</td></tr><tr class=""><td class="l">Shower in Seconds</td><td>Rs 20,755</td><td class="p">Rs 3,81,356</td><td>Rs 0</td><td class="p">Rs 42,373</td><td>Rs 20,755</td><td class="p">Rs 4,23,729</td><td><b>Rs 24,491</b></td><td class="p">Rs 5,00,000</td><td><b>Rs 26,572</b></td><td class="p">Rs 5,00,000</td><td>1.08</td><td class="p">1.00</td></tr><tr class=""><td class="l">FWB</td><td>Rs 24,880</td><td class="p">Rs 2,77,350</td><td>Rs 642</td><td class="p">Rs 30,817</td><td>Rs 25,522</td><td class="p">Rs 3,08,166</td><td><b>Rs 30,116</b></td><td class="p">Rs 3,63,636</td><td><b>Rs 22,379</b></td><td class="p">Rs 4,00,000</td><td>0.74</td><td class="p">1.10</td></tr><tr class=""><td class="l">Don't Sweat It</td><td>Rs 6,935</td><td class="p">Rs 2,72,397</td><td>Rs 0</td><td class="p">Rs 30,266</td><td>Rs 6,935</td><td class="p">Rs 3,02,664</td><td><b>Rs 8,183</b></td><td class="p">Rs 3,57,143</td><td><b>Rs 14,994</b></td><td class="p">Rs 5,00,000</td><td>1.83</td><td class="p">1.40</td></tr><tr class=""><td class="l">Bye Bye Blow Dry</td><td>Rs 5,109</td><td class="p">Rs 2,34,681</td><td>Rs 0</td><td class="p">Rs 26,076</td><td>Rs 5,109</td><td class="p">Rs 2,60,756</td><td><b>Rs 6,029</b></td><td class="p">Rs 3,07,692</td><td><b>Rs 11,087</b></td><td class="p">Rs 4,00,000</td><td>1.84</td><td class="p">1.30</td></tr><tr class=""><td class="l">Detox on Demand</td><td>Rs 29,466</td><td class="p">Rs 1,52,542</td><td>Rs 0</td><td class="p">Rs 16,949</td><td>Rs 29,466</td><td class="p">Rs 1,69,492</td><td><b>Rs 34,770</b></td><td class="p">Rs 2,00,000</td><td><b>Rs 14,433</b></td><td class="p">Rs 2,00,000</td><td>0.42</td><td class="p">1.00</td></tr><tr class=""><td class="l">Smooth Operator</td><td>Rs 0</td><td class="p">Rs 1,27,119</td><td>Rs 0</td><td class="p">Rs 14,124</td><td>Rs 0</td><td class="p">Rs 1,41,243</td><td><b>Rs 0</b></td><td class="p">Rs 1,66,667</td><td><b>Rs 7,641</b></td><td class="p">Rs 2,00,000</td><td>-</td><td class="p">1.20</td></tr><tr class=""><td class="l">Intense Double Cleanse</td><td>Rs 6,205</td><td class="p">Rs 84,746</td><td>Rs 1,278</td><td class="p">Rs 9,416</td><td>Rs 7,482</td><td class="p">Rs 94,162</td><td><b>Rs 8,829</b></td><td class="p">Rs 1,11,111</td><td><b>Rs 13,286</b></td><td class="p">Rs 1,00,000</td><td>1.50</td><td class="p">0.90</td></tr><tr class=""><td class="l">Chill The Flakes Out</td><td>Rs 3,542</td><td class="p">Rs 76,271</td><td>Rs 0</td><td class="p">Rs 8,475</td><td>Rs 3,542</td><td class="p">Rs 84,746</td><td><b>Rs 4,180</b></td><td class="p">Rs 1,00,000</td><td><b>Rs 7,191</b></td><td class="p">Rs 1,00,000</td><td>1.72</td><td class="p">1.00</td></tr><tr class=""><td class="l">One Step Wonder</td><td>Rs 5,623</td><td class="p">Rs 76,271</td><td>Rs 0</td><td class="p">Rs 8,475</td><td>Rs 5,623</td><td class="p">Rs 84,746</td><td><b>Rs 6,635</b></td><td class="p">Rs 1,00,000</td><td><b>Rs 4,796</b></td><td class="p">Rs 1,00,000</td><td>0.72</td><td class="p">1.00</td></tr><tr class=""><td class="l">High & Dry</td><td>Rs 2,032</td><td class="p">Rs 35,202</td><td>Rs 0</td><td class="p">Rs 3,911</td><td>Rs 2,032</td><td class="p">Rs 39,114</td><td><b>Rs 2,398</b></td><td class="p">Rs 46,154</td><td><b>Rs 1,199</b></td><td class="p">Rs 60,000</td><td>0.50</td><td class="p">1.30</td></tr><tr class=""><td class="l">DUOS</td><td>Rs 1,643</td><td class="p">Rs 15,254</td><td>Rs 0</td><td class="p">Rs 1,695</td><td>Rs 1,643</td><td class="p">Rs 16,949</td><td><b>Rs 1,938</b></td><td class="p">Rs 20,000</td><td><b>Rs 36,637</b></td><td class="p">Rs 60,000</td><td>18.90</td><td class="p">3.00</td></tr><tr class=""><td class="l">Hair & Everywhere</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 0</td><td><b>Rs 3,798</b></td><td class="p">Rs 60,000</td><td>-</td><td class="p">-</td></tr><tr class=""><td class="l">SIS Green Juice</td><td>Rs 502</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 502</td><td class="p">Rs 0</td><td><b>Rs 592</b></td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 60,000</td><td>0.00</td><td class="p">-</td></tr><tr class=""><td class="l">Fuller Without Filler</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 0</td><td><b>Rs 1,947</b></td><td class="p">Rs 60,000</td><td>-</td><td class="p">-</td></tr><tr class="un"><td class="l">Unassigned</td><td>Rs 11,430</td><td class="p">-</td><td>Rs 23,340</td><td class="p">-</td><td>Rs 34,771</td><td class="p">-</td><td><b>Rs 41,029</b></td><td class="p">-</td><td><b>Rs 0</b></td><td class="p">-</td><td>0.00</td><td class="p">-</td></tr></tbody></table></div></div></details>
+
+<details><summary>Reconciliation and unassigned audit</summary><div class="dbody">
+ <ul class="audit"><li><span>Meta &mdash; raw Rs 1,93,489, mapped plus unassigned Rs 1,93,489</span><b>ties</b></li><li><span>Google &mdash; raw Rs 25,259, mapped plus unassigned Rs 25,259</span><b>ties</b></li><li><span>Shopify revenue &mdash; raw Rs 2,58,470, mapped plus unassigned Rs 2,58,470</span><b>ties</b></li></ul>
+ <div class="cols">
+  <div class='acol'><h5>meta ads with no product token <em>Rs 11,430</em></h5><ul class='audit'><li><span>All Products - Single product Catalog - Generic - PDP - 26/03/26</span><b>Rs 6,144</b></li><li><span>Quiz - Arushi - Regular - Video - HP - 26/08/26</span><b>Rs 1,588</b></li><li><span>Generic - Founder - Partnership - LuxuryOfLess - HavingYouToDoLess - Video - CP - 31/08/26</span><b>Rs 967</b></li><li><span>Quiz - WhatWorksForYou - FindYourMatch - Static - CP - 02/09/26</span><b>Rs 611</b></li><li><span>SO - Founder - Partnership - GlycolicAcidBenefits - DifferentThanOtherGlycolicAcid - Video - PDP - 31/08/26</span><b>Rs 590</b></li><li><span>SO - Founder - Partnership - StrawberryLegs - Video - PDP - 10/07/26</span><b>Rs 487</b></li><li><span>Quiz - ScanYourFace - GetEssentials - Static - CP - 02/09/26</span><b>Rs 378</b></li><li><span>SO - Founder - Partnership - GlycolicAcidBenefits - WhyItsBest - Video - PDP - 01/08/26</span><b>Rs 348</b></li><li><span>SO - Founder - Partnership - StrawberryLegs - Nonetheless - Video - PDP - 07/08/26</span><b>Rs 163</b></li><li><span>SO - Founder - Partnership - BeforeAfter - RightAfterWaxing - Video - PDP - 19/08/26</span><b>Rs 140</b></li><li><span>SO - Founder - Partnership - GlycolicAcidBenefits - BodyPolisher - Video - PDP - 25/08/26</span><b>Rs 13</b></li></ul></div>
+  <div class='acol'><h5>google generic campaigns <em>Rs 23,340</em></h5><ul class='audit'><li><span>Search_Brand_campaign_maxconversions(Re)</span><b>Rs 11,967</b></li><li><span>PLA_Shopping_Singles_tROAS(Acq)</span><b>Rs 6,104</b></li><li><span>Pmax_Brand_Sales_Retargeting(Re)</span><b>Rs 3,722</b></li><li><span>Pmax_InterestTargeting(Acq)</span><b>Rs 1,214</b></li><li><span>Search_Brand_campaign_troas(Re)</span><b>Rs 333</b></li></ul></div>
+  <div class='acol'><h5>shopify lines outside the plan</h5><p class='fine'>Nothing unmapped.</p></div>
+ </div></div></details>
+
+<details><summary>How to read this</summary><div class="dbody">
+ <ol class="notes">
+  <li><b>The pace marker is the point.</b> The dark tick on every bar sits at
+   14%, where the week has actually got to. A fill short of the tick is behind
+   pace, a fill past it is ahead. Judge against the tick, never against a full bar.</li>
+  <li><b>Product MER, not ROAS.</b> Numerator is all channel Shopify net sales for the
+   product including organic and quick commerce. Denominator is only the spend we could
+   attribute to that product. Products with organic pull read high, products carrying
+   prospecting spend read low. This will not tie to Meta reported ROAS.</li>
+  <li><b>Total spend</b> is (Meta + Google) x 1.18. The sheet states targets and target
+   ROAS on GST inclusive spend, so MER and its target are directly comparable.</li>
+  <li><b>Targets are the stated weekly figures</b> from the Internal Weekly Checkpoint
+   tab, not a pro rata of the month. Weeks with targets today:
+   W1, W2.</li>
+  <li><b>Google product coverage is thin.</b> Only five campaigns carry a product token.
+   92% of Google spend is brand, shopping or generic Pmax and sits in
+   Unassigned, so per product Google spend is understated throughout.</li>
+  <li><b>Smooth Operator shows zero spend by design.</b> The short form <code>SO</code>
+   was excluded from the product logic as ambiguous and no ad spells the name out, so its
+   ads sit in Unassigned. Restoring the token would fix that row.</li>
+  <li><b>Mapping</b> matches the product word or its short form on token boundaries.
+   GSIS resolves before SIS, Pouch maps to Don't Sweat It, Detox to Detox on Demand,
+   H&amp;D to High &amp; Dry. First match wins, nothing is double counted, FIAF refill and
+   jar combos stay inside FIAF Family.</li>
+  <li><b>Creative count is not in this version.</b> Weekly creative targets exist in the
+   sheet but the Meta Creatives Update tab cannot be read end to end yet.</li>
+  <li><b>September context.</b> Month target is Rs 1.60 Cr spend
+   incl GST against Rs 2.00 Cr revenue at
+   1.25.</li>
+ </ol></div></details>
+
+<div class="sec" style="margin-top:28px">September weeks</div>
+<div class="pills"><div class="pill "><b>W1</b><span>31 Aug to 06 Sep</span><i>target set</i></div><div class="pill on"><b>W2</b><span>07 Sep to 13 Sep</span><i>target set</i></div><div class="pill "><b>W3</b><span>14 Sep to 20 Sep</span><i>target pending</i></div><div class="pill "><b>W4</b><span>21 Sep to 27 Sep</span><i>target pending</i></div><div class="pill "><b>W5</b><span>28 Sep to 30 Sep</span><i>target pending</i></div></div>
+
+<footer>Beyond Ads &middot; hello@gobeyondads.com &middot; +91 9553926661 &middot;
+ Banjara Hills, Hyderabad 500082<br>
+ Google Partner &middot; Meta Business Partner &middot; Amazon Ads Verified Partner &middot;
+ Shopify Partner<br>
+ Sources: Windsor.ai (Meta Ads, Google Ads, Shopify) &middot; Antinorm Media Plan,
+ Internal Weekly Checkpoint. Refreshes every morning at 11:00 IST.
+</footer>
+</div></body></html>

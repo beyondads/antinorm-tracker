@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>AntiNorm Product Tracker &middot; October W3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:Inter,Helvetica,Arial,sans-serif;background:#F2F7FB;color:#333333;
+  font-size:13px;line-height:1.5;padding:28px 24px 40px;-webkit-font-smoothing:antialiased}
+ .wrap{max-width:1240px;margin:0 auto}
+
+ header{display:flex;justify-content:space-between;align-items:flex-end;
+  gap:24px;flex-wrap:wrap;margin-bottom:20px;padding:0 4px}
+ .mark{font-size:19px;font-weight:700;color:#004AAD;letter-spacing:-.3px}
+ .mark span{font-weight:400;color:#63ABFF}
+ .tagline{font-size:8.5px;color:#666666;letter-spacing:.16em;text-transform:uppercase;margin-top:1px}
+ h1{font-size:15px;font-weight:600;color:#1A1A2E;margin-top:14px}
+ .hmeta{text-align:right;font-size:11px;color:#666666;line-height:1.7}
+ .hmeta b{color:#1A1A2E;font-weight:600}
+
+ .banner{background:#fff;border-left:3px solid #004AAD;border-radius:10px;
+  padding:13px 18px;margin-bottom:20px;font-size:12px}
+ .banner b{color:#1A1A2E}
+
+ .hero{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:1px;background:#E3EBF3;
+  border-radius:18px;overflow:hidden;margin-bottom:28px}
+ .hcell{background:#fff;padding:26px 28px}
+ .hcell.lead{padding:26px 32px}
+ .hlabel{font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:#666666;
+  font-weight:600}
+ .hnum{font-size:52px;font-weight:700;color:#1A1A2E;letter-spacing:-1.6px;
+  line-height:1.05;margin-top:10px}
+ .snum{font-size:27px;font-weight:700;color:#1A1A2E;letter-spacing:-.7px;margin-top:10px}
+ .hsub{font-size:11.5px;color:#666666;margin-top:6px}
+ .hsub b{color:#333333;font-weight:600}
+
+ .bar{width:100%;min-width:96px}
+ .bar.wide{margin-top:16px}
+ .track{position:relative;height:7px;background:#B8D8F8;border-radius:4px}
+ .fill{position:absolute;left:0;top:0;bottom:0;background:#004AAD;border-radius:0 4px 4px 0}
+ .tick{position:absolute;top:-3px;bottom:-3px;width:2px;background:#1A1A2E;border-radius:1px}
+ .barmeta{display:flex;align-items:baseline;gap:7px;margin-top:6px}
+ .att{font-size:11px;font-weight:600;color:#333333;font-variant-numeric:tabular-nums}
+ .over{font-size:9.5px;font-weight:600;color:#fff;background:#1A1A2E;border-radius:4px;padding:1px 5px}
+ .bar-na{font-size:10.5px;color:#666666}
+ .bar.mini{min-width:0;width:64px;margin:6px 0 0 auto}
+ .bar.mini .track{height:4px}
+
+ .sec{font-size:11px;font-weight:700;color:#1A1A2E;text-transform:uppercase;
+  letter-spacing:.13em;margin:0 4px 14px}
+ .sec em{font-style:normal;font-weight:400;color:#666666;text-transform:none;
+  letter-spacing:0;margin-left:10px;font-size:11.5px}
+ .acards{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));
+  gap:16px;margin-bottom:30px}
+ .acard{border-radius:16px;padding:22px 24px;background:#fff;border:1px solid #E3EBF3}
+ .acard.act{background:#1A1A2E;border-color:#1A1A2E}
+ .acard.fund{background:#004AAD;border-color:#004AAD}
+ .acard.watch{background:#B8D8F8;border-color:#B8D8F8}
+ .acard-k{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:#666666}
+ .acard.act .acard-k,.acard.fund .acard-k{color:#B8D8F8}
+ .acard.watch .acard-k{color:#004AAD}
+ .acard-p{font-size:19px;font-weight:700;color:#1A1A2E;margin-top:8px;letter-spacing:-.3px}
+ .acard.act .acard-p,.acard.fund .acard-p{color:#fff}
+ .acard-n{font-size:11.5px;color:#666666;margin-top:5px}
+ .acard.act .acard-n,.acard.fund .acard-n{color:#B8D8F8}
+ .acard-f{display:flex;gap:26px;margin-top:16px;padding-top:14px;border-top:1px solid #E3EBF3}
+ .acard.act .acard-f,.acard.fund .acard-f{border-top-color:rgba(255,255,255,.22)}
+ .acard.watch .acard-f{border-top-color:rgba(0,74,173,.2)}
+ .acard-f span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#666666}
+ .acard.act .acard-f span,.acard.fund .acard-f span{color:#B8D8F8}
+ .acard-f b{display:block;font-size:15px;font-weight:700;color:#1A1A2E;margin-top:3px}
+ .acard.act .acard-f b,.acard.fund .acard-f b{color:#fff}
+ .acard-f i{display:block;font-style:normal;font-size:10px;color:#666666;margin-top:1px}
+ .acard.act .acard-f i,.acard.fund .acard-f i{color:#B8D8F8}
+
+ .panel{background:#fff;border-radius:18px;padding:8px 8px 4px;margin-bottom:28px}
+ table.main{width:100%;border-collapse:collapse}
+ table.main thead th{font-size:9.5px;text-transform:uppercase;letter-spacing:.11em;
+  color:#666666;font-weight:600;text-align:right;padding:16px 14px 12px;
+  border-bottom:1px solid #E3EBF3;white-space:nowrap}
+ table.main thead th.l{text-align:left}
+ table.main tbody td{padding:15px 14px;border-bottom:1px solid #E3EBF3;vertical-align:middle}
+ table.main tbody tr:last-child td{border-bottom:none}
+ table.main tbody tr:hover td{background:#F2F7FB}
+ .c-prod{width:24%}
+ .pname{font-size:14px;font-weight:600;color:#1A1A2E}
+ .psplit{font-size:10.5px;color:#666666;margin-top:3px;font-variant-numeric:tabular-nums}
+ .rnote{font-size:10.5px;color:#333333;margin-top:5px}
+ .c-st{width:12%}
+ .c-num,.c-mer{text-align:right;white-space:nowrap}
+ .c-bar{width:13%}
+ .big{font-size:14px;font-weight:600;color:#1A1A2E;font-variant-numeric:tabular-nums}
+ .small{font-size:10.5px;color:#666666;margin-top:2px;font-variant-numeric:tabular-nums}
+ .mer-ok{color:#004AAD;font-weight:700}
+ .mer-low{color:#666666}
+ .chip{display:inline-block;font-size:10px;font-weight:600;padding:4px 10px;
+  border-radius:6px;white-space:nowrap;border:1px solid transparent}
+ .chip.act{background:#1A1A2E;color:#fff}
+ .chip.fund{background:#004AAD;color:#fff}
+ .chip.watch{background:#B8D8F8;color:#1A1A2E}
+ .chip.behind{background:#F2F7FB;color:#333333;border-color:#E3EBF3}
+ .chip.ontrack{background:#fff;color:#666666;border-color:#E3EBF3}
+ .chip.nospend,.chip.idle,.chip.none{background:#fff;color:#666666;border-color:#E3EBF3}
+ tfoot td{padding:16px 14px;border-top:2px solid #1A1A2E;font-weight:700;color:#1A1A2E;
+  font-size:13px;text-align:right;font-variant-numeric:tabular-nums}
+ tfoot td.l{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase}
+
+ .ustrip{display:flex;justify-content:space-between;align-items:center;gap:20px;
+  background:#B8D8F8;border-radius:14px;padding:16px 24px;margin-bottom:28px;flex-wrap:wrap}
+ .ustrip .t{font-size:12px;color:#1A1A2E}
+ .ustrip .t b{font-weight:700}
+ .ustrip .v{font-size:15px;font-weight:700;color:#1A1A2E;font-variant-numeric:tabular-nums}
+
+ details{background:#fff;border-radius:16px;margin-bottom:14px;overflow:hidden}
+ summary{padding:18px 26px;font-size:12.5px;font-weight:600;color:#004AAD;cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;align-items:center}
+ summary::-webkit-details-marker{display:none}
+ summary::after{content:"+";font-size:17px;color:#666666;font-weight:400}
+ details[open] summary::after{content:"\\2212"}
+ details[open] summary{border-bottom:1px solid #E3EBF3}
+ .dbody{padding:22px 26px 26px}
+ .scroll{overflow-x:auto}
+ table.det{width:100%;border-collapse:collapse;font-size:11.5px;min-width:1080px}
+ table.det th{background:#F2F7FB;color:#666666;font-size:9px;text-transform:uppercase;
+  letter-spacing:.07em;padding:9px 8px;text-align:right;white-space:nowrap;font-weight:600}
+ table.det th.l,table.det td.l{text-align:left}
+ table.det td{padding:8px;border-bottom:1px solid #E3EBF3;text-align:right;
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+ table.det td.p{color:#666666}
+ table.det tr.un{background:#F2F7FB}
+ .acol{min-width:0}
+ ul.audit{list-style:none;font-size:11px;margin-bottom:0}
+ ul.audit li{display:flex;justify-content:space-between;gap:16px;padding:6px 0;
+  border-bottom:1px solid #E3EBF3}
+ ul.audit li span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ ul.audit li b{font-variant-numeric:tabular-nums;white-space:nowrap;color:#1A1A2E}
+ h5{font-size:11px;color:#004AAD;margin:0 0 8px;text-transform:lowercase;font-weight:600}
+ h5 em{font-style:normal;color:#666666;font-weight:400;text-transform:none}
+ .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+ ol.notes{font-size:12px;padding-left:20px} ol.notes li{margin-bottom:10px}
+ ol.notes b{color:#1A1A2E}
+ .fine{font-size:11px;color:#666666}
+
+ /* two level nav */
+ .monthnav{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px;padding:0 2px}
+ .mtab{font-size:12.5px;font-weight:600;color:#004AAD;background:#fff;border:1px solid #E3EBF3;
+  border-radius:9px;padding:8px 16px;text-decoration:none;transition:border-color .12s}
+ a.mtab:hover{border-color:#63ABFF}
+ .mtab.on{background:#1A1A2E;border-color:#1A1A2E;color:#fff}
+ .mtab.off{opacity:.45}
+ .weeknav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px}
+ .pill{flex:1;min-width:124px;background:#fff;border-radius:12px;padding:11px 15px;
+  border:1px solid #E3EBF3;text-decoration:none;transition:border-color .12s,box-shadow .12s}
+ a.pill:hover{border-color:#63ABFF;box-shadow:0 2px 10px rgba(0,74,173,.10)}
+ .pill.on{background:#004AAD;border-color:#004AAD}
+ .pill.off{opacity:.5}
+ .pill b{display:block;font-size:13px;color:#004AAD}
+ .pill.on b{color:#fff}
+ a.pill b::after{content:" \\2192";font-size:11px;color:#666666}
+ .pill span{display:block;font-size:10.5px;color:#666666;margin-top:2px}
+ .pill.on span{color:#B8D8F8}
+ .pill i{display:block;font-style:normal;font-size:8.5px;color:#666666;margin-top:4px;
+  text-transform:uppercase;letter-spacing:.09em}
+ .pill.on i{color:#B8D8F8}
+
+ /* creative hub */
+ .hubnote{background:#fff;border-left:3px solid #63ABFF;border-radius:10px;padding:14px 20px;
+   margin-bottom:20px;font-size:12px}
+ .hubnote strong{color:#1A1A2E}
+ .ptiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(470px,1fr));
+   gap:16px;margin-bottom:28px}
+ .ptile{background:#fff;border-radius:18px;padding:22px 24px}
+ .ptile-uw{background:#FCF6F4;box-shadow:inset 3px 0 0 #C25A4B}
+ .ptile-h{display:grid;grid-template-columns:1fr auto;gap:4px 14px;align-items:baseline;
+   padding-bottom:14px;border-bottom:1px solid #E3EBF3;margin-bottom:4px}
+ .ptile-n{font-size:16px;font-weight:700;color:#1A1A2E;letter-spacing:-.2px}
+ .uw{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.3px;
+   text-transform:uppercase;color:#B0402F;background:#F6DED8;border-radius:5px;
+   padding:2px 7px;vertical-align:middle;margin-left:6px}
+ .ptile-r{text-align:right;font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
+ .ptile-r em{display:block;font-style:normal;font-size:10px;font-weight:400;color:#666666;margin-top:1px}
+ .ptile-m{font-size:11px;color:#666666;font-variant-numeric:tabular-nums}
+ .ptile-m b{color:#333333;font-weight:600}
+ .dimblock{padding-top:14px}
+ .dimhead{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+   color:#666666;margin-bottom:6px;display:flex;justify-content:space-between}
+ .dimhead em{font-style:normal;font-weight:400;letter-spacing:.04em;text-transform:none;font-size:10px}
+ .erow{border-radius:8px}
+ .erow+.erow{margin-top:3px}
+ .egap{height:9px}
+ .erow summary{display:grid;grid-template-columns:52px minmax(0,1fr) auto auto 44px 68px;gap:8px;
+   align-items:center;padding:7px 8px 7px 14px;cursor:pointer;list-style:none;border-radius:8px;
+   font-variant-numeric:tabular-nums;position:relative}
+ .erow summary::-webkit-details-marker{display:none}
+ .erow summary::after,.erow[open]>summary::after{content:none}
+ .erow summary::before{content:"›";color:#666666;font-size:13px;line-height:1;
+   position:absolute;left:-2px;opacity:.55;transition:transform .12s}
+ .erow[open]>summary::before{transform:rotate(90deg)}
+ .nochip{display:block;width:0}
+ .erow summary:hover{background:#F2F7FB}
+ .erow.best summary{background:#F2F7FB}
+ .erow.best summary:hover{background:#B8D8F8}
+ .etag{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+   color:#666666;white-space:nowrap}
+ .erow.best .etag{color:#004AAD}
+ .ekey{font-size:12.5px;font-weight:600;color:#1A1A2E;overflow:hidden;
+   text-overflow:ellipsis;white-space:nowrap}
+ .enum{font-size:13px;font-weight:700;color:#1A1A2E}
+ .edelta{font-size:11px;font-weight:600;color:#666666;text-align:right}
+ .erow.best .edelta{color:#004AAD}
+ .espend{font-size:10.5px;color:#666666;text-align:right;white-space:nowrap}
+ .erow .chip{font-size:9px;padding:2px 7px}
+ .ebody{padding:10px 8px 12px}
+ .ethin{font-size:10.5px;color:#666666;padding:6px 8px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+ .thumb{margin:0}
+ .thumb img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px;display:block;background:#F2F7FB}
+ .thumb a{display:block}
+ .noimg{width:100%;aspect-ratio:1;border-radius:8px;background:#F2F7FB;display:flex;
+   align-items:center;justify-content:center;font-size:9px;color:#666666;text-align:center}
+ .thumb figcaption{font-size:9.5px;color:#666666;margin-top:5px;line-height:1.35;
+   font-variant-numeric:tabular-nums}
+ .thumb figcaption b{color:#1A1A2E;font-weight:600}
+ .thumb figcaption span{display:block;color:#666666;overflow:hidden;
+   text-overflow:ellipsis;white-space:nowrap}
+ .thumb figcaption span.rgood,.thumb figcaption span.rbad{display:inline;overflow:visible;font-weight:700}
+ .thumb figcaption span.rgood{color:#004AAD}
+ .thumb figcaption span.rbad{color:#C25A4B}
+ @media (max-width:900px){.ptiles{grid-template-columns:1fr}}
+ footer{font-size:10px;color:#666666;padding:18px 4px 0;line-height:1.8}
+ @media (max-width:1080px){.hero{grid-template-columns:1fr 1fr}}
+ @media (max-width:720px){.hero{grid-template-columns:1fr} table.main thead{display:none}}
+</style></head><body><div class="wrap">
+
+<header>
+ <div><div class="mark">beyond <span>ads</span></div>
+  <div class="tagline">A D2C Boutique Agency</div>
+  <h1>AntiNorm &middot; product tracker</h1></div>
+ <div class="hmeta"><b>October W3 &middot; 12 Oct to 18 Oct 2026</b><br>
+  Day 1 of 7 &middot; 14% of week elapsed<br>
+  Locked 13 Oct 2026, 05:54 IST</div>
+</header>
+
+<div class="monthnav"><a class="mtab" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/sep/">September 2026</a><div class="mtab on">October 2026</div></div><div class="weeknav"><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/"><b>Month</b><span>01 Oct to 31 Oct</span><i>all weeks</i></a><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w1/"><b>W1</b><span>01 Oct to 04 Oct</span><i>target set</i></a><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w2/"><b>W2</b><span>05 Oct to 11 Oct</span><i>target set</i></a><div class="pill on"><b>W3</b><span>12 Oct to 18 Oct</span><i>target set</i></div><div class="pill off"><b>W4</b><span>19 Oct to 25 Oct</span><i>target set</i></div><div class="pill off"><b>W5</b><span>26 Oct to 31 Oct</span><i>target set</i></div></div>
+
+<div class="banner"><b>Week still running.</b> Day 1 of 7, data through 12 Oct. Compare every bar against the pace marker, not against 100%. Refreshes tomorrow at 11:00 IST.</div>
+
+<div class="hero">
+ <div class="hcell lead"><div class="hlabel">Revenue this week</div>
+  <div class="hnum">Rs 1.64 L</div>
+  <div class="hsub">against a target of <b>Rs 40.00 L</b></div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:4.1%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">4%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Spend incl GST</div>
+  <div class="snum">Rs 2.01 L</div>
+  <div class="hsub">target <b>Rs 31.73 L</b><br>
+   ex GST Rs 1.70 L</div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:6.3%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">6%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Product MER</div>
+  <div class="snum">0.81x</div>
+  <div class="hsub">target <b>1.26x</b><br>revenue over GST inclusive spend</div>
+  <div class="bar wide"><div class="track"><div class="fill" style="width:64.6%"></div></div><div class="barmeta"><span class="att">65%</span></div></div></div>
+ <div class="hcell"><div class="hlabel">Unassigned spend</div>
+  <div class="snum">15.7%</div>
+  <div class="hsub"><b>Rs 31,487</b> with no product<br>mostly Google generic</div></div>
+</div>
+
+<div class="sec">Where to look <em>ranked by money at stake, not alphabetically</em></div>
+<div class="acards">
+      <div class="acard fund">
+        <div class="acard-k">Push budget in</div>
+        <div class="acard-p">Shaving Grace</div>
+        <div class="acard-n">Beating target MER at 350%, only 1% of budget used</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 1,218</b>
+            <i>of Rs 1,33,333</i></div>
+          <div><span>MER</span><b>5.25</b><i>target 1.50</i></div>
+        </div>
+      </div>
+      <div class="acard fund">
+        <div class="acard-k">Push budget in</div>
+        <div class="acard-p">Don't Sweat It</div>
+        <div class="acard-n">Beating target MER at 201%, only 2% of budget used</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 3,769</b>
+            <i>of Rs 1,69,697</i></div>
+          <div><span>MER</span><b>3.32</b><i>target 1.65</i></div>
+        </div>
+      </div>
+      <div class="acard watch">
+        <div class="acard-k">Diagnose</div>
+        <div class="acard-p">FIAF Family</div>
+        <div class="acard-n">MER at 74% of target</div>
+        <div class="acard-f">
+          <div><span>Spend</span><b>Rs 83,562</b>
+            <i>of Rs 12,86,957</i></div>
+          <div><span>MER</span><b>0.85</b><i>target 1.15</i></div>
+        </div>
+      </div></div>
+
+<div class="sec">Every product <em>ranked by revenue contribution, biggest first</em></div>
+<div class="panel"><table class="main">
+ <thead><tr>
+  <th class="l">Product</th><th class="l">Status</th>
+  <th>Spend incl GST</th><th class="l">vs target</th>
+  <th>Revenue</th><th class="l">vs target</th><th>MER</th>
+ </tr></thead>
+ <tbody>
+      <tr>
+        <td class="c-prod"><div class="pname">FIAF Family</div>
+          <div class="psplit">Meta Rs 70,493 &middot; Google Rs 323</div><div class="rnote">MER at 74% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 83,562</div>
+          <div class="small">of Rs 12,86,957</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:6.5%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">6%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 70,836</div>
+          <div class="small">of Rs 14,80,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:4.8%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">5%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.85</div>
+          <div class="small">target 1.15</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:73.7%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">FWB</div>
+          <div class="psplit">Meta Rs 28,827 &middot; Google Rs 0</div><div class="rnote">MER at 50% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 34,016</div>
+          <div class="small">of Rs 3,80,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:9.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">9%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 17,083</div>
+          <div class="small">of Rs 3,80,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:4.5%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">4%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.50</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:50.2%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Don't Sweat It</div>
+          <div class="psplit">Meta Rs 3,194 &middot; Google Rs 0</div><div class="rnote">Beating target MER at 201%, only 2% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 3,769</div>
+          <div class="small">of Rs 1,69,697</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:2.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 12,495</div>
+          <div class="small">of Rs 2,80,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:4.5%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">4%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">3.32</div>
+          <div class="small">target 1.65</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Bye Bye Blow Dry</div>
+          <div class="psplit">Meta Rs 7,566 &middot; Google Rs 0</div><div class="rnote">Only 2% of budget used</div></td>
+        <td class="c-st"><span class="chip behind">Behind pace</span></td>
+        <td class="c-num"><div class="big">Rs 8,928</div>
+          <div class="small">of Rs 3,66,667</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:2.4%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 10,889</div>
+          <div class="small">of Rs 4,40,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:2.5%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">1.22</div>
+          <div class="small">target 1.20</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Detox on Demand</div>
+          <div class="psplit">Meta Rs 15,884 &middot; Google Rs 0</div><div class="rnote">MER at 45% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 18,744</div>
+          <div class="small">of Rs 2,66,667</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:7.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">7%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 10,188</div>
+          <div class="small">of Rs 3,20,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:3.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">3%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.54</div>
+          <div class="small">target 1.20</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:45.3%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Shaving Grace</div>
+          <div class="psplit">Meta Rs 1,032 &middot; Google Rs 0</div><div class="rnote">Beating target MER at 350%, only 1% of budget used</div></td>
+        <td class="c-st"><span class="chip fund">Feed it</span></td>
+        <td class="c-num"><div class="big">Rs 1,218</div>
+          <div class="small">of Rs 1,33,333</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.9%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">1%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 6,392</div>
+          <div class="small">of Rs 2,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:3.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">3%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-ok">5.25</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:100.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Shower in Seconds</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 2,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 6,293</div>
+          <div class="small">of Rs 2,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:3.1%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">3%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">High & Dry</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 13,333</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 4,796</div>
+          <div class="small">of Rs 20,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:24.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">24%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Fuller Without Filler</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">No spend planned or run</div></td>
+        <td class="c-st"><span class="chip idle">Not funded</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 0</div></td>
+        <td class="c-bar"><div class="bar-na">no target</div></td>
+        <td class="c-num"><div class="big">Rs 4,543</div>
+          <div class="small">of Rs 20,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:22.7%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">23%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target -</div>
+          </td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Splash & Dash</div>
+          <div class="psplit">Meta Rs 8,642 &middot; Google Rs 0</div><div class="rnote">MER at 28% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 10,198</div>
+          <div class="small">of Rs 93,333</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:10.9%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">11%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 4,245</div>
+          <div class="small">of Rs 1,40,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:3.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">3%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.42</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:27.8%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Smooth Operator</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 53,333</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 3,396</div>
+          <div class="small">of Rs 80,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:4.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">4%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">DUOS</div>
+          <div class="psplit">Meta Rs 6,877 &middot; Google Rs 0</div><div class="rnote">MER at 6% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 8,115</div>
+          <div class="small">of Rs 50,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:16.2%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">16%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 1,995</div>
+          <div class="small">of Rs 2,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:1.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">1%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">0.25</div>
+          <div class="small">target 4.00</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:6.1%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Intense Double Cleanse</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 66,667</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 1,898</div>
+          <div class="small">of Rs 1,00,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:1.9%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Chill The Flakes Out</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 561</div><div class="rnote">MER at 81% of target</div></td>
+        <td class="c-st"><span class="chip watch">Weak MER</span></td>
+        <td class="c-num"><div class="big">Rs 662</div>
+          <div class="small">of Rs 40,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:1.7%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">2%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 799</div>
+          <div class="small">of Rs 60,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:1.3%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">1%</span></div></div></td>
+        <td class="c-mer"><div class="big mer-low">1.21</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:80.5%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">One Step Wonder</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 26,667</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 40,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">Hair & Everywhere</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 13,333</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 20,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+      <tr>
+        <td class="c-prod"><div class="pname">SIS Green Juice</div>
+          <div class="psplit">Meta Rs 0 &middot; Google Rs 0</div><div class="rnote">Budget allocated but nothing spent</div></td>
+        <td class="c-st"><span class="chip nospend">No spend</span></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 13,333</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-num"><div class="big">Rs 0</div>
+          <div class="small">of Rs 20,000</div></td>
+        <td class="c-bar"><div class="bar"><div class="track"><div class="fill" style="width:0.0%"></div><div class="tick" style="left:14.3%"></div></div><div class="barmeta"><span class="att">0%</span></div></div></td>
+        <td class="c-mer"><div class="big ">-</div>
+          <div class="small">target 1.50</div>
+          <div class="bar mini"><div class="track"><div class="fill" style="width:0.0%"></div></div></div></td>
+      </tr>
+ </tbody>
+ <tfoot><tr><td class="l">Total</td><td></td>
+  <td>Rs 2,00,697</td><td></td>
+  <td>Rs 1,63,544</td><td></td><td>0.81x</td></tr></tfoot>
+</table></div>
+
+<div class="ustrip">
+ <div class="t"><b>Unassigned</b> &mdash; Rs 31,487 of spend and Rs 7,696
+  of revenue sit outside the plan. 93% of all Google spend has no product token.</div>
+ <div class="v">15.7% of spend</div>
+</div>
+
+
+<div class="sec">Creative hub <em>best and worst per product, 12 Oct to 18 Oct 2026</em></div>
+
+<div class="hubnote">Every number here is <strong>Meta attributed</strong> revenue over GST
+ inclusive spend. Two references are used. An entry is ranked against <strong>its own
+ product's</strong> blended Meta ROAS, so best means above the product average and worst means
+ below it, and a healthy entry is never called a laggard just for being the lowest of a strong
+ set. Whether a leader is actually good is decided by that product's own <strong>brand line</strong>,
+ shown in each tile header. The line is the product's plan ROAS target translated onto this
+ Meta basis: plan targets are stated on MER (Shopify revenue over total spend), this section runs
+ on Meta last-click, so each target is scaled by the account's ratio of Meta ROAS to blended MER,
+ currently 0.71x over 0.81x = <strong>0.87x</strong>. A product below its line is
+ badged <span class="uw">below line</span>, and an entry earns <strong>Scale</strong> only if it
+ beats its product average by 20% AND clears that line. An entry needs Rs 10,000 of
+ spend before it is ranked, a single ad needs Rs 5,000 before it shows its own
+ thumbnail. Click any row for the ads.</div>
+
+<div class="ptiles">
+      <div class="ptile ptile-uw">
+        <div class="ptile-h">
+          <div class="ptile-n">FIAF Family <span class="uw">below line</span></div>
+          <div class="ptile-m"><b>Rs 81,196</b> &middot; 28 ads
+            &middot; line 1.00x, from a 1.15x plan target</div>
+          <div class="ptile-r"><span class="mer-low">0.75x</span>
+            <em>-25% vs 1.00x line</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>2 of 12 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">#1 best</span>
+          <span class="ekey">ReplaceMultipleProducts</span>
+          <span class="chip watch">Below 1.00x line</span>
+          <span class="enum">0.99x</span>
+          <span class="edelta">+31%</span>
+          <span class="espend">Rs 32,624</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120242672404950223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/669068850_1400871971791277_4528660362870858554_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=OJTFPZRx2xIQ7kNvwHOCLv_&_nc_oc=AdoGa_fAisLNY-ZiFfvb2xChSVsXAbNlh6an45k-dWNBGbyQXqKIROFJhuWAOV4Wvnk&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=3HsQFAYQZY7c_tCvRlPkrA&_nc_tpa=Q5bMBQKYTX1tlt8zuc5FBzBmto8eoblMK_dzWO9GKACEv7EQvxkWcN73U9jHYP8antEFrznSefCxZPNWjg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQPRvCzcWMn5RnZDKRs7l4cHe7QUfBlW0pAbjTEZlbCT0g&oe=6AD380E5" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 32,098</b> &middot; <span class="rgood">1.00x</span>
+            <span>Deepa Thadhani</span></figcaption></figure></div><p class="fine">1 more ad(s) under Rs 5,000 (Rs 526 combined), too little spend to judge on their own.</p></div>
+      </details>
+      <details class="erow best">
+        <summary>
+          <span class="etag">#2 best</span>
+          <span class="ekey">PreFestiveFacial</span>
+          <span class="chip watch">Below 1.00x line</span>
+          <span class="enum">0.77x</span>
+          <span class="edelta">+2%</span>
+          <span class="espend">Rs 18,199</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 18,199 across 8 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details><div class="egap"></div><div class="ethin">No clear laggard: nothing above the floor sits below this product's average</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>3 of 4 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">#1 best</span>
+          <span class="ekey">AI</span>
+          <span class="chip fund">Scale</span>
+          <span class="enum">1.00x</span>
+          <span class="edelta">+33%</span>
+          <span class="espend">Rs 17,283</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 17,283 across 12 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details>
+      <details class="erow best">
+        <summary>
+          <span class="etag">#2 best</span>
+          <span class="ekey">UGC</span>
+          <span class="chip watch">Below 1.00x line</span>
+          <span class="enum">0.76x</span>
+          <span class="edelta">+1%</span>
+          <span class="espend">Rs 49,719</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120242672404950223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/669068850_1400871971791277_4528660362870858554_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=OJTFPZRx2xIQ7kNvwHOCLv_&_nc_oc=AdoGa_fAisLNY-ZiFfvb2xChSVsXAbNlh6an45k-dWNBGbyQXqKIROFJhuWAOV4Wvnk&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=3HsQFAYQZY7c_tCvRlPkrA&_nc_tpa=Q5bMBQKYTX1tlt8zuc5FBzBmto8eoblMK_dzWO9GKACEv7EQvxkWcN73U9jHYP8antEFrznSefCxZPNWjg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQPRvCzcWMn5RnZDKRs7l4cHe7QUfBlW0pAbjTEZlbCT0g&oe=6AD380E5" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 32,098</b> &middot; <span class="rgood">1.00x</span>
+            <span>Deepa Thadhani</span></figcaption></figure></div><p class="fine">8 more ad(s) under Rs 5,000 (Rs 17,621 combined), too little spend to judge on their own.</p></div>
+      </details><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">Founder</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.46x</span>
+          <span class="edelta">-38%</span>
+          <span class="espend">Rs 13,331</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250170817700223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/765715791_2193634567870650_4989993397514484036_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=i3ZaWWXtjGoQ7kNvwFjTpGu&_nc_oc=AdpQTjUXUlj-tp54avuWf-trK6igS8uLFh2NR4dT5Wc-ejqlo556F-zfPpsEtdrlylc&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=YSmoO0pqNlh8OSLlZGNvPw&_nc_tpa=Q5bMBQJcKMNNHoBd5KAMLDVtQIsSAsxoWTUw354VyhwJH6ykWBIeA1azhhjQVda80gZzNlUdWeNP6SmAaQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQPBLgzUxFFignZnNtUaHIfYFGyOW8TDuBWMsiu9Cr3iYw&oe=6AD39B0D" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 7,546</b> &middot; <span class="rbad">0.32x</span>
+            <span>Founder</span></figcaption></figure></div><p class="fine">5 more ad(s) under Rs 5,000 (Rs 5,785 combined), too little spend to judge on their own.</p></div>
+      </details>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>1 of 3 judged</em></div>
+          <div class="ethin">No clear leader: nothing above the floor beats this product's average</div><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">Video</span>
+          <span class="nochip"></span>
+          <span class="enum">0.72x</span>
+          <span class="edelta">-4%</span>
+          <span class="espend">Rs 71,418</span>
+        </summary>
+        <div class="ebody"><div class="thumbs">
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120242672404950223" target="_blank" rel="noopener"><img src="https://scontent-fra3-1.xx.fbcdn.net/v/t15.5256-10/669068850_1400871971791277_4528660362870858554_n.jpg?_nc_cat=105&ccb=1-7&_nc_ohc=OJTFPZRx2xIQ7kNvwHOCLv_&_nc_oc=AdoGa_fAisLNY-ZiFfvb2xChSVsXAbNlh6an45k-dWNBGbyQXqKIROFJhuWAOV4Wvnk&_nc_zt=23&_nc_ht=scontent-fra3-1.xx&edm=AEuWsiQEAAAA&_nc_gid=3HsQFAYQZY7c_tCvRlPkrA&_nc_tpa=Q5bMBQKYTX1tlt8zuc5FBzBmto8eoblMK_dzWO9GKACEv7EQvxkWcN73U9jHYP8antEFrznSefCxZPNWjg&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=a7ce7f&_nc_sid=58080a&oh=00_AQPRvCzcWMn5RnZDKRs7l4cHe7QUfBlW0pAbjTEZlbCT0g&oe=6AD380E5" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 32,098</b> &middot; <span class="rgood">1.00x</span>
+            <span>Deepa Thadhani</span></figcaption></figure>
+        <figure class="thumb"><a href="https://adsmanager.facebook.com/adsmanager/manage/ads?act=665061062793662&selected_ad_ids=120250170817700223" target="_blank" rel="noopener"><img src="https://scontent-fra3-2.xx.fbcdn.net/v/t15.5256-10/765715791_2193634567870650_4989993397514484036_n.jpg?_nc_cat=111&ccb=1-7&_nc_ohc=i3ZaWWXtjGoQ7kNvwFjTpGu&_nc_oc=AdpQTjUXUlj-tp54avuWf-trK6igS8uLFh2NR4dT5Wc-ejqlo556F-zfPpsEtdrlylc&_nc_zt=23&_nc_ht=scontent-fra3-2.xx&edm=AEuWsiQEAAAA&_nc_gid=YSmoO0pqNlh8OSLlZGNvPw&_nc_tpa=Q5bMBQJcKMNNHoBd5KAMLDVtQIsSAsxoWTUw354VyhwJH6ykWBIeA1azhhjQVda80gZzNlUdWeNP6SmAaQ&stp=c0.5000x0.5000f_dst-emg0_p1024x1024_q75_tt6&ur=afbe02&_nc_sid=58080a&oh=00_AQPBLgzUxFFignZnNtUaHIfYFGyOW8TDuBWMsiu9Cr3iYw&oe=6AD39B0D" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
+          <figcaption><b>Rs 7,546</b> &middot; <span class="rbad">0.32x</span>
+            <span>Founder</span></figcaption></figure></div><p class="fine">20 more ad(s) under Rs 5,000 (Rs 31,774 combined), too little spend to judge on their own.</p></div>
+      </details>
+        </div>
+      </div>
+      <div class="ptile ptile-uw">
+        <div class="ptile-h">
+          <div class="ptile-n">FWB <span class="uw">below line</span></div>
+          <div class="ptile-m"><b>Rs 33,138</b> &middot; 45 ads
+            &middot; line 0.87x, from a 1x plan target</div>
+          <div class="ptile-r"><span class="mer-low">0.55x</span>
+            <em>-36% vs 0.87x line</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>0 of 13 judged</em></div>
+          <div class="ethin">Nothing above Rs 10,000 in this window (13 tracked)</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>3 of 4 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">#1 best</span>
+          <span class="ekey">Founder</span>
+          <span class="chip watch">Below 0.87x line</span>
+          <span class="enum">0.76x</span>
+          <span class="edelta">+37%</span>
+          <span class="espend">Rs 10,212</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 10,212 across 6 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details>
+      <details class="erow best">
+        <summary>
+          <span class="etag">#2 best</span>
+          <span class="ekey">UGC</span>
+          <span class="chip watch">Below 0.87x line</span>
+          <span class="enum">0.74x</span>
+          <span class="edelta">+34%</span>
+          <span class="espend">Rs 10,565</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 10,565 across 7 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">AI</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.26x</span>
+          <span class="edelta">-54%</span>
+          <span class="espend">Rs 10,718</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 10,718 across 29 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>1 of 3 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Video</span>
+          <span class="chip watch">Below 0.87x line</span>
+          <span class="enum">0.61x</span>
+          <span class="edelta">+11%</span>
+          <span class="espend">Rs 25,437</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 25,437 across 26 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details><div class="egap"></div><div class="ethin">No clear laggard: nothing above the floor sits below this product's average</div>
+        </div>
+      </div>
+      <div class="ptile ptile-uw">
+        <div class="ptile-h">
+          <div class="ptile-n">Unassigned <span class="uw">below line</span></div>
+          <div class="ptile-m"><b>Rs 18,543</b> &middot; 10 ads
+            &middot; line 1.30x, no plan target so account default</div>
+          <div class="ptile-r"><span class="mer-low">0.32x</span>
+            <em>-76% vs 1.30x line</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>1 of 4 judged</em></div>
+          <div class="ethin">No clear leader: nothing above the floor beats this product's average</div><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">GIF</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.00x</span>
+          <span class="edelta">-100%</span>
+          <span class="espend">Rs 10,649</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 10,649 across 7 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>1 of 2 judged</em></div>
+          <div class="ethin">No clear leader: nothing above the floor beats this product's average</div><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">Unlabelled</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.23x</span>
+          <span class="edelta">-27%</span>
+          <span class="espend">Rs 14,689</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 14,689 across 9 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>1 of 1 judged</em></div>
+          
+      <details class="erow best">
+        <summary>
+          <span class="etag">Best</span>
+          <span class="ekey">Unlabelled</span>
+          <span class="chip watch">Below 1.30x line</span>
+          <span class="enum">0.32x</span>
+          <span class="edelta">+0%</span>
+          <span class="espend">Rs 18,543</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 18,543 across 10 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details><div class="egap"></div><div class="ethin">No clear laggard: nothing above the floor sits below this product's average</div>
+        </div>
+      </div>
+      <div class="ptile">
+        <div class="ptile-h">
+          <div class="ptile-n">Detox on Demand </div>
+          <div class="ptile-m"><b>Rs 17,473</b> &middot; 24 ads
+            &middot; line 1.04x, from a 1.2x plan target</div>
+          <div class="ptile-r"><span class="mer-ok">1.11x</span>
+            <em>+6% vs 1.04x line</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>1 of 9 judged</em></div>
+          <div class="ethin">No clear leader: nothing above the floor beats this product's average</div><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">ClayMask</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.19x</span>
+          <span class="edelta">-83%</span>
+          <span class="espend">Rs 10,204</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 10,204 across 8 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>0 of 5 judged</em></div>
+          <div class="ethin">Nothing above Rs 10,000 in this window (5 tracked)</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>1 of 2 judged</em></div>
+          <div class="ethin">No clear leader: nothing above the floor beats this product's average</div><div class="egap"></div>
+      <details class="erow worst">
+        <summary>
+          <span class="etag">Worst</span>
+          <span class="ekey">Video</span>
+          <span class="chip act">Cut</span>
+          <span class="enum">0.16x</span>
+          <span class="edelta">-85%</span>
+          <span class="espend">Rs 10,249</span>
+        </summary>
+        <div class="ebody"><p class="fine">Every ad here is under Rs 5,000 (Rs 10,249 across 4 ads). This entry clears the ranking floor in aggregate, but no single ad has enough spend to show on its own yet.</p></div>
+      </details>
+        </div>
+      </div>
+      <div class="ptile ptile-uw">
+        <div class="ptile-h">
+          <div class="ptile-n">Splash & Dash <span class="uw">below line</span></div>
+          <div class="ptile-m"><b>Rs 10,198</b> &middot; 20 ads
+            &middot; line 1.30x, from a 1.5x plan target</div>
+          <div class="ptile-r"><span class="mer-low">0.91x</span>
+            <em>-30% vs 1.30x line</em></div>
+        </div>
+        
+        <div class="dimblock">
+          <div class="dimhead">Angle
+            <em>0 of 7 judged</em></div>
+          <div class="ethin">Nothing above Rs 10,000 in this window (7 tracked)</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Format
+            <em>0 of 2 judged</em></div>
+          <div class="ethin">Nothing above Rs 10,000 in this window (2 tracked)</div>
+        </div>
+        <div class="dimblock">
+          <div class="dimhead">Creative type
+            <em>0 of 2 judged</em></div>
+          <div class="ethin">Nothing above Rs 10,000 in this window (2 tracked)</div>
+        </div>
+      </div></div>
+
+
+<div class="ustrip">
+  <div class="t"><b>Blind spot.</b> Rs 396 of spend carries no angle in its ad name and
+    cannot be judged below. Rename those ads to the standard convention and they join the hub
+    automatically.</div>
+  <div class="v">Rs 396</div>
+</div>
+<details><summary>Which products are unlabelled</summary><div class="dbody">
+  <ul class="audit"><li><span>Detox on Demand</span><b>Rs 396</b></li></ul></div></details>
+
+<details><summary>How the creative hub is built</summary><div class="dbody">
+ <ol class="notes">
+  <li><b>Parsing.</b> Ad names follow
+   <code>Product - Format - [Partnership] - [Creator] - Angle - Description - Type - Landing - Date</code>.
+   The parser anchors from both ends because the middle is variable length. Creator is whatever sits
+   immediately before <code>Partnership</code>, which is why lowercase handles are read correctly.</li>
+  <li><b>Offers are excluded</b>, Rs 5,184 in this window. PriceSlash,
+   FreebieOffer, AOV999, LastChance and percentage-off angles are promo levers, not creative angles.</li>
+  <li><b>Best vs worst is split on the product's own average.</b> An entry is a leader only if it
+   is at or above this product's blended ROAS, a laggard only if it is below. That makes it
+   impossible for one entry to sit in both lists. Up to two a side.</li>
+  <li><b>Per-ad floor of Rs 5,000.</b> An entry is ranked on its aggregate spend, but
+   inside a row only ads that individually clear Rs 5,000 get a thumbnail and a per-ad
+   ROAS. Ads with a few hundred rupees behind them carry a meaningless ROAS, so they are collapsed
+   into a single line instead of polluting the view.</li>
+  <li><b>The brand line is per product</b> (Anuj, 5 Oct 2026), not one flat number, so a 4.0x-target
+   product is not judged by the same bar as a 1.0x-target one. Because plan targets are MER-basis and
+   this section is Meta last-click, each is scaled by 0.87x onto the right basis rather than
+   compared across bases. The scale is clamped to between 0.5x and 2.0x so a collapsed MER cannot
+   produce an absurd bar. Products with no plan target fall back to 1.3x.</li>
+  <li><b>Creative type is a thin dimension.</b> Almost everything is Video or Static, and only a
+   handful of products carry enough of both to compare. Read it as a sanity check, not a strategy
+   input.</li>
+  <li><b>Thumbnails</b> come from Meta's CDN and the links open the ad in Ads Manager. The image
+   URLs are signed and expire in one to four days, so they are refreshed on every daily run.</li>
+ </ol></div></details>
+
+<details><summary>Full numbers, every column</summary><div class="dbody"><div class="scroll">
+ <table class="det"><thead><tr><th class="l">Product</th>
+  <th>Meta</th><th>Meta tgt</th><th>Google</th><th>Google tgt</th>
+  <th>Spend ex GST</th><th>Ex GST tgt</th><th>Spend incl</th><th>Incl tgt</th>
+  <th>Revenue</th><th>Rev tgt</th><th>MER</th><th>MER tgt</th></tr></thead>
+  <tbody><tr class=""><td class="l">FIAF Family</td><td>Rs 70,493</td><td class="p">Rs 9,81,577</td><td>Rs 323</td><td class="p">Rs 1,09,064</td><td>Rs 70,815</td><td class="p">Rs 10,90,642</td><td><b>Rs 83,562</b></td><td class="p">Rs 12,86,957</td><td><b>Rs 70,836</b></td><td class="p">Rs 14,80,000</td><td>0.85</td><td class="p">1.15</td></tr><tr class=""><td class="l">FWB</td><td>Rs 28,827</td><td class="p">Rs 2,89,831</td><td>Rs 0</td><td class="p">Rs 32,203</td><td>Rs 28,827</td><td class="p">Rs 3,22,034</td><td><b>Rs 34,016</b></td><td class="p">Rs 3,80,000</td><td><b>Rs 17,083</b></td><td class="p">Rs 3,80,000</td><td>0.50</td><td class="p">1.00</td></tr><tr class=""><td class="l">Bye Bye Blow Dry</td><td>Rs 7,566</td><td class="p">Rs 2,79,661</td><td>Rs 0</td><td class="p">Rs 31,073</td><td>Rs 7,566</td><td class="p">Rs 3,10,735</td><td><b>Rs 8,928</b></td><td class="p">Rs 3,66,667</td><td><b>Rs 10,889</b></td><td class="p">Rs 4,40,000</td><td>1.22</td><td class="p">1.20</td></tr><tr class=""><td class="l">Detox on Demand</td><td>Rs 15,884</td><td class="p">Rs 2,03,390</td><td>Rs 0</td><td class="p">Rs 22,599</td><td>Rs 15,884</td><td class="p">Rs 2,25,989</td><td><b>Rs 18,744</b></td><td class="p">Rs 2,66,667</td><td><b>Rs 10,188</b></td><td class="p">Rs 3,20,000</td><td>0.54</td><td class="p">1.20</td></tr><tr class=""><td class="l">Shower in Seconds</td><td>Rs 0</td><td class="p">Rs 1,52,542</td><td>Rs 0</td><td class="p">Rs 16,949</td><td>Rs 0</td><td class="p">Rs 1,69,492</td><td><b>Rs 0</b></td><td class="p">Rs 2,00,000</td><td><b>Rs 6,293</b></td><td class="p">Rs 2,00,000</td><td>-</td><td class="p">1.00</td></tr><tr class=""><td class="l">Don't Sweat It</td><td>Rs 3,194</td><td class="p">Rs 1,29,430</td><td>Rs 0</td><td class="p">Rs 14,381</td><td>Rs 3,194</td><td class="p">Rs 1,43,811</td><td><b>Rs 3,769</b></td><td class="p">Rs 1,69,697</td><td><b>Rs 12,495</b></td><td class="p">Rs 2,80,000</td><td>3.32</td><td class="p">1.65</td></tr><tr class=""><td class="l">Shaving Grace</td><td>Rs 1,032</td><td class="p">Rs 1,01,695</td><td>Rs 0</td><td class="p">Rs 11,299</td><td>Rs 1,032</td><td class="p">Rs 1,12,994</td><td><b>Rs 1,218</b></td><td class="p">Rs 1,33,333</td><td><b>Rs 6,392</b></td><td class="p">Rs 2,00,000</td><td>5.25</td><td class="p">1.50</td></tr><tr class=""><td class="l">Splash & Dash</td><td>Rs 8,642</td><td class="p">Rs 71,186</td><td>Rs 0</td><td class="p">Rs 7,910</td><td>Rs 8,642</td><td class="p">Rs 79,096</td><td><b>Rs 10,198</b></td><td class="p">Rs 93,333</td><td><b>Rs 4,245</b></td><td class="p">Rs 1,40,000</td><td>0.42</td><td class="p">1.50</td></tr><tr class=""><td class="l">Intense Double Cleanse</td><td>Rs 0</td><td class="p">Rs 50,847</td><td>Rs 0</td><td class="p">Rs 5,650</td><td>Rs 0</td><td class="p">Rs 56,497</td><td><b>Rs 0</b></td><td class="p">Rs 66,667</td><td><b>Rs 1,898</b></td><td class="p">Rs 1,00,000</td><td>-</td><td class="p">1.50</td></tr><tr class=""><td class="l">Smooth Operator</td><td>Rs 0</td><td class="p">Rs 40,678</td><td>Rs 0</td><td class="p">Rs 4,520</td><td>Rs 0</td><td class="p">Rs 45,197</td><td><b>Rs 0</b></td><td class="p">Rs 53,333</td><td><b>Rs 3,396</b></td><td class="p">Rs 80,000</td><td>-</td><td class="p">1.50</td></tr><tr class=""><td class="l">DUOS</td><td>Rs 6,877</td><td class="p">Rs 38,136</td><td>Rs 0</td><td class="p">Rs 4,237</td><td>Rs 6,877</td><td class="p">Rs 42,373</td><td><b>Rs 8,115</b></td><td class="p">Rs 50,000</td><td><b>Rs 1,995</b></td><td class="p">Rs 2,00,000</td><td>0.25</td><td class="p">4.00</td></tr><tr class=""><td class="l">Chill The Flakes Out</td><td>Rs 0</td><td class="p">Rs 30,508</td><td>Rs 561</td><td class="p">Rs 3,390</td><td>Rs 561</td><td class="p">Rs 33,898</td><td><b>Rs 662</b></td><td class="p">Rs 40,000</td><td><b>Rs 799</b></td><td class="p">Rs 60,000</td><td>1.21</td><td class="p">1.50</td></tr><tr class=""><td class="l">One Step Wonder</td><td>Rs 0</td><td class="p">Rs 20,339</td><td>Rs 0</td><td class="p">Rs 2,260</td><td>Rs 0</td><td class="p">Rs 22,599</td><td><b>Rs 0</b></td><td class="p">Rs 26,667</td><td><b>Rs 0</b></td><td class="p">Rs 40,000</td><td>-</td><td class="p">1.50</td></tr><tr class=""><td class="l">High & Dry</td><td>Rs 0</td><td class="p">Rs 10,169</td><td>Rs 0</td><td class="p">Rs 1,130</td><td>Rs 0</td><td class="p">Rs 11,299</td><td><b>Rs 0</b></td><td class="p">Rs 13,333</td><td><b>Rs 4,796</b></td><td class="p">Rs 20,000</td><td>-</td><td class="p">1.50</td></tr><tr class=""><td class="l">Hair & Everywhere</td><td>Rs 0</td><td class="p">Rs 10,169</td><td>Rs 0</td><td class="p">Rs 1,130</td><td>Rs 0</td><td class="p">Rs 11,299</td><td><b>Rs 0</b></td><td class="p">Rs 13,333</td><td><b>Rs 0</b></td><td class="p">Rs 20,000</td><td>-</td><td class="p">1.50</td></tr><tr class=""><td class="l">SIS Green Juice</td><td>Rs 0</td><td class="p">Rs 10,169</td><td>Rs 0</td><td class="p">Rs 1,130</td><td>Rs 0</td><td class="p">Rs 11,299</td><td><b>Rs 0</b></td><td class="p">Rs 13,333</td><td><b>Rs 0</b></td><td class="p">Rs 20,000</td><td>-</td><td class="p">1.50</td></tr><tr class=""><td class="l">Fuller Without Filler</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td>Rs 0</td><td class="p">Rs 0</td><td><b>Rs 0</b></td><td class="p">Rs 0</td><td><b>Rs 4,543</b></td><td class="p">Rs 20,000</td><td>-</td><td class="p">-</td></tr><tr class="un"><td class="l">Unassigned</td><td>Rs 15,714</td><td class="p">-</td><td>Rs 10,969</td><td class="p">-</td><td>Rs 26,683</td><td class="p">-</td><td><b>Rs 31,487</b></td><td class="p">-</td><td><b>Rs 7,696</b></td><td class="p">-</td><td>0.24</td><td class="p">-</td></tr></tbody></table></div></div></details>
+
+<details><summary>Reconciliation and unassigned audit</summary><div class="dbody">
+ <ul class="audit"><li><span>Meta &mdash; raw Rs 1,58,229, mapped plus unassigned Rs 1,58,229</span><b>ties</b></li><li><span>Google &mdash; raw Rs 11,853, mapped plus unassigned Rs 11,853</span><b>ties</b></li><li><span>Shopify revenue &mdash; raw Rs 1,63,544, mapped plus unassigned Rs 1,63,544</span><b>ties</b></li></ul>
+ <div class="cols">
+  <div class='acol'><h5>meta ads with no product token <em>Rs 15,714</em></h5><ul class='audit'><li><span>Face The Day - AI - FaceCareEssentials - PackedAndReady - Flexible - PDP - 08/10/26</span><b>Rs 3,265</b></li><li><span>AMZ_GIF_Influencer_Videos_Retargeting_MichelleRossQuadros</span><b>Rs 3,235</b></li><li><span>Catalog - All Products - PDP - 07/10/26</span><b>Rs 2,435</b></li><li><span>AMZ_GIF_Influencer_Videos_SiddhiJaiswal</span><b>Rs 1,798</b></li><li><span>AMZ_GIF_Influencer_Videos_Acquistion_YuktaSethi</span><b>Rs 1,282</b></li><li><span>AMZ_GIF_Influencer_Videos_Retargeting_SiddhiJaiswal</span><b>Rs 1,263</b></li><li><span>AMZ_GIF_Influencer_Videos_Acquistion_SaraSindhwani</span><b>Rs 1,151</b></li><li><span>Catalog - Single - PDP - 06/10/26</span><b>Rs 989</b></li><li><span>AMZ_GIF_Influencer_Videos_Retargeting_DeepaThandani</span><b>Rs 195</b></li><li><span>AMZ_GIF_Influencer_Videos_Acquistion_DivyaV</span><b>Rs 102</b></li></ul></div>
+  <div class='acol'><h5>google generic campaigns <em>Rs 10,969</em></h5><ul class='audit'><li><span>Search_Brand_campaign_troas(Re)</span><b>Rs 5,024</b></li><li><span>PLA_Shopping_Singles_tROAS(Acq)</span><b>Rs 1,171</b></li><li><span>PMax - Brand - Feed Only - Catch All - 24/07/2025</span><b>Rs 1,156</b></li><li><span>Search_Brand_campaign_maxconversions(Re)</span><b>Rs 1,044</b></li><li><span>PLA_ShoppingAds_MaxconvValue</span><b>Rs 844</b></li><li><span>Pmax_InterestTargeting(Acq)</span><b>Rs 589</b></li><li><span>Pmax_Brand_Sales_Retargeting(Re)</span><b>Rs 582</b></li><li><span>Pmax - NB - Feed + Asset - 04/05/2026</span><b>Rs 560</b></li></ul></div>
+  <div class='acol'><h5>shopify lines outside the plan <em>Rs 7,696</em></h5><ul class='audit'><li><span>Face the Day</span><b>Rs 7,497</b></li><li><span>Works like a Charm</span><b>Rs 199</b></li></ul></div>
+ </div></div></details>
+
+<details><summary>How to read this</summary><div class="dbody">
+ <ol class="notes">
+  <li><b>The pace marker is the point.</b> The dark tick on every bar sits at
+   14%, where the week has actually got to. A fill short of the tick is behind
+   pace, past it is ahead. Judge against the tick, never against a full bar.</li>
+  <li><b>Product MER, not ROAS.</b> Numerator is all channel Shopify net sales for the
+   product including organic and quick commerce. Denominator is only the spend we could
+   attribute to that product. Products with organic pull read high, products carrying
+   prospecting spend read low. This will not tie to Meta reported ROAS.</li>
+  <li><b>Total spend</b> is (Meta + Google) x 1.18. Targets and target ROAS are stated on
+   GST inclusive spend, so MER and its target are directly comparable.</li>
+  <li><b>Targets are the stated figures</b> from the Antinorm Planning sheet, one tab per
+   month, never a pro rata. The build refuses to run unless target revenue divided by target
+   inclusive spend reconciles to the ROAS the sheet states, which is the guard against a
+   repeat of the September basis error.</li>
+  <li><b>October plan.</b> Month target is Rs 99.17 L spend incl
+   GST against Rs 1.25 Cr revenue at 1.26x. The month window follows
+   the plan's own week grid, so the month page equals the sum of its week pages.</li>
+  <li><b>Google product coverage is thin.</b> 93% of Google spend is brand,
+   shopping or generic Pmax with no product token and sits in Unassigned, so per product
+   Google spend is understated throughout.</li>
+  <li><b>Smooth Operator, Splash &amp; Dash and Shaving Grace short forms.</b> SO, S&amp;D and
+   SG were all judged too ambiguous to match on, so only the spelled out names map. Ads using
+   only the short form fall to Unassigned.</li>
+  <li><b>Creative count is not in this version.</b> Weekly creative targets exist in the sheet
+   but the Meta Creatives Update tab cannot be read end to end yet.</li>
+ </ol></div></details>
+
+<footer>Beyond Ads &middot; hello@gobeyondads.com &middot; +91 9553926661 &middot;
+ Banjara Hills, Hyderabad 500082<br>
+ Google Partner &middot; Meta Business Partner &middot; Amazon Ads Verified Partner &middot;
+ Shopify Partner<br>
+ Sources: Windsor.ai (Meta Ads, Google Ads, Shopify) &middot; Antinorm Planning sheet.
+ Refreshes every morning at 11:00 IST.
+</footer>
+</div></body></html>

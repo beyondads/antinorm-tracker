@@ -161,7 +161,8 @@
  .pill.off{opacity:.5}
  .pill b{display:block;font-size:13px;color:#004AAD}
  .pill.on b{color:#fff}
- a.pill b::after{content:" \2192";font-size:11px;color:#666666}
+ a.pill:not(.off) b::after{content:" \2192";font-size:11px;color:#666666}
+ a.pill.off,a.mtab.off{cursor:default}
  .pill span{display:block;font-size:10.5px;color:#666666;margin-top:2px}
  .pill.on span{color:#B8D8F8}
  .pill i{display:block;font-style:normal;font-size:8.5px;color:#666666;margin-top:4px;
@@ -243,10 +244,10 @@
   <h1>AntiNorm &middot; product tracker</h1></div>
  <div class="hmeta"><b>October &middot; 01 Oct to 31 Oct 2026</b><br>
   Day 14 of 31 &middot; 45% of month elapsed<br>
-  Locked 15 Oct 2026, 05:53 IST</div>
+  Locked 15 Oct 2026, 06:58 IST</div>
 </header>
 
-<div class="monthnav"><a class="mtab" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/sep/">September 2026</a><div class="mtab on">October 2026</div></div><div class="weeknav"><div class="pill on"><b>Month</b><span>01 Oct to 31 Oct</span><i>all weeks</i></div><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w1/"><b>W1</b><span>01 Oct to 04 Oct</span><i>target set</i></a><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w2/"><b>W2</b><span>05 Oct to 11 Oct</span><i>target set</i></a><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w3/"><b>W3</b><span>12 Oct to 18 Oct</span><i>target set</i></a><div class="pill off"><b>W4</b><span>19 Oct to 25 Oct</span><i>target set</i></div><div class="pill off"><b>W5</b><span>26 Oct to 31 Oct</span><i>target set</i></div></div>
+<div class="monthnav"><a class="mtab" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/sep/" data-start="2026-08-31" data-href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/sep/">September 2026</a><div class="mtab on" data-start="2026-10-01">October 2026</div></div><div class="weeknav"><div class="pill on" data-start="2026-10-01"><b>Month</b><span>01 Oct to 31 Oct</span><i>all weeks</i></div><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w1/" data-start="2026-10-01" data-href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w1/"><b>W1</b><span>01 Oct to 04 Oct</span><i>target set</i></a><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w2/" data-start="2026-10-05" data-href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w2/"><b>W2</b><span>05 Oct to 11 Oct</span><i>target set</i></a><a class="pill" href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w3/" data-start="2026-10-12" data-href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w3/"><b>W3</b><span>12 Oct to 18 Oct</span><i>target set</i></a><a class="pill off" data-start="2026-10-19" data-href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w4/"><b>W4</b><span>19 Oct to 25 Oct</span><i>target set</i></a><a class="pill off" data-start="2026-10-26" data-href="/antinorm-tracker/JlWTeQUeXKX9PluffF4cCnWt/oct/w5/"><b>W5</b><span>26 Oct to 31 Oct</span><i>target set</i></a></div><script>(function(){var MS=86400000,t=new Date();t.setHours(0,0,0,0);var c=new Date(t.getTime()-MS);document.querySelectorAll(".monthnav a[data-href],.weeknav a[data-href]").forEach(function(el){var s=new Date(el.getAttribute("data-start")+"T00:00:00");if(s<=c){el.href=el.getAttribute("data-href");el.classList.remove("off");}else{el.removeAttribute("href");el.classList.add("off");}});})();</script>
 
 <div class="banner"><b>Month still running.</b> Day 14 of 31, data through 14 Oct. Compare every bar against the pace marker, not against 100%. Refreshes tomorrow at 11:00 IST.</div>
 
